@@ -1,0 +1,19 @@
+<p>login works!</p>
+
+<h2>reactive forms</h2>
+<form  [formGroup]="login" (ngSubmit)="onSub()">
+<input type="text" name="user"  formControlName="email">
+<span *ngIf="email?.invalid && email?.touched">email is required</span>
+<br> <br>
+<input type="text" name="pass" formControlName="pass">
+<span *ngIf="pass?.invalid && pass?.touched">password invalid</span>
+<br> <br>
+<button type="submit">submit</button>
+</form>
+
+<h1>{{data}}</h1>
+
+
+<input type="text" #i>
+<button (click)="send(i.value)">sub</button>
+
