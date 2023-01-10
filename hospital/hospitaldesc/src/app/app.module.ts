@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
 import { DoctorComponent } from './dashboard/doctor/doctor.component';
 import { PatientComponent } from './dashboard/patient/patient.component';
-import { AddDoctorComponent } from './dashboard/doctor/add-doctor/add-doctor.component';
 
 
 @NgModule({
@@ -16,14 +15,14 @@ import { AddDoctorComponent } from './dashboard/doctor/add-doctor/add-doctor.com
     AppComponent,
     LoginComponent,
     DoctorComponent,
-    PatientComponent,
-    AddDoctorComponent
+    PatientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    // DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
