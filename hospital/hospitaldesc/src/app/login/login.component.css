@@ -1,0 +1,11 @@
+.button{
+    margin-right: 50px;
+}
+.reg:hover{
+    color:red;
+    text-decoration: none;
+}
+.body{
+    margin-top: 0%;
+    height: 100%;
+}
