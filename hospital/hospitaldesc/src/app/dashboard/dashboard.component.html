@@ -1,2 +1,15 @@
 <p>dashboard works!</p>
+<div class="row mt-2" *ngIf="authService.userData as user">
+    <div class="col-md-12">
+      <div class="media">
+        <!-- <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '..\..\assets\icons\icons8-plus-64.png'}}"
+          alt="{{user.displayName}}">
+        <div class="media-body"> -->
+          <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-dark btn-lg btn-block" (click)="authService.SignOut()">Log Out</button>
+  <!-- </div> -->
 <router-outlet></router-outlet>

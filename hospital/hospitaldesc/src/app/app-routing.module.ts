@@ -3,11 +3,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DoctorComponent } from './dashboard/doctor/doctor.component';
 import { PatientComponent } from './dashboard/patient/patient.component';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {
     path: '', component: LoginComponent
+  },
+  {
+    path: 'signup', component: SignupComponent
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'forgotpass', component: ForgotpassComponent
   },
   // {
   //   path:'doctor',component:DoctorComponent
