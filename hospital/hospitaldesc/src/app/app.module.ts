@@ -7,12 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AddPaitentComponent } from './add-paitent/add-paitent.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    AddPaitentComponent,
+  
   ],
   imports: [
     BrowserModule,

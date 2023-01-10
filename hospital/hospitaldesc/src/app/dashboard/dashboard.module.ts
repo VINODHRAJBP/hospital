@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { PatientComponent } from './patient/patient.component';
 import { RouterModule } from '@angular/router';
+import { SildebarComponent } from './sildebar/sildebar.component';
 
 
 
@@ -11,7 +12,9 @@ import { RouterModule } from '@angular/router';
   declarations: [
     DashboardComponent,
     DoctorComponent,
-    PatientComponent
+    PatientComponent,
+    SildebarComponent
+  
   ],
   imports: [
     CommonModule,
