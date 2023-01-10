@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
 import { DoctorComponent } from './dashboard/doctor/doctor.component';
 import { PatientComponent } from './dashboard/patient/patient.component';
+import { AddDoctorComponent } from './dashboard/doctor/add-doctor/add-doctor.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PatientComponent } from './dashboard/patient/patient.component';
     AppComponent,
     LoginComponent,
     DoctorComponent,
-    PatientComponent
+    PatientComponent,
+    AddDoctorComponent
   ],
   imports: [
     BrowserModule,
