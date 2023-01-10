@@ -12,10 +12,10 @@ export class PatientComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // login=new FormGroup({
-  //   email:new FormControl('',[Validators.required,Validators.email]),
-  //   pass:new FormControl('',[Validators.minLength(3)])
-  // })
+  register=new FormGroup({
+    email:new FormControl('',[Validators.required,Validators.email]),
+    pass:new FormControl('',[Validators.minLength(3)])
+  })
 
   onSub(){
 
