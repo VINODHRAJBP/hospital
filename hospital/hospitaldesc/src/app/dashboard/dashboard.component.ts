@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../shared/authservice.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +7,11 @@ import { AuthService } from '../shared/authservice.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public authService : AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-
+  add(){
+    this.route.navigate(['addpatient'])
+  }
 }
