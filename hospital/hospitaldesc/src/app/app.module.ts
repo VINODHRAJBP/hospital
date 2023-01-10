@@ -8,21 +8,21 @@ import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
 import { DoctorComponent } from './dashboard/doctor/doctor.component';
 import { PatientComponent } from './dashboard/patient/patient.component';
+import {SildebarComponent} from './dashboard/sildebar/sildebar.component'
+import { DashboardModule } from './dashboard/dashboard.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DoctorComponent,
-    PatientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    // DashboardModule
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

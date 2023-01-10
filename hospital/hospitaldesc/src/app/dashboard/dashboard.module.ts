@@ -6,6 +6,7 @@ import { PatientComponent } from './patient/patient.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SildebarComponent } from './sildebar/sildebar.component';
+import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
 
 
 
@@ -15,7 +16,8 @@ import { SildebarComponent } from './sildebar/sildebar.component';
     DashboardComponent,
     DoctorComponent,
     PatientComponent,
-    SildebarComponent
+    SildebarComponent,
+    AddDoctorComponent
   
   ],
   imports: [
