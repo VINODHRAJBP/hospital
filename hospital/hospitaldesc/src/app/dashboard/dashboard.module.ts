@@ -6,6 +6,8 @@ import { PatientComponent } from './patient/patient.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SildebarComponent } from './sildebar/sildebar.component';
+import {HttpClientModule} from '@angular/common/http'
+
 
 
 
@@ -21,7 +23,9 @@ import { SildebarComponent } from './sildebar/sildebar.component';
   imports: [
     CommonModule,
     RouterModule,
-     ReactiveFormsModule
+     ReactiveFormsModule,
+     HttpClientModule
+     
   ],
   exports:[DoctorComponent,PatientComponent]
 })
