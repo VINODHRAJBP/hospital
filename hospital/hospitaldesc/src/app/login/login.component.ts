@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
 
   onSub(){
-  console.log(this.login.value);
+  return (this.login.value);
   }
 
 
