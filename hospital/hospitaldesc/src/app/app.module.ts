@@ -6,23 +6,23 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { AddPaitentComponent } from './add-paitent/add-paitent.component';
+import { DoctorComponent } from './dashboard/doctor/doctor.component';
+import { PatientComponent } from './dashboard/patient/patient.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AddPaitentComponent,
-  
+    DoctorComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    DashboardModule
+    // DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
