@@ -1,30 +1,36 @@
-<p>patient works!</p>
 
-<section class="h-100 h-custom gradient-custom-2">
+<section class="h-100  gradient-custom-2">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12">
           <div class="card card-registration card-registration-2" style="border-radius: 15px;">
             <div class="card-body p-0">
+                <form [formGroup]="register">
               <div class="row g-0">
                 <div class="col-lg-6">
                   <div class="p-5">
                     <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
-  <form>
+  
+
+
                     <div class="mb-4 pb-2">
-                      <select class="select">
-                        <option value="1">Title</option>
-                        <option value="2">Mr.</option>
-                        <option value="3">Mrs.</option>
-                        <option value="4">Miss</option>
-                      </select>
-                    </div>
-                </form>
+                        <select class="form-select"  aria-label="Default select example">
+                          <option selected>Title</option>
+                          <option value="1" class="lead">Mr</option>
+                          <option value="2" class="lead">Miss</option>
+                          <option value="3" class="lead">Mrs</option>
+                        </select>
+                      </div>
+
+
+
+                  
+              
                     <div class="row">
                       <div class="col-md-6 mb-4 pb-2">
   
                         <div class="form-outline">
-                          <input type="text" id="form3Examplev2" class="form-control form-control-lg" />
+                          <input type="text" id="form3Examplev2" class="form-control form-control-lg" formControlName="Fname" />
                           <label class="form-label" for="form3Examplev2">First name</label>
                         </div>
   
@@ -32,38 +38,49 @@
                       <div class="col-md-6 mb-4 pb-2">
   
                         <div class="form-outline">
-                          <input type="text" id="form3Examplev3" class="form-control form-control-lg" />
+                          <input type="text" id="form3Examplev3" class="form-control form-control-lg" formControlName="lname" />
                           <label class="form-label" for="form3Examplev3">Last name</label>
                         </div>
   
                       </div>
                       <div class="col-md-6 mb-4 pb-2 form-outline">
-                        <input type="text" id="form3Examplev3" class="form-control form-control-lg" />
+                        <input type="text" id="form3Examplev3" class="form-control form-control-lg" formControlName="Age" />
                         <label class="form-label" for="form3Examplev3">Age</label>
                       </div>
                     </div>
   
+                    
+
                     <div class="mb-4 pb-2">
-                      <select class="select">
-                        <option value="1">Gender</option>
-                        <option value="2">Male</option>
-                        <option value="3">Female</option>
-                        <option value="4">Others</option>
+                      <select class="form-select"  aria-label="Default select example">
+                        <option selected>Gender</option>
+                        <option value="1" class="lead">Male</option>
+                        <option value="2" class="lead">Female</option>
+                        <option value="3" class="lead">Others</option>
                       </select>
                     </div>
   
                     <div class="mb-4 pb-2">
                       <div class="form-outline">
-                        <input type="text" id="form3Examplev4" class="form-control form-control-lg" />
+                        <input type="text" id="form3Examplev4" class="form-control form-control-lg" formControlName="Ph"  />
+                        
                         <label class="form-label" for="form3Examplev4">Contact no</label>
                       </div>
                     </div>
+
+                    <div class="mb-4">
+                        <div class="form-outline form-white">
+                          <input type="text" id="form3Examplea9" class="form-control form-control-lg" formControlName="title" />
+                          <label class="form-label" for="form3Examplea9">Your Email</label>
+                        </div>
+                      </div>
+    
   
                     <div class="row">
                       <div class=" mb-4 pb-2 mb-md-0 pb-md-0">
   
                         <div class="form-outline ">
-                          <input type="text" id="form3Examplev5" class="form-control form-control-lg" />
+                          <input type="text" id="form3Examplev5" class="form-control form-control-lg" formControlName="Address" />
                           <label class="form-label" for="form3Examplev5">Address</label>
                         </div>
   
@@ -82,29 +99,75 @@
   
                   </div>
                 </div>
+
+                <!-- end of form 1 -->
                 <div class="col-lg-6 bg-indigo text-white">
                   <div class="p-5">
-                    <h3 class="fw-normal mb-5">Contact Details</h3>
+                    <h3 class="fw-normal mb-5">Doctor Details</h3>
   
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea2">Street + Nr</label>
+                        <input type="text" id="form3Examplea2" class="form-control form-control-lg" formControlName="title" />
+                        <label class="form-label" for="form3Examplea2">Doctorname</label>
                       </div>
                     </div>
+
+                    
+                        <div class="mb-4 pb-2">
   
-                    <div class="mb-4 pb-2">
+                        <select class=" form-control form-control-lg">
+                          <option value="1" class="lead" active>Specilist</option>
+                          <option value="2" class="lead">Cardiologist</option>
+                          <option value="3" class="lead">Orthopedics</option>
+                          <option value="4" class="lead">Obstetrics and Gynecology</option>
+                          <option value="1" class="lead">Dermatology</option>
+                          <option value="2" class="lead">Pediatrics.</option>
+                          <option value="3" class="lead">Radiology</option>
+                          <option value="4" class="lead">Ophthalmology</option>
+                        </select>
+                        <label class="form-label" for="form3Examplea3">Specilist</label>
+                
+                  </div>
+  
+                      
+
+
+                      <div class="mb-4 pb-2">
+                        <div class="form-outline form-white">
+                          <input type="date" id="form3Examplea3" class="form-control form-control-lg" formControlName="title" />
+                          <label class="form-label" for="form3Examplea3">Appointment Date</label>
+                        </div>
+                      </div>
+
+                      <div class="mb-4 pb-2">
+  
+                        <select class="form-control form-control-lg">
+                          <option value="1" class="lead" active>00:00AM</option>
+                          <option value="2" class="lead">10:00AM</option>
+                          <option value="3" class="lead">11:00AM</option>
+                          <option value="4" class="lead">12:00PM</option>
+                          <option value="1" class="lead">02:00PM</option>
+                          <option value="2" class="lead">03:00PM</option>
+                          <option value="3" class="lead">04:00pM</option>
+                          <option value="4" class="lead">05:00PM</option>
+                        </select>
+                        <label class="form-label" for="form3Examplea3">Time slot</label>
+                
+                  </div>
+  
+  
+                    <!-- <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea3" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea3">Additional Information</label>
+                        <input type="time" id="form3Examplea3" class="form-control form-control-lg" formControlName="title" />
+                        <label class="form-label" for="form3Examplea3">Time slot</label>
                       </div>
-                    </div>
+                    </div> -->
   
-                    <div class="row">
+                    <!-- <div class="row">
                       <div class="col-md-5 mb-4 pb-2">
   
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea4" class="form-control form-control-lg" />
+                          <input type="text" id="form3Examplea4" class="form-control form-control-lg" formControlName="title" />
                           <label class="form-label" for="form3Examplea4">Zip Code</label>
                         </div>
   
@@ -112,7 +175,7 @@
                       <div class="col-md-7 mb-4 pb-2">
   
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea5" class="form-control form-control-lg" />
+                          <input type="text" id="form3Examplea5" class="form-control form-control-lg" formControlName="title" />
                           <label class="form-label" for="form3Examplea5">Place</label>
                         </div>
   
@@ -121,7 +184,7 @@
   
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea6" class="form-control form-control-lg" />
+                        <input type="text" id="form3Examplea6" class="form-control form-control-lg" formControlName="title" />
                         <label class="form-label" for="form3Examplea6">Country</label>
                       </div>
                     </div>
@@ -130,7 +193,7 @@
                       <div class="col-md-5 mb-4 pb-2">
   
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea7" class="form-control form-control-lg" />
+                          <input type="text" id="form3Examplea7" class="form-control form-control-lg" formControlName="title" />
                           <label class="form-label" for="form3Examplea7">Code +</label>
                         </div>
   
@@ -138,22 +201,22 @@
                       <div class="col-md-7 mb-4 pb-2">
   
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea8" class="form-control form-control-lg" />
+                          <input type="text" id="form3Examplea8" class="form-control form-control-lg" formControlName="title" />
                           <label class="form-label" for="form3Examplea8">Phone Number</label>
                         </div>
   
                       </div>
-                    </div>
+                    </div> -->
   
                     <div class="mb-4">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea9" class="form-control form-control-lg" />
+                        <input type="text" id="form3Examplea9" class="form-control form-control-lg" formControlName="title" />
                         <label class="form-label" for="form3Examplea9">Your Email</label>
                       </div>
                     </div>
   
                     <div class="form-check d-flex justify-content-start mb-4 pb-3">
-                      <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
+                      <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" formControlName="title" />
                       <label class="form-check-label text-white" for="form2Example3">
                         I do accept the <a href="#!" class="text-white"><u>Terms and Conditions</u></a> of your
                         site.
@@ -166,6 +229,7 @@
                   </div>
                 </div>
               </div>
+            </form>
             </div>
           </div>
         </div>
