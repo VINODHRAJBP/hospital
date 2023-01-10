@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PatientComponent } from './patient.component';
+import { DashboardComponent } from './dashboard.component';
 
 
 
 @NgModule({
   declarations: [
-    PatientComponent
+    DashboardComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class PatientModule { }
+export class DashboardModule { }

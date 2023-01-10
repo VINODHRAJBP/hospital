@@ -6,20 +6,22 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
-import { PatientModule } from './patient/patient/patient.module';
+import { DoctorComponent } from './dashboard/doctor/doctor.component';
+import { PatientComponent } from './dashboard/patient/patient.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DoctorComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    PatientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
