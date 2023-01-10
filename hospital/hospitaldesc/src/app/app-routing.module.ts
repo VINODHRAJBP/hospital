@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DoctorComponent } from './dashboard/doctor/doctor.component';
 import { PatientComponent } from './dashboard/patient/patient.component';
 import { LoginComponent } from './login/login.component';
+import { AddPaitentComponent } from './add-paitent/add-paitent.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,8 @@ const routes: Routes = [
       },
       {
         path:'patient',component:PatientComponent
+      },{
+        path:'addpatient',component:AddPaitentComponent
       }
     ]
   }

@@ -4,6 +4,9 @@ import { DashboardComponent } from './dashboard.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { PatientComponent } from './patient/patient.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SildebarComponent } from './sildebar/sildebar.component';
+
 
 
 
@@ -18,8 +21,10 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+     ReactiveFormsModule
   ],
   exports:[DoctorComponent,PatientComponent]
 })
-export class DashboardModule { }
+export class DashboardModule { 
+  
+}
