@@ -23,7 +23,8 @@ const routes: Routes = [
       },
       {
         path:'patient',component:PatientComponent
-      },{
+      },
+      {
         path:'addpatient',component:AddPaitentComponent
       }
     ]
