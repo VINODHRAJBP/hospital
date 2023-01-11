@@ -1,15 +1,4 @@
-<!-- <p>login works!</p>
 
-<h2>reactive forms</h2>
-<form  [formGroup]="login" (ngSubmit)="onSub()">
-<input type="text" name="user"  formControlName="email">
-<span *ngIf="email?.invalid && email?.touched">email is required</span>
-<br> <br>
-<input type="text" name="pass" formControlName="pass">
-<span *ngIf="pass?.invalid && pass?.touched">password invalid</span>
-<br> <br>
-<button type="submit">submit</button>
-</form> -->
 
 
 
@@ -58,7 +47,7 @@
 
                                     <a class="small text-muted" href="#!">Forgot password?</a>
                                     <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!"
-                                            style="color: #393f81;">Register here</a></p>
+                                            style="color: #393f81;" routerLink="registration">Register here</a></p>
                                     <a href="#!" class="small text-muted">Terms of use.</a>
                                     <a href="#!" class="small text-muted">Privacy policy</a>
                                 </form>
