@@ -6,7 +6,13 @@ import { PatientComponent } from './patient/patient.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SildebarComponent } from './sildebar/sildebar.component';
+<<<<<<< HEAD
 import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
+||||||| 135d29a
+=======
+import {HttpClientModule} from '@angular/common/http'
+
+>>>>>>> bfa1a229df2c73b7377d23ea914b92ae41e2b4a1
 
 
 
@@ -23,7 +29,9 @@ import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
   imports: [
     CommonModule,
     RouterModule,
-     ReactiveFormsModule
+     ReactiveFormsModule,
+     HttpClientModule
+     
   ],
   exports:[DoctorComponent,PatientComponent]
 })
