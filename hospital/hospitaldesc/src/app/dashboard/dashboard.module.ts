@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SildebarComponent } from './sildebar/sildebar.component';
 import {HttpClientModule} from '@angular/common/http'
+import { AddPaitentComponent } from '../add-paitent/add-paitent.component';
 
 
 
@@ -17,7 +18,8 @@ import {HttpClientModule} from '@angular/common/http'
     DashboardComponent,
     DoctorComponent,
     PatientComponent,
-    SildebarComponent
+    SildebarComponent,
+    AddPaitentComponent
   
   ],
   imports: [

@@ -21,12 +21,9 @@ const routes: Routes = [
   {
     path: 'forgotpass', component: ForgotpassComponent
   },
-  // {
-  //   path:'doctor',component:DoctorComponent
-  // },
-  // {
-  //   path:'patient',component:PatientComponent
-  // },
+  {
+    path:'addpatient',component:AddPaitentComponent
+  },
   {
     path:'dashboard',component:DashboardComponent,children:[
       {
@@ -35,12 +32,9 @@ const routes: Routes = [
       {
         path:'patient',component:PatientComponent
       },
-      {
-        path:'addpatient',component:AddPaitentComponent
-      }
+    
     ]
   }
-
 
 ];
 
