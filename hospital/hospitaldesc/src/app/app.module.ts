@@ -5,29 +5,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
-<<<<<<< HEAD
-
-import { DoctorComponent } from './dashboard/doctor/doctor.component';
-import { PatientComponent } from './dashboard/patient/patient.component';
- 
-
- 
-||||||| a193772
-<<<<<<< HEAD
-||||||| bfa1a22
-import { DoctorComponent } from './dashboard/doctor/doctor.component';
-import { PatientComponent } from './dashboard/patient/patient.component';
-import { DashboardModule } from './dashboard/dashboard.module';
-
-=======
-import { DoctorComponent } from './dashboard/doctor/doctor.component';
-import { PatientComponent } from './dashboard/patient/patient.component';
-import { DashboardModule } from './dashboard/dashboard.module';
->>>>>>> 9f2a9f74ac56d2ea33122087a270fe444dd73f16
-=======
-import { DoctorComponent } from './dashboard/doctor/doctor.component';
-import { PatientComponent } from './dashboard/patient/patient.component';
->>>>>>> 928f7dfde047ca9d5fe9f257183987422775b8b2
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
@@ -51,24 +28,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     SignupComponent,
     ForgotpassComponent,
     HeaderComponent,
-<<<<<<< HEAD
-||||||| a193772
-=======
->>>>>>> 9f2a9f74ac56d2ea33122087a270fe444dd73f16
-    HeaderComponent
-<<<<<<< HEAD
-||||||| bfa1a22
-    
-=======
->>>>>>> 251f9f5398b445195cdc7df463c96964642abed7
->>>>>>> 9f2a9f74ac56d2ea33122087a270fe444dd73f16
-=======
-<<<<<<< HEAD
-   
 
-=======
->>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
->>>>>>> 928f7dfde047ca9d5fe9f257183987422775b8b2
   ],
   imports: [
     BrowserModule,
