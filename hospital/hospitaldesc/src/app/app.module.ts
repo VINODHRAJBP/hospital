@@ -26,13 +26,9 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
     LoginComponent,
-<<<<<<< HEAD
     SignupComponent,
     ForgotpassComponent,
     HeaderComponent,
-=======
-    HeaderComponent
->>>>>>> 251f9f5398b445195cdc7df463c96964642abed7
   ],
   imports: [
     BrowserModule,
