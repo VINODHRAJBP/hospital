@@ -46,12 +46,9 @@ export class PatientComponent implements OnInit {
     let patientData={name:a.firstName!+a.lastName,age:a.age,gender:a.gender,ph:a.ph,email:a.email,address:a.address}
     let doctorData={name:a.doctorName,speciliat:a.specilist,appointmentDate:a.date,appointmentTime:a.time,email:a.doctorEmail}
   
-    let folder=a.firstName!+a.lastName
+    let folder=a.firstName!+" "+a.lastName
     
-    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'/doctor.json',doctorData).subscribe(a=>{console.log(a);
-    })
-
-    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'/patient.json', patientData).subscribe(a=>{console.log(a);
+    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'.json',a).subscribe(a=>{console.log(a);
     })
   }
 }
