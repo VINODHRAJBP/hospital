@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators, FormControlDirective} from '@angular/forms'
+import {FormGroup, FormControl, Validators} from '@angular/forms'
 import { Location } from '@angular/common';
+import { Doctor } from '../doctor';
+import { DoctorService } from '../doctor.service';
 
 @Component({
   selector: 'app-add-doctor',
@@ -9,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class AddDoctorComponent {
 
-  constructor(private location:Location) { }
+  constructor(private location:Location, private doctorService:DoctorService) { }
 
   doctorRegister=new FormGroup({
     name:new FormControl('',[Validators.required]),
@@ -42,10 +44,13 @@ export class AddDoctorComponent {
     departments:string[]=['gen','card','ent','hert']
 
     addDoctor(){
-        console.log(this.doctorRegister.value); 
+        this.doctorService.createDoctor(this.doctorRegister.value) 
+        alert('Doctor Added Successfully...!!')   
     }
 
     goBack(){
         this.location.back()
     }
+
+    
 }
