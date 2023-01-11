@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import {FormGroup,FormControl,Validators} from '@angular/forms'
+import { Database } from 'firebase/database';
+import { AuthService } from '../shared/authservice.service';
 
 
 @Component({
@@ -10,7 +12,9 @@ import {FormGroup,FormControl,Validators} from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+   
+    public authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -32,7 +36,7 @@ export class LoginComponent implements OnInit {
 
 
   onSub(){
-  console.log(this.login.value);
+  return (this.login.value);
   }
 
 
