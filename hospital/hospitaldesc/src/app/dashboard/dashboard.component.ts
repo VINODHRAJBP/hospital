@@ -21,4 +21,8 @@ add1(){
   this.addpatient=!this.addpatient
 }
 
+// addDoctor:boolean=false;
+// doctor(){
+// this.addDoctor=!this.addDoctor
+// }
 }
