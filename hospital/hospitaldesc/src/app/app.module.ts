@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -9,7 +8,6 @@ import {ReactiveFormsModule } from '@angular/forms';
 import { DoctorComponent } from './dashboard/doctor/doctor.component';
 import { PatientComponent } from './dashboard/patient/patient.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
@@ -28,9 +26,13 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
     LoginComponent,
+<<<<<<< HEAD
     SignupComponent,
     ForgotpassComponent,
     HeaderComponent,
+=======
+    HeaderComponent
+>>>>>>> 251f9f5398b445195cdc7df463c96964642abed7
   ],
   imports: [
     BrowserModule,

@@ -11,8 +11,12 @@ export class AddPaitentComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  addpatient=true
 add(){
-this.route.navigate(['patient'])
-console.log(this.route.navigate(['dashboard/patient']))
+  this.addpatient=false
+this.route.navigate(['dashboard/patient'])
+ console.log(this.route.navigate(['dashboard/patient']))
 }
+
 }

@@ -13,6 +13,12 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
   add(){
-    this.route.navigate(['addpatient'])
+    this.route.navigate(['dashboard/patient'])
   }
+
+  addpatient=false
+add1(){
+  this.addpatient=!this.addpatient
+}
+
 }

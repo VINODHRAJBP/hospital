@@ -11,7 +11,7 @@
     </div>
     <div class="patience">
         <a   class="nav_link"><img src="https://img.favpng.com/17/12/10/patient-icon-healthcare-icon-medical-icon-vVipqRtL_t.jpg " style="width:60px;"> 
-        <span class="nav_name" style="font-weight:500; font-size: larger;" routerLink="addpatient">patience</span> </a> 
+        <span class="nav_name" style="font-weight:500; font-size: larger;" (click)="add1()">patience</span> </a> 
     </div>
 </div>
      </div> 
@@ -19,5 +19,12 @@
     </div>
 </div>
 <app-sildebar ></app-sildebar>
+<!-- <app-add-paitent></app-add-paitent> -->
+<div *ngIf="addpatient">
+<div class="add">
+    <button class="btn btn-light "  (click)="add()"  style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="150px" >
+      <br > 
+     <p style="font-weight:900;"  >Add-Patient </p> </button>   
+  </div>
+</div>
 <router-outlet></router-outlet>
-<button >jjj</button>
