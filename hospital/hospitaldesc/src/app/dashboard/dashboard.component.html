@@ -5,60 +5,37 @@
                         style="padding-top:80px">Dashboard</span></a>
                 <div class="nav_list">
                     <div class="doctor">
-<<<<<<< HEAD
+
                         <a class="nav_link active"><img
                                 src="https://thumbs.dreamstime.com/z/medical-team-icon-male-female-doctor-symbols-medical-team-icon-male-female-doctor-symbols-flat-style-vector-eps-157851279.jpg"
                                 style="width:60px;">
                             <span class="nav_name" style="font-weight:500; font-size: larger;" routerLink="doctor">Doctor</span> </a>
                     </div>
                     <div class="patience">
-                        <a (click)="add()" class="nav_link"><img
+                        <a class="nav_link"><img
                                 src="https://img.favpng.com/17/12/10/patient-icon-healthcare-icon-medical-icon-vVipqRtL_t.jpg "
                                 style="width:60px;">
-                            <span class="nav_name" style="font-weight:500; font-size: larger;" routerLink="patient">patience</span> </a>
+                            <span class="nav_name" style="font-weight:500; font-size: larger;" (click)="add1()">patience</span> </a>
                     </div>
                 </div>
             </div>
         </nav>
-||||||| bfa1a22
-        <a  class="nav_link active"><img src="https://thumbs.dreamstime.com/z/medical-team-icon-male-female-doctor-symbols-medical-team-icon-male-female-doctor-symbols-flat-style-vector-eps-157851279.jpg" style="width:60px;"> 
-        <span class="nav_name" style="font-weight:500; font-size: larger;">Doctor</span> </a>
-    </div>
-    <div class="patience">
-        <a (click)="add()"  class="nav_link"><img src="https://img.favpng.com/17/12/10/patient-icon-healthcare-icon-medical-icon-vVipqRtL_t.jpg " style="width:60px;"> 
-        <span class="nav_name" style="font-weight:500; font-size: larger;">patience</span> </a> 
-    </div>
-</div>
+
+       
      </div> 
-     </nav>
-=======
-        <a  class="nav_link active"><img src="https://thumbs.dreamstime.com/z/medical-team-icon-male-female-doctor-symbols-medical-team-icon-male-female-doctor-symbols-flat-style-vector-eps-157851279.jpg" style="width:60px;"> 
-        <span class="nav_name" style="font-weight:500; font-size: larger;">Doctor</span> </a>
+     
     </div>
-    <div class="patience">
-        <a   class="nav_link"><img src="https://img.favpng.com/17/12/10/patient-icon-healthcare-icon-medical-icon-vVipqRtL_t.jpg " style="width:60px;"> 
-        <span class="nav_name" style="font-weight:500; font-size: larger;" (click)="add1()">patience</span> </a> 
-    </div>
-</div>
-     </div> 
-     </nav>
->>>>>>> 9f2a9f74ac56d2ea33122087a270fe444dd73f16
-    </div>
-</div>
+
 <app-sildebar ></app-sildebar>
-<<<<<<< HEAD
-<router-outlet></router-outlet>
-||||||| bfa1a22
-<router-outlet></router-outlet>
-<button routerLink="patient">jjj</button>
-=======
+
+
 <!-- <app-add-paitent></app-add-paitent> -->
 <div *ngIf="addpatient">
 <div class="add">
     <button class="btn btn-light "  (click)="add()"  style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="150px" >
       <br > 
-     <p style="font-weight:900;"  >Add-Patient </p> </button>   
+     <p style="font-weight:900;" >Add-Patient </p> </button>   
   </div>
 </div>
 <router-outlet></router-outlet>
->>>>>>> 9f2a9f74ac56d2ea33122087a270fe444dd73f16
+

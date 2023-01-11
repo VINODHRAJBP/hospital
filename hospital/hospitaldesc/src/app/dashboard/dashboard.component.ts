@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
     this.route.navigate(['dashboard/patient'])
   }
 
-  addpatient=false
+  addpatient=false;
 add1(){
   this.addpatient=!this.addpatient
 }
