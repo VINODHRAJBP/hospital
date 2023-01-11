@@ -17,7 +17,7 @@ export class PatientComponent implements OnInit {
     firstName: new FormControl('',[Validators.required]),
     lastName: new FormControl('',[Validators.required]),
     age: new FormControl('',[Validators.required]),
-    ph: new FormControl('',[Validators.maxLength(10),Validators.minLength(10)]),
+  ph: new FormControl("", [Validators.required]),
     gender: new FormControl(''),
     email: new FormControl('',[Validators.email,Validators.required]),
     address: new FormControl('',[Validators.required]),
@@ -46,12 +46,9 @@ export class PatientComponent implements OnInit {
     let patientData={name:a.firstName!+a.lastName,age:a.age,gender:a.gender,ph:a.ph,email:a.email,address:a.address}
     let doctorData={name:a.doctorName,speciliat:a.specilist,appointmentDate:a.date,appointmentTime:a.time,email:a.doctorEmail}
   
-    let folder=a.firstName!+a.lastName
+    let folder=a.firstName!+" "+a.lastName
     
-    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'/doctor.json',doctorData).subscribe(a=>{console.log(a);
-    })
-
-    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'/patient.json', patientData).subscribe(a=>{console.log(a);
+    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'.json',a).subscribe(a=>{console.log(a);
     })
   }
 }

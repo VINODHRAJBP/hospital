@@ -20,8 +20,22 @@ width: 300px;
 
     .add{
         margin-left: 300px;
-        background: rgb(236, 223, 223);
+        /* background: rgb(236, 223, 223); */
         width: 100px;
+        margin-top: 30px;
+<<<<<<< HEAD
+         
+    }
+=======
+        /* position:absolute; */
+    }
+
+    .add1{
+        margin-left: 300px;
+        /* background: rgb(236, 223, 223); */
+        width: 150vh;
         margin-top: 30px;
         /* position:absolute; */
     }
+    
+>>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4

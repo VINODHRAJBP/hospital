@@ -130,13 +130,13 @@
   
                         <select class="form-control form-control-lg" formControlName="time" name="time">
                           <option  class="lead" active>00:00AM</option>
-                          <option value="10" class="lead">10:00AM</option>
-                          <option value="11" class="lead">11:00AM</option>
-                          <option value="12" class="lead">12:00PM</option>
-                          <option value="02" class="lead">02:00PM</option>
-                          <option value="03" class="lead">03:00PM</option>
-                          <option value="04" class="lead">04:00pM</option>
-                          <option value="05" class="lead">05:00PM</option>
+                          <option value="10 AM" class="lead">10:00AM</option>
+                          <option value="11 AM" class="lead">11:00AM</option>
+                          <option value="12 PM" class="lead">12:00PM</option>
+                          <option value="2 PM" class="lead">02:00PM</option>
+                          <option value="3 PM" class="lead">03:00PM</option>
+                          <option value="4 PM" class="lead">04:00pM</option>
+                          <option value="5 PM" class="lead">05:00PM</option>
                         </select>
                         <label class="form-label" for="form3Examplea3">Time slot</label>
                   </div>
@@ -155,12 +155,12 @@
                       </label>
                     </div>
   
-                    <button type="button" class="btn btn-light btn-lg"
-                      data-mdb-ripple-color="dark" (click)="onSub()">Register</button>
+                    <button type="button" class="btn btn-light btn-outline-success btn-warning"
+                      data-mdb-ripple-color="dark" (click)="onSub()" routerLink="/dashboard" >Submit</button>
 
-                      <button type="button" class="btn btn-light btn-lg"
+                <button type="button" class="btn btn-light btn-outline-danger btn-warning" style="margin-left: 8px;"
                       data-mdb-ripple-color="dark" (click)="onsub1()">cancel</button>
-  
+
                   </div>
                 </div>
               </div>
