@@ -30,8 +30,11 @@ import { DashboardModule } from './dashboard/dashboard.module';
     SignupComponent,
     ForgotpassComponent,
     HeaderComponent,
+<<<<<<< HEAD
    
 
+=======
+>>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
   ],
   imports: [
     BrowserModule,
