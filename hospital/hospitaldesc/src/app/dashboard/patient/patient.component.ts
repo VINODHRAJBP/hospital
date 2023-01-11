@@ -44,10 +44,10 @@ export class PatientComponent implements OnInit {
     console.log(patientData);
     let folder=a.firstName!+a.lastName
     
-    this.http.post('https://hospital-2a8e9-default-rtdb.firebaseio.com/appointments/'+folder+'/doctor.json',doctorData).subscribe(a=>{console.log(a);
+    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'/doctor.json',doctorData).subscribe(a=>{console.log(a);
     })
 
-    this.http.post('https://hospital-2a8e9-default-rtdb.firebaseio.com/appointments/'+folder+'/patient.json', patientData).subscribe(a=>{console.log(a);
+    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'/patient.json', patientData).subscribe(a=>{console.log(a);
     })
   }
 }
