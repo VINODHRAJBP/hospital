@@ -18,15 +18,9 @@ import { AddPaitentComponent } from '../add-paitent/add-paitent.component';
     DashboardComponent,
     DoctorComponent,
     PatientComponent,
-<<<<<<< HEAD
     SildebarComponent,
-    AddDoctorComponent
-||||||| bfa1a22
-    SildebarComponent
-=======
-    SildebarComponent,
+    AddDoctorComponent,
     AddPaitentComponent
->>>>>>> 9f2a9f74ac56d2ea33122087a270fe444dd73f16
   
   ],
   imports: [
