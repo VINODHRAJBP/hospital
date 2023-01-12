@@ -1,8 +1,10 @@
-<div class="mb-3">
-    <label for="doctor" class="form-label">Select Doctor</label>
+<div class="select ">
+    <label for="doctor" class="form-label">Select Doctor: </label>
     <select #doctor class="form-select" name="doctor">
         <option  *ngFor="let doctor of allDoctors" [value]="doctor.name">{{doctor.name}}</option>
     </select>
+
+    <button (click)="onFetchAppointments()"><img style="width:30px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT33EwjKIBFg4dXlQn2B5BmNxgc_VIORGSgiA&usqp=CAU" ></button>
 </div>
 
 
@@ -19,14 +21,15 @@
         </thead>
         <tbody>
             <tr *ngFor="let appointment of allAppointments">
-                <ng-template *ngIf="appointment.doctorName===doctor.value else elsetemp">
-                    <td>{{appointment.firstName}}</td>
-                    <td>{{appointment.age}}</td>
-                    <td>{{appointment.gender}}</td>
-                    <td>{{appointment.time}}</td>
-                    <td>{{appointment.doctorName}}</td>
-                </ng-template>
-                <ng-template #elsetemp>No appointments found</ng-template>
+                <!-- <ng-template *ngIf="appointment.doctorName===doctor.value ;then iftemp else elsetemp"></ng-template> -->
+                <ng-container *ngIf="appointment.doctorName===doctor.value">
+                    <td >{{appointment.firstName}}</td>
+                    <td >{{appointment.age}}</td>
+                    <td >{{appointment.gender}}</td>
+                    <td >{{appointment.time}}</td>
+                    <td >{{appointment.doctorName}}</td>
+                </ng-container>
+                 <!-- <ng-container #elsetemp>No appointments found</ng-container> -->
             </tr>
         </tbody>
     </table>

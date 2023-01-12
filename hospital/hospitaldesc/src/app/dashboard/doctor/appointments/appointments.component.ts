@@ -37,9 +37,5 @@ export class AppointmentsComponent implements OnInit{
     })
   }
 
-  add(v:string){
-
-    console.log(v);
-    
-  }
+   
 }

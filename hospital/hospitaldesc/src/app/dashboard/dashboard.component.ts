@@ -25,13 +25,12 @@ add1(){
   this.addpatient=!this.addpatient
 }
 
-<<<<<<< HEAD
+ 
 // addDoctor:boolean=false;
 // doctor(){
 // this.addDoctor=!this.addDoctor
 // }
-||||||| a193772
-=======
+ 
 get(){
   // this.http.get('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json').pipe(map(
 
@@ -58,6 +57,5 @@ patientData:any=[]
         
 }
 
-
->>>>>>> 928f7dfde047ca9d5fe9f257183987422775b8b2
+ 
 }
