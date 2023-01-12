@@ -31,7 +31,8 @@ export class AuthService {
       }
     });
   }
-  
+  Email=''
+  Password=''
   // Sign in with email/password
   SignIn(email: string, password: string) {
     return this.afAuth
@@ -47,6 +48,10 @@ export class AuthService {
       .catch((error) => {
         window.alert(error.message);
       });
+      this.Email=''
+      this.Password=''
+
+      
   }
   // Sign up with email/password
   SignUp(email: string, password: string) {

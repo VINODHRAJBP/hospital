@@ -18,3 +18,13 @@ color:red
 .img-fluid{
     height: 100%;
 }
+.reg{
+    text-decoration: none;
+}
+.img1{
+    border-radius: 10px;
+    padding-right: 20px;
+}
+.register{
+    font-style: italic;
+}

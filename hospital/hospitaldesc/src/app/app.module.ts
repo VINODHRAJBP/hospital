@@ -6,14 +6,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
-<<<<<<< HEAD
+
 import { RegistrationComponent } from './registration/registration.component';
 import {HttpClientModule} from '@angular/common/http'
-=======
+
 import { DoctorComponent } from './dashboard/doctor/doctor.component';
 import { PatientComponent } from './dashboard/patient/patient.component';
 import { DashboardModule } from './dashboard/dashboard.module';
->>>>>>> 8a96736f7d25f69400bb981e809a52d2fb55e5c0
+
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -33,23 +33,25 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
     LoginComponent,
-<<<<<<< HEAD
-    RegistrationComponent
-=======
-    DoctorComponent,
-    PatientComponent
->>>>>>> 8a96736f7d25f69400bb981e809a52d2fb55e5c0
+    RegistrationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-<<<<<<< HEAD
-    HttpClientModule
-=======
-    // DashboardModule
->>>>>>> 8a96736f7d25f69400bb981e809a52d2fb55e5c0
+    HttpClientModule,
+    DashboardModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]

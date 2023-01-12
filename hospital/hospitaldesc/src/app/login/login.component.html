@@ -1,152 +1,84 @@
-<<<<<<< HEAD
+<div class="body">
+    <section class="h-40">
+        <div class="container py-5 h-100 mt-0  ">
+            <div class="row d-flex justify-content-center align-items-center   ">
+                <div class="col col-xl-10 ">
+                    <div class="card  bg-light " style="border-radius: 1rem;">
+                        <div class="row g-0">
+                            <div class="col-md-6 col-lg-5 d-none d-md-block">
+                                <img src="https://www.bostonmagazine.com/wp-content/uploads/sites/2/2021/01/Stethoscope.jpg"
+                                    alt="login form" class="img-fluid"
+                                    style="border-radius: 1rem 0 0 1rem;height: 550px;" />
+                            </div>
+                            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-7 text-black ">
 
+                                    <form [formGroup]="login" (ngSubmit)="onSub()">
 
-
-
-
-=======
->>>>>>> 8a96736f7d25f69400bb981e809a52d2fb55e5c0
-<section class="vh-100" style="background-color: #9A616D;">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col col-xl-10">
-                <div class="card" style="border-radius: 1rem;">
-                    <div class="row g-0">
-                        <div class="col-md-6 col-lg-5 d-none d-md-block">
-                            <img src="https://www.bostonmagazine.com/wp-content/uploads/sites/2/2021/01/Stethoscope.jpg"
-                                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;height:650px;" />
-                        </div>
-                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                            <div class="card-body p-4 p-lg-5 text-black">
-
-                                <form [formGroup]="login" (ngSubmit)="onSub()">
-
-                                    <div class="d-flex align-items-center mb-3 pb-1">
-                                        <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                                        <span class="h1 fw-bold mb-0">Logo</span>
-                                    </div>
-
-                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account
-                                    </h5>
-
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example17">Email address</label>
-                                        <input type="email" id="form2Example17" name="user"
-                                            class="form-control form-control-lg" formControlName="email" />
-                                        <span *ngIf="email?.invalid && email?.touched">Email is required</span>
-
-                                    </div>
-
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example27">Password</label>
-                                        <input type="password" id="form2Example27" name="pass" formControlName="pass"
-                                            class="form-control form-control-lg" />
-                                        <span *ngIf="pass?.invalid && pass?.touched">password invalid</span>
-
-                                    </div>
-
-                                    <div class="pt-1 mb-4">
-                                        <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
-                                    </div>
-
-                                    <a class="small text-muted" href="#!">Forgot password?</a>
-                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!"
-                                            style="color: #393f81;" routerLink="registration">Register here</a></p>
-                                    <a href="#!" class="small text-muted">Terms of use.</a>
-                                    <a href="#!" class="small text-muted">Privacy policy</a>
-                                </form>
-
-                                <div class="body">
-                                    <section class="h-40">
-                                        <div class="container py-5 h-100 mt-0  ">
-                                            <div class="row d-flex justify-content-center align-items-center   ">
-                                                <div class="col col-xl-10 ">
-                                                    <div class="card  bg-light " style="border-radius: 1rem;">
-                                                        <div class="row g-0">
-                                                            <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                                                <img src="https://www.bostonmagazine.com/wp-content/uploads/sites/2/2021/01/Stethoscope.jpg"
-                                                                    alt="login form" class="img-fluid"
-                                                                    style="border-radius: 1rem 0 0 1rem;height: 550px;" />
-                                                            </div>
-                                                            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                                                <div class="card-body p-4 p-lg-7 text-black ">
-
-                                                                    <form [formGroup]="login" (ngSubmit)="onSub()">
-
-                                                                        <div
-                                                                            class="d-flex align-items-center mb-3 pb-1">
-                                                                            <i class="fas fa-cubes fa-2x me-3"
-                                                                                style="color: #ff6219;"></i>
-                                                                            <img src="data:image/png;base64,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"
-                                                                                alt="">
-                                                                            <span class=" h3 fw-bold mb-0"
-                                                                                style="color:rgba(120, 158, 84, 0.7)">Hs
-                                                                                call center</span>
-                                                                        </div>
-
-                                                                        <h5 class="fw-normal mb-3 pb-3"
-                                                                            style="letter-spacing: 1px;color: rgba(36, 172, 81, 0.7);">
-                                                                            Sign into your account
-                                                                        </h5>
-
-                                                                        <div class="form-outline mb-4">
-                                                                            <label class="form-label"
-                                                                                for="form2Example17">Email
-                                                                                address</label>
-                                                                            <input type="email" id="form2Example17"
-                                                                                name="user"
-                                                                                class="form-control form-control-lg"
-                                                                                formControlName="email" #userEmail />
-                                                                            <span
-                                                                                *ngIf="email?.invalid && email?.touched"
-                                                                                style="color: red;">Email is
-                                                                                required</span>
-
-                                                                        </div>
-
-                                                                        <div class="form-outline mb-4">
-                                                                            <label class="form-label"
-                                                                                for="form2Example27">Password</label>
-                                                                            <input type="password" id="form2Example27"
-                                                                                name="pass" formControlName="pass"
-                                                                                class="form-control form-control-lg"
-                                                                                #userPassword />
-                                                                            <span *ngIf="pass?.invalid && pass?.touched"
-                                                                                style="color: red;"
-                                                                                minlength="4">password invalid</span>
-
-                                                                        </div>
-
-                                                                        <div class="pt-1 mb-4 mr-50 d-flex ">
-                                                                            <button
-                                                                                class="btn btn-dark btn-lg btn-block button"
-                                                                                type="button"
-                                                                                (click)="authService.SignIn( userEmail.value, userPassword.value)">Login</button>
-                                                                            <button type="button"
-                                                                                class="btn btn-dark btn-lg btn-block"
-                                                                                (click)="authService.GoogleAuth()">
-                                                                                Log in with Google
-                                                                            </button>
-                                                                        </div>
-
-                                                                        <a class="small text-muted"
-                                                                            routerLink="/forgotpass">Forgot
-                                                                            password?</a>
-                                                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">
-                                                                            Don't have an account?
-                                                                            <a routerLink="/signup" class="reg">Register
-                                                                                here</a>
-                                                                        </p>
-                                                                        <!-- <a href="#!" class="small text-muted">Terms of use.</a>
-                                        <a href="#!" class="small text-muted">Privacy policy</a> -->
-                                                                    </form>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAAB1CAMAAACcYfSsAAAA81BMVEX///8AgNsREiQBLV5OjDkAABaCgoLe6ds3gRkAe9pEhyxKijQAK10AfdoAedkAdNgAJ1ubupKVtot0omcAABsAIFcAG1UICh/J2cQAFVIAEFEAAEsAABAAAACrxaOgprYmhdzV2N83jd6LsIC6z7WivppsnV6SuerDx9Hn6e3p8OcpewBUmOFyeZP09fcBJVNKSlQxMj4aGirn8vubxO2Plql+sOfL3/V7g5kAADsAadYnOmcAAEVYZINcn+NQWXs2Q2ywt8O10vLb6Phwp+UBOG0AYq0AUJIBdMgAT5ytv9VBTnSHnr9ZWWOOjpVubnKcnqO6s8GaAAAFAElEQVRoge2YaXuiSBRGwWqNJGyTEWzEtGC6W+woQVwn7pitxwH8/79mik2RRQ2Q/sTxyVIQOXmpy6UQQXJycnJycnJycnKyp+0f9D9X1ZD9Q3nwibrhJLhl1PoklVgbhje2yPEnqOTJPxEuBBk8PWfuEqczz/Xti803d9iihIzDNWrs3P3114Mje/jlbliQ1CBLV3eGs14dXpUdWfnK20ugVIancskBXvIGYdmYQsmmHP3WjyKvGEAv98OwDOkQKCZkY4MuwIunZBsKRbFMsi1ZAPDVYRwhQ5qEZUvvmtQAAGzjtGxAoihKpq6SNQ9dgLf679fbvyzurx3Zzb09vP0Kd/XheUTRtFeAbOWCMsv1cO3wxcUdPlg2W4ZS6fpyl7Fc+Bb+eru3HHN9iziThqJEJ41LtE8ioOfnZAvCiZamcc3pj8mIFBXZngFHtjwn6zgylNokljVYR4aDE7IbSyY4LpQYJZatnLMIwAwOvpdvHPYWh/J3xKtGy5ZYxrsupw3/+Nvmp2u7+emMfyB2K3ZJXP3iXsb4Fh9RHWRE7GVJ61GqeTKcPy3bB0PJpF1kzXkywB2aY4TMbo0OWNLllk+G107JDq4Usv1phLPWjZeNfLLEp1HiD7LDuiAkO5SiJdMSyuSZTwZYd5kfXF31fbnStBAa98lo4G69L1t3lvK9OxSII1lSFzJh/NGYrbv5ysYdNI9cKW4yon/SoG3VDv5Fv4n5XcmnDALwIxsNxOP9G/QoF5Qldx0Vv23j1v7dGhl0pXqCwo+jwSugu18eys8UimYXLHCpOVfA1L3gxgIWdFEpZsyiywZtOD+HddJfhGKlXO9YADpoAww3bGGhWFCWegHergWn7fHllSTDqjTrjz3H0/aIv7xGiDKYMM/mZcMfX97eo1UZuaw7Nm6bwFtMqAxdsG0BGmZ6jQtl1UZmLkTWfp8QQch/M3nulDdaayFEFZ+PV7w2nQ+ldmKj3O+PByPooTDitAp9e4QzSrM8t5pPGlL7YmdfG2vaYPS86DRRiiKJcx7I+8vjvrnQDMfz+Go5nwyH67UkhW5Jx4yeKJKEkgssh1iBfobTNMNyHB/9+ZOf8eUeSwWC/eVwO6Klcy7r5numHA68glCsPdz2sqkbhRt6dKp4Fc6HPpqMYxC8AwfBsPdTKkDXGuctHhvhhI0ghdF/0xkTO1uAnornHQdkId600OBsyFIX1GJ8+PRDV3d/EZWMIEnhWds/7bWl7pRj6QghM/+ATQuXP4GRaLM1DhxEFodbvAaFASPDrKOPHCK4aoIeTOi0xjEPsG1puJ2yHHMUEfetwk7GQr3lBQE1JCF0RtrmzJOyLK4nyyld41jGS8lcck0/P2FQQcLuKzQXLS0uT5SxLa2H8+0U0CwHteyse+YN/UVnNGoNtPH4XJh42qIorRvD4WQ+P9OIc3JycnJycnJyciIp/UGQ4h8EKRQKVfgqOF/1ivWjUIGvTwDKKvqdUq/UlXqxrhi6clevF82CmcxWrR6+uxs8XJmplkxdNy12irEzdqakq9W445109XpFeMCeUqmoagUaioqiKw4VW1ZQDVMx73RTN3vKrmQYu56kJwtWLJUM3SiZRskwSyY8lKkrpgE3GebuzpFVe3W9rvd6iqrqd72eqiqqkigYDFUsqHYJFFXrDMJ8vXq1oBad/x2x0zs1UrUqo1r1KiYb/EdCMjvqBfwPfEKh4OMx/DcAAAAASUVORK5CYII="
+                                                alt="">
+                                            <span class=" h3 fw-bold mb-0" style="color:blue">Hs
+                                                call center</span>
                                         </div>
-                                    </section>
+
+                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;color:blue">
+                                            Sign into your account
+                                        </h5>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="email">Email
+                                                address</label>
+                                           
+                                                <input type="email" class="form-control form-control-lg" formControlName="email"
+                                            placeholder="Email" #userEmail ngModel [(ngModel)]="Email" />
+                                            <span *ngIf="email&& email.invalid && email.touched" style="color: red;">Email is
+                                                required</span>
+                                           
+
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="password">Password</label>
+                                            <input type="password" id="password" name="pass" formControlName="pass"
+                                              [(ngModel)]="Password" ngModel class="form-control form-control-lg" #userPassword
+                                                 />
+                                            <span *ngIf="pass&& pass.invalid && pass.touched"
+                                                style="color: red;">password is
+                                                required</span>
+
+                    
+
+                                        </div>
+
+                                        <div class="pt-1 mb-4 mr-50 d-flex ">
+                                            <button class="btn btn-dark btn-lg btn-block button" type="button"
+                                                (click)="authService.SignIn( userEmail.value, userPassword.value)"
+                                                [disabled]="login.invalid">Login</button>
+                                            <h3 class="h3">OR</h3>
+                                            <button type="button" class="btn btn-dark btn-lg btn-block"
+                                                (click)="authService.GoogleAuth()">
+                                                Log in with Google
+                                            </button>
+                                        </div>
+
+                                        <p class="small text-muted " routerLink="/forgotpass" class="forgot">Forgot
+                                          #userPwd  password?</p>
+                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">
+                                            Don't have an account?
+                                            <a routerLink="/registration" class="reg">Register here</a>
+                                        </p>
+                                        <!-- <a href="#!" class="small text-muted">Terms of use.</a>
+                                        <a href="#!" class="small text-muted">Privacy policy</a> -->
+                                    </form>
+
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

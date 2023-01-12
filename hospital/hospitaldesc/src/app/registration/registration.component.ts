@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ValidatehosiptalService } from '../validatehosiptal.service';
+import {FormGroup,FormControl,Validators} from '@angular/forms'
+import { AuthService } from '../shared/authservice.service';
+
 
 
 @Component({
@@ -10,37 +13,29 @@ import { ValidatehosiptalService } from '../validatehosiptal.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor( private validhosiptal:ValidatehosiptalService, private http:HttpClient) { }
-email:string=""
-password:string=""
+  constructor( private validhosiptal:ValidatehosiptalService, private http:HttpClient, public authService:AuthService ) { }
+
   ngOnInit(): void {
     
   }
+  register=new FormGroup({
+    email:new FormControl('',[Validators.required,Validators.email]),
+    pass:new FormControl('',[Validators.minLength(3),Validators.required])
+  })
+
   
   
-// p(data:any){
-//   this.validhosiptal.registerget(data)
-// }
+get email(){
+  return this.register.get('email')
+}
+ get pass(){
+  return this.register.get('pass')
+ }
 
 
-register(reg:any) {
+onSub(){
+console.log(this.register.value)
 
-  if (reg.email == "") {
-    alert('please enter email')
-    return
-
-  }
-
-  if (reg.password == "") {
-    alert('please enter password')
-    return
-    
-  }
-
-  this.validhosiptal.register(this.email, this.password)
-  this.email = '';
-  this.password = '';
-  console.log(reg)
 
 }
 }

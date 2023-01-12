@@ -9,3 +9,14 @@
     margin-top: 0%;
     height: 100%;
 }
+.h3{
+    margin-right: 20px;
+}
+
+
+.forgot:hover{
+    color:red
+}
+.reg{
+    text-decoration: none;
+}
