@@ -28,29 +28,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     SignupComponent,
     ForgotpassComponent,
     HeaderComponent,
-<<<<<<< HEAD
-||||||| f4a1574
-<<<<<<< HEAD
-||||||| a193772
-=======
->>>>>>> 9f2a9f74ac56d2ea33122087a270fe444dd73f16
-    HeaderComponent
-<<<<<<< HEAD
-||||||| bfa1a22
-    
-=======
->>>>>>> 251f9f5398b445195cdc7df463c96964642abed7
->>>>>>> 9f2a9f74ac56d2ea33122087a270fe444dd73f16
-=======
-<<<<<<< HEAD
-   
-
-=======
->>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
->>>>>>> 928f7dfde047ca9d5fe9f257183987422775b8b2
-=======
-
->>>>>>> 3e94afe70e86c177d65e85711ffc8241793d067a
+ 
   ],
   imports: [
     BrowserModule,

@@ -27,24 +27,19 @@ add1(){
   this.addpatient=!this.addpatient
 }
 
-<<<<<<< HEAD
+ 
  
 // addDoctor:boolean=false;
 // doctor(){
 // this.addDoctor=!this.addDoctor
 // }
  
-||||||| f4a1574
-<<<<<<< HEAD
+ 
 // addDoctor:boolean=false;
 // doctor(){
 // this.addDoctor=!this.addDoctor
 // }
-||||||| a193772
-=======
-=======
-
->>>>>>> 3e94afe70e86c177d65e85711ffc8241793d067a
+ 
 get(){
   // this.http.get('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json').pipe(map(
 
@@ -60,12 +55,4 @@ timeSlotData(){
  
   
 }
-
-<<<<<<< HEAD
- 
-||||||| f4a1574
-
->>>>>>> 928f7dfde047ca9d5fe9f257183987422775b8b2
-=======
->>>>>>> 3e94afe70e86c177d65e85711ffc8241793d067a
 }
