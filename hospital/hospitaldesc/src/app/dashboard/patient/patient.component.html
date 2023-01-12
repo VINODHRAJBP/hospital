@@ -108,7 +108,6 @@
                         <label class="form-label" for="form3Examplea2">Doctorname</label>
                       </div>
                     </div> -->
-
                         <div class="mb-2 pb-1">
                           <select class=" form-control form-control-lg form-select" #doctor
                             aria-label="Default select example" name="specilist" formControlName="specilist">
@@ -152,6 +151,19 @@
                           <select class="form-control form-control-lg" formControlName="time" name="time">
                             <option class="lead" *ngFor='let time of timeSlot'>
                               {{time}}
+                            </option>
+                          </select>
+
+
+
+                          <select class="form-control form-control-lg" formControlName="time" name="time">
+                            <option class="lead" *ngFor='let time of timeSlot'>
+                              <ng-container *ngIf="this.slottime.includes({date:'hghg',doctorName:'jjjjj'});else con">
+                                <span>
+                              {{time}}kl
+                              </span>
+                              </ng-container>
+                              <ng-template #con>{{time}}kk</ng-template>
                             </option>
                           </select>
                           <label class="form-label" for="form3Examplea3">Time slot</label>

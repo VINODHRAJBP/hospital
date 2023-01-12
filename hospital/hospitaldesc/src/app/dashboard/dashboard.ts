@@ -15,6 +15,6 @@ export interface data {
 
 export interface timeSlot{
     date:any,
-    time:string,
+    // time:any,
     doctorName:any
 }
