@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, NG_VALIDATORS } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DashboardService } from '../dashboard.service';
 @Component({
   selector: 'app-patient',
   templateUrl: './patient.component.html',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PatientComponent implements OnInit {
 
-  constructor(private http:HttpClient,private route:Router) { }
+  constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService) { }
 
   ngOnInit(): void {
   }
@@ -17,7 +18,7 @@ export class PatientComponent implements OnInit {
     firstName: new FormControl('',[Validators.required]),
     lastName: new FormControl('',[Validators.required]),
     age: new FormControl('',[Validators.required]),
-  ph: new FormControl("", [Validators.required]),
+    ph: new FormControl("", [Validators.required]),
     gender: new FormControl(''),
     email: new FormControl('',[Validators.email,Validators.required]),
     address: new FormControl('',[Validators.required]),
@@ -28,16 +29,13 @@ export class PatientComponent implements OnInit {
     doctorEmail: new FormControl('',[Validators.email])
 
   })
+  a=this.dashboardServices.appointmentDetails
 
   timeSlot = ['Select','10 AM', '11 AM', '12 PM', '2 PM', '3 PM', '4 PM', '5 PM',]
-  specilist = ['Select','Cardiologist', 'Orthopedics', 'Obstetrics and Gynecology', 'Dermatology', 'Pediatrics', 'Radiology','Ophthalmology']
+  specilist = ['Select','Praveen','Cardiologist', 'Orthopedics', 'Obstetrics and Gynecology', 'Dermatology', 'Pediatrics', 'Radiology','Ophthalmology']
 
   get data() {
     return this.register.get(['firstName', 'lastName', 'age', 'ph', 'gender', 'email', 'address', 'doctorName', 'specilist', 'date', 'time', 'doctorEmail'])
-  }
-
-  get firstName() {
-    return this.register.get('firstName')
   }
 
   onsub1(){
@@ -53,5 +51,11 @@ export class PatientComponent implements OnInit {
     
     this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'.json',a).subscribe(a=>{console.log(a);
     })
+  }
+
+
+  ddd(a:any,b:any){
+console.log(a,b);
+
   }
 }

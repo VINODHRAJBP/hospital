@@ -19,12 +19,15 @@ export class DashboardComponent implements OnInit {
   data=[]
   add(){
     this.route.navigate(['dashboard/patient'])
+  this.timeSlotData()
+
   }
 
   addpatient=false;
 add1(){
   this.dashboardService.fetchDoctor()
   this.addpatient=!this.addpatient
+
 }
 
 
@@ -33,15 +36,13 @@ get(){
 
   // ))
 }
-time:timeSlot[]=[]
+
 timeSlotData(){
   for (let a of this.dashboardService.patientData){
     let b = {date:a.date,time:a.time,doctorName:a.doctorName }
-   this.time.push(b)
+   this.dashboardService.appointmentDetails.push(b)
   }
- console.log(this.time);
- 
-  
+ console.log(this.dashboardService.appointmentDetails);
 }
 
 }
