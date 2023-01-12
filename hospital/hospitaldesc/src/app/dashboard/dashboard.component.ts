@@ -19,29 +19,41 @@ export class DashboardComponent implements OnInit {
   data=[]
   add(){
     this.route.navigate(['dashboard/patient'])
+  this.timeSlotData()
+
   }
 
   addpatient=false;
 add1(){
   this.dashboardService.fetchDoctor()
   this.addpatient=!this.addpatient
+
 }
 
-
+ 
+ 
+// addDoctor:boolean=false;
+// doctor(){
+// this.addDoctor=!this.addDoctor
+// }
+ 
+ 
+// addDoctor:boolean=false;
+// doctor(){
+// this.addDoctor=!this.addDoctor
+// }
+ 
 get(){
   // this.http.get('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json').pipe(map(
 
   // ))
 }
-time:timeSlot[]=[]
+
 timeSlotData(){
   for (let a of this.dashboardService.patientData){
     let b = {date:a.date,time:a.time,doctorName:a.doctorName }
-   this.time.push(b)
+   this.dashboardService.appointmentDetails.push(b)
   }
- console.log(this.time);
- 
-  
+ console.log(this.dashboardService.appointmentDetails);
 }
-
 }

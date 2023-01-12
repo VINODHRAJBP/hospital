@@ -1,25 +1,42 @@
 button{
-    border: 1px solid black;
-    margin-left: 280px;
-    margin-top: 30px;
-  }
+  border: 1px solid black;
+  margin-left: 280px;
+  margin-top: 30px;
+}
 
-  img{
-    width:50px;
-  }
+img{
+  width:50px;
+}
 
-   .btn{
-    position: relative;
-   }
+ .btn{
+  position: relative;
+ }
 
-   table {
-    border: 1px solid black;
-    width: 1000px;
-    margin-top: 150px;
-    margin-left: 250px;
-  }
+ table {
+  border: 1px solid rgb(152, 193, 255);
+  width: 1000px;
+  /* margin-top: 90px; */
+  margin-left: 100px;
+  box-shadow: 10px 0px 5px rgb(100, 172, 196);
+  
+}
 
-  /* .btn2{
-    margin-left: 180px;
+.add{
+  /* margin-left: 300px; */
+  /* background: rgb(236, 223, 223); */
+  width: 100px;
+  /* margin-top: 30px; */
 
-  } */
+}
+.add1{
+width: 150vh;
+/* box-shadow: 10px 0px 5px rgb(100, 172, 196); */
+font-style: italic;
+font-weight:600;}
+
+.details{
+margin-left: 100px;
+margin-top: 50px;
+text-shadow: 1px 1px 4px rgb(163, 191, 233);
+text-decoration: underline;
+}

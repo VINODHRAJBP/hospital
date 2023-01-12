@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SignupComponent } from './signup/signup.component';
 import { AppointmentsComponent } from './dashboard/doctor/appointments/appointments.component';
+ import { DoctorDetailsComponent } from './dashboard/doctor/doctor-details/doctor-details.component';
 
 const routes: Routes = [
   {
@@ -36,13 +37,13 @@ const routes: Routes = [
       {
         path:'doctor',component:DoctorComponent,children:[
           {path:'add-doctor', component:AddDoctorComponent},
-          {path:'appointments',component:AppointmentsComponent}
+          {path:'appointments',component:AppointmentsComponent},
+          {path:'doctor-details',component:DoctorDetailsComponent}
         ]
       },
       {
         path:'patient',component:PatientComponent
       },
-    
     ]
   }
 

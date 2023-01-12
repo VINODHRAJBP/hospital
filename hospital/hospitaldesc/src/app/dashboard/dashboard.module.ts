@@ -9,22 +9,22 @@ import { SildebarComponent } from './sildebar/sildebar.component';
 import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
 import {HttpClientModule} from '@angular/common/http'
 import { AppointmentsComponent } from './doctor/appointments/appointments.component';
-
-
-
-
+import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
+ 
+ 
 @NgModule({
   declarations: [
     DashboardComponent,
     DoctorComponent,
     PatientComponent,
-
     SildebarComponent,
     AddDoctorComponent,
    
 
   
     AppointmentsComponent
+
+
 
   ],
   imports: [
