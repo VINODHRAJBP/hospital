@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddPaitentComponent } from './add-paitent/add-paitent.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddDoctorComponent } from './dashboard/doctor/add-doctor/add-doctor.component';
 import { DoctorComponent } from './dashboard/doctor/doctor.component';
 import { PatientComponent } from './dashboard/patient/patient.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { SignupComponent } from './signup/signup.component';
+import { AppointmentsComponent } from './dashboard/doctor/appointments/appointments.component';
 
 const routes: Routes = [
   {
@@ -30,26 +31,20 @@ const routes: Routes = [
   {
     path: 'forgotpass', component: ForgotpassComponent
   },
-  // {
-  //   path:'doctor',component:DoctorComponent
-  // },
-  // {
-  //   path:'patient',component:PatientComponent
-  // },
   {
     path:'dashboard',component:DashboardComponent,children:[
       {
-        path:'doctor',component:DoctorComponent
+        path:'doctor',component:DoctorComponent,children:[
+          {path:'add-doctor', component:AddDoctorComponent},
+          {path:'appointments',component:AppointmentsComponent}
+        ]
       },
       {
         path:'patient',component:PatientComponent
       },
-      {
-        path:'addpatient',component:AddPaitentComponent
-      }
+    
     ]
   }
-
 
 ];
 
