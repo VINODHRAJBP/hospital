@@ -19,12 +19,8 @@ import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.c
     PatientComponent,
     SildebarComponent,
     AddDoctorComponent,
-   
-
-  
-    AppointmentsComponent
-
-
+    AppointmentsComponent,
+    DoctorDetailsComponent
 
   ],
   imports: [

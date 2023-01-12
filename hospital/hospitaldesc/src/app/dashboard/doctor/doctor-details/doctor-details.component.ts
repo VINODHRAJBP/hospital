@@ -21,7 +21,7 @@ export class DoctorDetailsComponent implements OnInit{
   fetchDoctor(){
     this.doctorService.fetchDoctor().subscribe((doctors)=>{
       this.allDoctors=doctors
-      // console.log(this.allDoctors);
+       console.log(this.allDoctors);
     })
   }
 }
