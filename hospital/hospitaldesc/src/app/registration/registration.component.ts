@@ -20,14 +20,16 @@ export class RegistrationComponent implements OnInit {
   }
   register=new FormGroup({
     email:new FormControl('',[Validators.required,Validators.email]),
-    pass:new FormControl('',[Validators.minLength(3),Validators.required])
+    pass:new FormControl('',[Validators.minLength(6),Validators.required])
   })
 
   
   
 get email(){
   return this.register.get('email')
+  
 }
+
  get pass(){
   return this.register.get('pass')
  }
@@ -35,9 +37,12 @@ get email(){
 
 onSub(){
 console.log(this.register.value)
-
-
 }
+
+registration(){
+  alert("registration succesfull")
+}
+
 }
 
 

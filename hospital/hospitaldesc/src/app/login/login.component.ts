@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   
   login=new FormGroup({
     email:new FormControl('',[Validators.required,Validators.email]),
-    pass:new FormControl('',[Validators.minLength(3),Validators.required])
+    pass:new FormControl('',[Validators.minLength(6),Validators.required])
   })
 
 
@@ -41,12 +41,17 @@ export class LoginComponent implements OnInit {
 
 
   onSub(){
-    this.Email=""
-    this.Password=""
-  return (this.login.value);
+  // return (this.login.value);
+  console.log(this.login.value)
   }
 
   
+  sign(email:any,password:any){
+    this.authService.SignIn(email,password)
+    this.Email=""
+    this.Password=""
+    
+  }
 
 
 }

@@ -21,17 +21,11 @@ import { AppointmentsComponent } from './doctor/appointments/appointments.compon
 
     SildebarComponent,
     AddDoctorComponent,
-<<<<<<< HEAD
    
 
   
-=======
     AppointmentsComponent
 
-
-
-
->>>>>>> 3e94afe70e86c177d65e85711ffc8241793d067a
   ],
   imports: [
     CommonModule,

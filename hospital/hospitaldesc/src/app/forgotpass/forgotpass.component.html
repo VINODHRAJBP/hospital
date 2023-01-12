@@ -1,20 +1,58 @@
-<div class="displayTable">
-    <div class="displayTableCell">
-      <div class="authBlock text-center">
+<!-- <div class="main">
+<div >
+    <div >
+      <div>
         <h3>Reset Password</h3>
-        <p class="text-center" >Please enter your email address to request a password reset.</p>
+        <p  >No worries! Enter your Emailand we will send you a reset</p>
         <div class="formGroup">
-          <input type="email" class="formControl " placeholder="Email Address" #passwordResetEmail required>
+          <input type="email"  placeholder="Email Address" #passwordResetEmail required>
         </div>
-        <!-- Calling ForgotPassword from AuthService Api -->
+        //Calling ForgotPassword from AuthService Api 
         <div class="formGroup mt-2 mb-2 text-center">
-          <button mat-raised-button class="btn" color="primary" value="Reset Password" (click)="authService.ForgotPassword(passwordResetEmail.value)">Reset Password</button>
-          <!-- <input type="submit" class="btn btnPrimary" value="Reset Password" (click)="authService.ForgotPassword(passwordResetEmail.value)"> -->
+          <button mat-raised-button  color="primary" value="Reset Password" (click)="authService.ForgotPassword(passwordResetEmail.value)">Reset Password</button>
+          //<input type="submit" class="btn btnPrimary" value="Reset Password" (click)="authService.ForgotPassword(passwordResetEmail.value)">
         </div>
       </div>
-      <div class="redirectToLogin text-center">
+      <div >
         
-        <span>Go back to ? <span class="redirect" routerLink="/login">Log In</span></span>
+        <span>Go back to ? <span routerLink="/login">Log In</span></span>
       </div>
     </div>
   </div>
+</div> -->
+
+<div class="bg-light">
+
+<div class="container d-flex flex-column  " >
+      <div class="row align-items-center justify-content-center
+          min-vh-100">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="mb-4 ">
+                <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvlPpd_4-6mICjeO9OWlQO9LGXUxxYe9ohLA&usqp=CAU" alt="">
+                <h2 style="padding-left: 20%;">Forgot Password?</h2>
+                <p class="mb-2" style="padding-left: 60px;">Enter your registered email ID to reset the password!
+                </p>
+              </div>
+              <form>
+                <div class="mb-3">
+                  <label for="email" class="form-label" style="margin-left: 20px;font-size:large;">Email address</label>
+                  <input type="email" id="email" class="form-control" name="email" placeholder="Enter Your Email"
+                    required=""  #passwordResetEmail>
+                </div>
+                <div class="mb-3 d-grid">
+                  <button type="submit" class="btn btn-primary"  value="Reset Password" (click)="authService.ForgotPassword(passwordResetEmail.value)">
+                    Reset Password
+                  </button>
+                </div>
+                <span>Don't have an account? <a routerLink="/login">Login</a></span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+    
