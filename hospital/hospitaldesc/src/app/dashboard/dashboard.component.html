@@ -1,4 +1,5 @@
 <div>
+<<<<<<< HEAD
   <div class="l-navbar" id="nav-bar">
     <nav class="nav" style="width:250px;padding-right:80px;">
       <div><a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name"
@@ -20,7 +21,84 @@
         </div>
       </div>
     </nav>
+||||||| 3e94afe
+  <div class="l-navbar" id="nav-bar">
+    <nav class="nav" style="width:250px;padding-right:80px;">
+      <div><a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name"
+            style="padding-top:80px">Dashboard</span></a>
+        <div class="nav_list">
+          <div class="doctor">
+            <a class="nav_link active"><img
+                src="https://thumbs.dreamstime.com/z/medical-team-icon-male-female-doctor-symbols-medical-team-icon-male-female-doctor-symbols-flat-style-vector-eps-157851279.jpg"
+                style="width:60px;">
+              <span class="nav_name" style="font-weight:500; font-size: larger;" routerLink="doctor">Doctor</span> </a>
+          </div>
+          <div class="patience">
+            <a class="nav_link"><img
+                src="https://img.favpng.com/17/12/10/patient-icon-healthcare-icon-medical-icon-vVipqRtL_t.jpg "
+                style="width:60px;">
+              <span class="nav_name" style="font-weight:500; font-size: larger;" (click)="add1()">patience</span> </a>
+          </div>
+        </div>
+      </div>
+      </nav>
+=======
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav" style="width:250px;padding-right:80px;">
+            <div><a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name"
+                        style="padding-top:80px">Dashboard</span></a>
+                <div class="nav_list">
+                    <div class="doctor">
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
+                        <a class="nav_link active"><img
+                                src="https://thumbs.dreamstime.com/z/medical-team-icon-male-female-doctor-symbols-medical-team-icon-male-female-doctor-symbols-flat-style-vector-eps-157851279.jpg"
+                                style="width:60px;">
+                            <span class="nav_name" style="font-weight:500; font-size: larger;" routerLink="doctor">Doctor</span> </a>
+                    </div>
+                    <div class="patience">
+                        <a class="nav_link"><img
+                                src="https://img.favpng.com/17/12/10/patient-icon-healthcare-icon-medical-icon-vVipqRtL_t.jpg "
+                                style="width:60px;">
+                            <span class="nav_name" style="font-weight:500; font-size: larger;" (click)="add1()">patience</span> </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+<<<<<<< HEAD
+
+       
+     </div> 
+     
+    </div>
+
+<app-sildebar ></app-sildebar>
+
+
+=======
+    </div>
+</div>
+
+
+    
+<app-sildebar ></app-sildebar>
+>>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
+<!-- <app-add-paitent></app-add-paitent> -->
+<div *ngIf="addpatient">
+
+<div class="add">
+    <button class="btn btn-light " (click)="add()"  style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="150px" >
+      <br > 
+<<<<<<< HEAD
+     <p style="font-weight:900;" >Add-Patient </p> </button>   
+=======
+     <p style="font-weight:900;"  >Add-Patient </p> </button>  
+     <h1>Patient Details</h1>
+>>>>>>> 7d886be9e01ccb439c86e035257d3b4e85e5d0e1
   </div>
+<<<<<<< HEAD
 
   <app-sildebar></app-sildebar>
   <div *ngIf="addpatient">
@@ -82,3 +160,133 @@
     </div>
   </div>
   <router-outlet></router-outlet>
+||||||| 3e94afe
+
+
+      <app-sildebar></app-sildebar>
+
+
+
+      <div *ngIf="addpatient">
+
+        <div class="add">
+          <button class="btn btn-light " (click)="add()" style="border-radius: 3px;"><img
+              src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg"
+              alt="" width="150px">
+            <br>
+
+            <p style="font-weight:900;" (click)="timeSlotData()">Add-Patient </p>
+          </button>
+          <h1>Patient Details</h1>
+        </div>
+        <div class="add1">
+          <table class="table table-hover ">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Phno</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Consultant Doctor</th>
+                <th scope="col">Appointment Date</th>
+                <th scope="col">Appointment Time</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of dashboardService.patientData">
+                <th scope="row" class="font-weight-light">1</th>
+                <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
+                <td class=" font-weight-light">{{a.age}}</td>
+                <td class=" font-weight-light">{{a.gender}}</td>
+                <td class="font-weight-light">{{a.ph}}</td>
+                <td class="font-weight-light">{{a.email}}</td>
+                <td class="font-weight-light">{{a.doctorName}}</td>
+                <td class="font-weight-light">{{a.date}}</td>
+                <td class="font-weight-light">{{a.time}}</td>
+
+              </tr>
+            </tbody>
+            <!-- <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+
+          </table>
+
+
+          <!-- <p>{{a.firstName}}</p> -->
+
+        </div>
+</div>
+
+
+<router-outlet></router-outlet>
+=======
+<div class="add1">
+<table class="table table-hover " >
+    <thead >
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Phno</th>
+        <th scope="col">Mail</th>
+        <th scope="col">Consultant Doctor</th>
+        <th scope="col">Appointment Date</th>
+        <th scope="col">Appointment Time</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of dashboardService.patientData">
+                <th scope="row" class="font-weight-light">1</th>
+                <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
+                <td class=" font-weight-light">{{a.age}}</td>
+                <td class=" font-weight-light">{{a.gender}}</td>
+                <td class="font-weight-light">{{a.ph}}</td>
+                <td class="font-weight-light">{{a.email}}</td>
+                <td class="font-weight-light">{{a.doctorName}}</td>
+                <td class="font-weight-light">{{a.date}}</td>
+                <td class="font-weight-light">{{a.time}}</td>
+
+      </tr>
+    </tbody>
+      <!-- <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+   
+  </table>
+
+
+    <!-- <p>{{a.firstName}}</p> -->
+
+>>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
+>>>>>>> 7d886be9e01ccb439c86e035257d3b4e85e5d0e1
