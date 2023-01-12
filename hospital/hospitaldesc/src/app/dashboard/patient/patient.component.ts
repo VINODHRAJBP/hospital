@@ -29,6 +29,9 @@ export class PatientComponent implements OnInit {
 
   })
 
+  timeSlot = ['Select','10 AM', '11 AM', '12 PM', '2 PM', '3 PM', '4 PM', '5 PM',]
+  specilist = ['Select','Cardiologist', 'Orthopedics', 'Obstetrics and Gynecology', 'Dermatology', 'Pediatrics', 'Radiology','Ophthalmology']
+
   get data() {
     return this.register.get(['firstName', 'lastName', 'age', 'ph', 'gender', 'email', 'address', 'doctorName', 'specilist', 'date', 'time', 'doctorEmail'])
   }
@@ -43,8 +46,8 @@ export class PatientComponent implements OnInit {
   onSub() {
     console.log(this.register.value.date);
     let a=this.register.value
-    let patientData={name:a.firstName!+a.lastName,age:a.age,gender:a.gender,ph:a.ph,email:a.email,address:a.address}
-    let doctorData={name:a.doctorName,speciliat:a.specilist,appointmentDate:a.date,appointmentTime:a.time,email:a.doctorEmail}
+    // let patientData={name:a.firstName!+a.lastName,age:a.age,gender:a.gender,ph:a.ph,email:a.email,address:a.address}
+    // let doctorData={name:a.doctorName,speciliat:a.specilist,appointmentDate:a.date,appointmentTime:a.time,email:a.doctorEmail}
   
     let folder=a.firstName!+" "+a.lastName
     

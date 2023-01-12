@@ -23,14 +23,24 @@ width: 300px;
         /* background: rgb(236, 223, 223); */
         width: 100px;
         margin-top: 30px;
+<<<<<<< HEAD
         box-shadow: 10px 10px 5px rgb(100, 103, 104)
          
     }
+=======
+         
+    }
+
+>>>>>>> 3e94afe70e86c177d65e85711ffc8241793d067a
     .add1{
         margin-left: 300px;
         width: 150vh;
         margin-top: 30px;
         box-shadow: 10px 0px 5px rgb(100, 172, 196)
     }
+<<<<<<< HEAD
     
 
+=======
+    
+>>>>>>> 3e94afe70e86c177d65e85711ffc8241793d067a

@@ -8,6 +8,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SildebarComponent } from './sildebar/sildebar.component';
 import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
 import {HttpClientModule} from '@angular/common/http'
+import { AppointmentsComponent } from './doctor/appointments/appointments.component';
+
+
 
 
 @NgModule({
@@ -15,11 +18,20 @@ import {HttpClientModule} from '@angular/common/http'
     DashboardComponent,
     DoctorComponent,
     PatientComponent,
+
     SildebarComponent,
     AddDoctorComponent,
+<<<<<<< HEAD
    
 
   
+=======
+    AppointmentsComponent
+
+
+
+
+>>>>>>> 3e94afe70e86c177d65e85711ffc8241793d067a
   ],
   imports: [
     CommonModule,

@@ -41,7 +41,7 @@ export class AddDoctorComponent {
     return this.doctorRegister.get('department');
   }
 
-    departments:string[]=['gen','card','ent','hert']
+    departments:string[]=['Specilist','Cardiologist','Pediatrics','Orthopedics','Dermatology','Radiology']
 
     addDoctor(){
         this.doctorService.createDoctor(this.doctorRegister.value) 

@@ -5,7 +5,10 @@
                         style="padding-top:80px">Dashboard</span></a>
                 <div class="nav_list">
                     <div class="doctor">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
                         <a class="nav_link active"><img
                                 src="https://thumbs.dreamstime.com/z/medical-team-icon-male-female-doctor-symbols-medical-team-icon-male-female-doctor-symbols-flat-style-vector-eps-157851279.jpg"
                                 style="width:60px;">
@@ -19,22 +22,37 @@
                     </div>
                 </div>
             </div>
-        </nav> 
+        </nav>
+<<<<<<< HEAD
+
+       
      </div> 
      
     </div>
+
 <app-sildebar ></app-sildebar>
 
+
+=======
+    </div>
+</div>
+
+
+    
+<app-sildebar ></app-sildebar>
+>>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
 <!-- <app-add-paitent></app-add-paitent> -->
 <div *ngIf="addpatient">
+
 <div class="add">
     <button class="btn btn-light " (click)="add()"  style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="150px" >
       <br > 
-     <p style="font-weight:900;">Add-Patient </p> </button> 
-    </div> 
-    <div class="add1">
-     <h3 style="text-shadow: 1px 1px 2px rgb(0, 78, 151);">Patient Details</h3>
-    </div>
+<<<<<<< HEAD
+     <p style="font-weight:900;" >Add-Patient </p> </button>   
+=======
+     <p style="font-weight:900;"  >Add-Patient </p> </button>  
+     <h1>Patient Details</h1>
+  </div>
 <div class="add1">
 <table class="table table-hover " >
     <thead >
@@ -49,28 +67,46 @@
         <th scope="col">Appointment Date</th>
         <th scope="col">Appointment Time</th>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let a of patientData">
-        <th scope="row" class="font-weight-light">1</th>
-        <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
-        <td class=" font-weight-light">{{a.age}}</td>
-        <td class=" font-weight-light">{{a.gender}}</td>
-        <td class="font-weight-light">{{a.ph}}</td>
-        <td class="font-weight-light">{{a.email}}</td>
-        <td class="font-weight-light">{{a.doctorName}}</td>
-        <td class="font-weight-light">{{a.date}}</td>
-        <td class="font-weight-light">{{a.time}}</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of dashboardService.patientData">
+                <th scope="row" class="font-weight-light">1</th>
+                <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
+                <td class=" font-weight-light">{{a.age}}</td>
+                <td class=" font-weight-light">{{a.gender}}</td>
+                <td class="font-weight-light">{{a.ph}}</td>
+                <td class="font-weight-light">{{a.email}}</td>
+                <td class="font-weight-light">{{a.doctorName}}</td>
+                <td class="font-weight-light">{{a.date}}</td>
+                <td class="font-weight-light">{{a.time}}</td>
 
       </tr>
     </tbody>
+      <!-- <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+   
   </table>
+
+
+    <!-- <p>{{a.firstName}}</p> -->
+
+>>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
   </div>
 </div>
 
-  
 
 <router-outlet></router-outlet>
+<<<<<<< HEAD
 
-
+=======
+>>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
