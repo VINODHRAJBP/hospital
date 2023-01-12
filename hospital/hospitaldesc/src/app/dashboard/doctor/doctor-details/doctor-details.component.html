@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center">
+    <table class="table">
+       <thead>
+         <tr>
+           <th scope="col">Name</th>
+           <th scope="col">Number</th>
+           <th scope="col">Email</th>
+           <th scope="col">Department</th>
+         </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor="let doctor of allDoctors">
+             <td >{{doctor.name}}</td>
+             <td>{{doctor.number}}</td>
+             <td>{{doctor.mail}}</td>
+             <td>{{doctor.department}}</td>
+          </tr>
+       </tbody>
+     </table>
+  </div>

@@ -30,7 +30,19 @@ add1(){
 
 }
 
-
+ 
+ 
+// addDoctor:boolean=false;
+// doctor(){
+// this.addDoctor=!this.addDoctor
+// }
+ 
+ 
+// addDoctor:boolean=false;
+// doctor(){
+// this.addDoctor=!this.addDoctor
+// }
+ 
 get(){
   // this.http.get('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json').pipe(map(
 
@@ -44,5 +56,4 @@ timeSlotData(){
   }
  console.log(this.dashboardService.appointmentDetails);
 }
-
 }

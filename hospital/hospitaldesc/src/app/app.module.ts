@@ -28,7 +28,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     SignupComponent,
     ForgotpassComponent,
     HeaderComponent,
-
+ 
   ],
   imports: [
     BrowserModule,

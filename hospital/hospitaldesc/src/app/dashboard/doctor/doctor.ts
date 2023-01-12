@@ -3,5 +3,6 @@ export interface Doctor{
     number:string,
     mail:string,
     gender:string,
-    department:string
+    department:string,
+    btn:boolean
 }
