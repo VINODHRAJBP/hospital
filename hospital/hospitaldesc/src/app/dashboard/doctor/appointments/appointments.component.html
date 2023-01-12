@@ -1,9 +1,8 @@
-
 <div class="d-flex" style="margin-left: 270px;margin-top: 30px;">
     <label for="doctor" class="form-label">Select Doctor: </label>
-    <select  style="width: 250px;" #doctor class="form-select" name="doctor">
-        <option  *ngFor="let doctor of allDoctors" [value]="doctor.name">{{doctor.name}}</option>
-     </select>
+    <select style="width: 250px;" #doctor class="form-select" name="doctor">
+        <option *ngFor="let doctor of allDoctors" [value]="doctor.name">{{doctor.name}}</option>
+    </select>
     <button type="button" class="btn btn-light" (click)="onFetchAppointments()">search</button>
 </div>
 
@@ -21,24 +20,22 @@
         </thead>
         <tbody>
             <tr *ngFor="let appointment of allAppointments">
-                <!-- <ng-container *ngIf="appointment.doctorName===doctor;then ift else elset"> -->
-                <ng-container #ift>
-                    <td >{{appointment.firstName}}</td>
-                    <td >{{appointment.age}}</td>
-                    <td >{{appointment.gender}}</td>
-                    <td >{{appointment.time}}</td>
-                    <td >{{appointment.doctorName}}</td>
+                <ng-container *ngIf="appointment.doctorName===doctor">
+                    <td>{{appointment.firstName}}</td>
+                    <td>{{appointment.age}}</td>
+                    <td>{{appointment.gender}}</td>
+                    <td>{{appointment.time}}</td>
+                    <td>{{appointment.doctorName}}</td>
                     <td>
                         <div *ngIf="appointment.btn">
-                          <button type="button" class="btn btn-light" (click)="onCanceleAppointment(appointment)">Cancel</button>
+                            <button type="button" class="btn btn-light"
+                                (click)="onCanceleAppointment(appointment)">Cancel</button>
                         </div>
                         <div *ngIf="!appointment.btn">
-                          <button type="button" class="btn btn-danger" disabled>Canceled</button>
+                            <button type="button" class="btn btn-danger" disabled>Canceled</button>
                         </div>
-                      </td>
+                    </td>
                 </ng-container>
-                <ng-container #elset>No Appointments</ng-container>
-            <!-- </ng-container> -->
             </tr>
         </tbody>
     </table>
