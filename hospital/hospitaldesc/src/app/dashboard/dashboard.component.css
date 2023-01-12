@@ -23,15 +23,33 @@ width: 300px;
         /* background: rgb(236, 223, 223); */
         width: 100px;
         margin-top: 30px;
+<<<<<<< HEAD
 
         /* position:absolute; */
+=======
+<<<<<<< HEAD
+        box-shadow: 10px 10px 5px rgb(100, 103, 104)
+         
+    }
+=======
+         
+>>>>>>> 7d886be9e01ccb439c86e035257d3b4e85e5d0e1
     }
 
+>>>>>>> 3e94afe70e86c177d65e85711ffc8241793d067a
     .add1{
         margin-left: 300px;
-        /* background: rgb(236, 223, 223); */
         width: 150vh;
         margin-top: 30px;
-        /* position:absolute; */
+        box-shadow: 10px 0px 5px rgb(100, 172, 196)
     }
+<<<<<<< HEAD
     
+=======
+<<<<<<< HEAD
+    
+
+=======
+    
+>>>>>>> 3e94afe70e86c177d65e85711ffc8241793d067a
+>>>>>>> 7d886be9e01ccb439c86e035257d3b4e85e5d0e1

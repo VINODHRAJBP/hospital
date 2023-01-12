@@ -120,6 +120,7 @@
 
                         <div class="mb-4 pb-2">
                         <select class=" form-control form-control-lg" name="specilist" formControlName="specilist">
+<<<<<<< HEAD
                           <option  class="lead" selected>Select</option>
                           <option value="Cardiologist" class="lead">Cardiologist</option>
                           <option value="Orthopedics" class="lead">Orthopedics</option>
@@ -129,6 +130,10 @@
                           <option value="Radiology" class="lead">Radiology</option>
                           <option value="Ophthalmology" class="lead">Ophthalmology</option>
                         </select>
+=======
+                          <option  class="lead" *ngFor="let a of specilist">{{a}}</option>
+                          </select>
+>>>>>>> 7d886be9e01ccb439c86e035257d3b4e85e5d0e1
                         <label class="form-label" for="form3Examplea3">Specilist</label>
                 
                   </div>
@@ -145,16 +150,9 @@
 
                       <div class="mb-4 pb-2">
   
-                        <select class="form-control form-control-lg" formControlName="time" name="time">
-                          <option  class="lead" active>00:00AM</option>
-                          <option value="10 AM" class="lead">10:00AM</option>
-                          <option value="11 AM" class="lead">11:00AM</option>
-                          <option value="12 PM" class="lead">12:00PM</option>
-                          <option value="2 PM" class="lead">02:00PM</option>
-                          <option value="3 PM" class="lead">03:00PM</option>
-                          <option value="4 PM" class="lead">04:00pM</option>
-                          <option value="5 PM" class="lead">05:00PM</option>
-                        </select>
+                        <select class="form-control form-control-lg" formControlName="time" name="time" >
+                          <option  class="lead" *ngFor="let a of timeSlot" >{{a}}</option>
+                                                  </select>
                         <label class="form-label" for="form3Examplea3">Time slot</label>
                   </div>
                   <div class="mb-4">

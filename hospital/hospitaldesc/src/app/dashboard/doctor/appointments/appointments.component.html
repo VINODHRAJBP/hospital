@@ -1,0 +1,33 @@
+<div class="mb-3">
+    <label for="doctor" class="form-label">Select Doctor</label>
+    <select #doctor class="form-select" name="doctor">
+        <option  *ngFor="let doctor of allDoctors" [value]="doctor.name">{{doctor.name}}</option>
+    </select>
+</div>
+
+
+<div class="d-flex justify-content-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Time</th>
+                <th scope="col">Doctor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of allAppointments">
+                <ng-template *ngIf="appointment.doctorName===doctor.value else elsetemp">
+                    <td>{{appointment.firstName}}</td>
+                    <td>{{appointment.age}}</td>
+                    <td>{{appointment.gender}}</td>
+                    <td>{{appointment.time}}</td>
+                    <td>{{appointment.doctorName}}</td>
+                </ng-template>
+                <ng-template #elsetemp>No appointments found</ng-template>
+            </tr>
+        </tbody>
+    </table>
+</div>

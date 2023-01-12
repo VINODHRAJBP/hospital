@@ -34,5 +34,21 @@ export class DoctorService {
             }))
     }
 
+    fetchApointments() {
+        return this.http.get<{ [key: string]:any }>('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json')
+            .pipe(map((res) => {
+                const  appointments = [];
+                for (const key in res) {
+                    if (res.hasOwnProperty(key)) {
+                        appointments.push({ ...res[key]});
+                    }
+                }
+                return appointments;
+                
+            }), catchError((err) => {
+                return throwError(err);
+            }))
+    }
+
 
 }

@@ -7,6 +7,7 @@ import { PatientComponent } from './dashboard/patient/patient.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AppointmentsComponent } from './dashboard/doctor/appointments/appointments.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
     path:'dashboard',component:DashboardComponent,children:[
       {
         path:'doctor',component:DoctorComponent,children:[
-          {path:'add-doctor', component:AddDoctorComponent}
+          {path:'add-doctor', component:AddDoctorComponent},
+          {path:'appointments',component:AppointmentsComponent}
         ]
       },
       {
