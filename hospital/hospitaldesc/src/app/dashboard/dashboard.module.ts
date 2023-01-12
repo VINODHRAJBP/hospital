@@ -17,13 +17,7 @@ import {HttpClientModule} from '@angular/common/http'
     PatientComponent,
     SildebarComponent,
     AddDoctorComponent,
-<<<<<<< HEAD
 
-
-=======
-    AddPaitentComponent
->>>>>>> 8c2d1c07eea8dedb3bd9a3a7b1fd5cde810d6bf4
-  
   ],
   imports: [
     CommonModule,
