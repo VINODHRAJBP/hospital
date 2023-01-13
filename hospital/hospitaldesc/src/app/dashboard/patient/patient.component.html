@@ -149,9 +149,10 @@
                         <div class="mb-2 pb-1">
 
                           <select class="form-control form-control-lg" formControlName="time" name="time">
-                            <option class="lead" *ngFor='let time of timeSlot'>
+                            <option  *ngFor="let time of TIME" [value]="time" [disabled]="isDisableTime(time)">{{time}}</option>
+                            <!-- <option class="lead" *ngFor='let time of timeSlot'>
                               {{time}}
-                            </option>
+                            </option> -->
                           </select>
 
 
