@@ -7,12 +7,8 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SildebarComponent } from './sildebar/sildebar.component';
 import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
-<<<<<<< HEAD
 import { AddPatientComponent } from './patient/add-patient.component.ts/add-patient.component';
 import {HttpClientModule} from '@angular/common/http'
-=======
-import { HttpClientModule } from '@angular/common/http'
->>>>>>> 455d2f732e7b8e4ce83934fdd443394281fb1e35
 import { AppointmentsComponent } from './doctor/appointments/appointments.component';
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -30,10 +26,7 @@ import {matMenuAnimations, MatMenuModule} from '@angular/material/menu'
     AddDoctorComponent,
     AppointmentsComponent,
     DoctorDetailsComponent,
-<<<<<<< HEAD
     AddPatientComponent
-=======
->>>>>>> 455d2f732e7b8e4ce83934fdd443394281fb1e35
 
   ],
   imports: [
