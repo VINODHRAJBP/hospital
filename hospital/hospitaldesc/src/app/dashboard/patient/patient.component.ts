@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, NG_VALIDATORS } from '@angular/forms';
 import { Router } from '@angular/router';
+import { timeSlot } from '../dashboard';
 import { DashboardService } from '../dashboard.service';
 @Component({
   selector: 'app-patient',
@@ -11,9 +12,26 @@ import { DashboardService } from '../dashboard.service';
 export class PatientComponent implements OnInit {
 
   constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService) { }
-
+  aj = [{ a: 'a', b: 'b' }, { a: 'd', b: 'c' }, { a: 'h', b: 'g' }]
+  // aj=['a','v']
+  slottime: timeSlot[] = []
   ngOnInit(): void {
+this.slottime=this.dashboardServices.appointmentDetails
+// console.log(this.slottime);
+
+    // console.log(this.slottime.includes({ date: "2023-01-25", doctorName: "Praveen" }));
+    // console.log(this.slottime.find());
+    
+    console.log({ date: '2023-01-25', time: '4 pm', doctorName: 'Praveen' });
+    console.log(this.aj);
+    
+
+    console.log(this.aj.indexOf({ a: 'd', b: 'c' }));
+ 
+
   }
+
+ 
   register = new FormGroup({
     firstName: new FormControl('',[Validators.required]),
     lastName: new FormControl('',[Validators.required]),
@@ -31,7 +49,7 @@ export class PatientComponent implements OnInit {
   })
   a=this.dashboardServices.appointmentDetails
 
-  timeSlot = ['Select','10 AM', '11 AM', '12 PM', '2 PM', '3 PM', '4 PM', '5 PM',]
+  timeSlot = ['Select','10 AM', '11 AM','a', '12 PM', '2 PM', '3 PM', '4 PM', '5 PM',]
   specilist = ['Select','Praveen','Cardiologist', 'Orthopedics', 'Obstetrics and Gynecology', 'Dermatology', 'Pediatrics', 'Radiology','Ophthalmology']
 
   get data() {

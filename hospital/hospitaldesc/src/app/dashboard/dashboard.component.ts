@@ -51,7 +51,7 @@ get(){
 
 timeSlotData(){
   for (let a of this.dashboardService.patientData){
-    let b = {date:a.date,time:a.time,doctorName:a.doctorName }
+    let b = {date:a.date,doctorName:a.doctorName }
    this.dashboardService.appointmentDetails.push(b)
   }
  console.log(this.dashboardService.appointmentDetails);
