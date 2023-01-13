@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { Doctor } from '../doctor';
 import { DoctorService } from '../doctor.service';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-appointments',
@@ -11,26 +13,34 @@ export class AppointmentsComponent implements OnInit{
 
     constructor(private doctorService:DoctorService){}
 
+
     allAppointments:any[]=[]
     allDoctors:Doctor[]=[]
 
-    ngOnInit() {
+    displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
+    dataSource !: MatTableDataSource<any>;
+  
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+   
+
+    ngOnInit() { 
         this.onFetchAppointments();
-        this.onFetchDoctors();
+        this.onFetchDoctors();   
     }
 
     onFetchAppointments(){
         this.doctorService.fetchApointments().subscribe((appointments)=>{
             this.allAppointments=appointments;
-            console.log(appointments);
-            
+          this.dataSource=new MatTableDataSource(appointments);
+          this.dataSource.paginator = this.paginator;
+            // console.log(appointments);
         })
     }
 
   onFetchDoctors(){
     this.doctorService.fetchDoctor().subscribe((doctors)=>{
       this.allDoctors=doctors;
-      console.log(doctors);
+      // console.log(doctors);
     })
   }
 
@@ -38,6 +48,7 @@ export class AppointmentsComponent implements OnInit{
     appointment.btn=false;
     this.doctorService.deleteAppointment(appointment)
   }
+
 
    
 }

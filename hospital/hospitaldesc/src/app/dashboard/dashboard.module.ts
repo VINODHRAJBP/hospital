@@ -10,6 +10,8 @@ import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
 import {HttpClientModule} from '@angular/common/http'
 import { AppointmentsComponent } from './doctor/appointments/appointments.component';
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+ import { MatTableModule } from '@angular/material/table';
  
  
 @NgModule({
@@ -27,7 +29,9 @@ import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.c
     CommonModule,
     RouterModule,
      ReactiveFormsModule,
-     HttpClientModule
+     HttpClientModule,
+     MatPaginatorModule,
+     MatTableModule
      
   ],
   exports:[DoctorComponent,PatientComponent]
