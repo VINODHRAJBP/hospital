@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let appointment of allAppointments">
-                <ng-container *ngIf="appointment.doctorName===doctor">
+                <ng-container *ngIf="appointment.doctorName===doctor.value">
                     <td>{{appointment.firstName}}</td>
                     <td>{{appointment.age}}</td>
                     <td>{{appointment.gender}}</td>
