@@ -12,83 +12,86 @@ import { DashboardService } from '../dashboard.service';
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
+  constructor(private route:Router,private http:HttpClient,public dashboardService:DashboardService) { }
+
+
+
+  // displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
+  //   dataSource !: MatTableDataSource<data>;
+
+  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+
+  minDate=new Date()
+
+  ngOnInit(): void {
+  this.dashboardService.fetchDoctor()
+    console.log(this.dashboardService.appointmentDetails);
+    
+  }
+
+  
+
+
 
  
 
-  constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService) { }
-  appointmentStartDate=new Date()
-  slottime: timeSlot[] = []
+  addpatient=false;
+add1(){
+  this.addpatient=!this.addpatient
+  // this.dataSource=new MatTableDataSource(this.dashboardService.patientData);
+  // this.dataSource.paginator = this.paginator;
 
-
-  ngOnInit(): void {
-   
-this.slottime=this.dashboardServices.appointmentDetails
-console.log(this.slottime);
-    console.log(this.slottime.includes({ date: "2023-01-25", doctorName: "Praveen" }));  
-  }
-  
-  register = new FormGroup({
-    firstName: new FormControl('',[Validators.required]),
-    lastName: new FormControl('',[Validators.required]),
-    age: new FormControl('',[Validators.required]),
-    ph: new FormControl("", [Validators.required]),
-    gender: new FormControl(''),
-    email: new FormControl('',[Validators.email,Validators.required]),
-    address: new FormControl('',[Validators.required]),
-    doctorName: new FormControl('',[Validators.required]),
-    specilist: new FormControl('',[Validators.required]),
-    date: new FormControl(''),
-    time: new FormControl(''),
-    doctorEmail: new FormControl('',[Validators.email])
-
-  })
-  a=this.dashboardServices.appointmentDetails
-
-  timeSlot = ['Select','10 AM','a', '11 AM', '12 PM', '2 PM', '3 PM', '4 PM', '5 PM',]
-  specilist = ['Select','Praveen','Cardiologist', 'Orthopedics', 'Obstetrics and Gynecology', 'Dermatology', 'Pediatrics', 'Radiology','Ophthalmology']
-
-  get data() {
-    return this.register.get(['firstName', 'lastName', 'age', 'ph', 'gender', 'email', 'address', 'doctorName', 'specilist', 'date', 'time', 'doctorEmail'])
-  }
-
-  onsub1(){
-      this.route.navigate(['../dashboard']);
-  }
-  onSub() {
-    console.log(this.register.value.date);
-    let a=this.register.value
-    // let patientData={name:a.firstName!+a.lastName,age:a.age,gender:a.gender,ph:a.ph,email:a.email,address:a.address}
-    // let doctorData={name:a.doctorName,speciliat:a.specilist,appointmentDate:a.date,appointmentTime:a.time,email:a.doctorEmail}
-  
-    let folder=a.firstName!+" "+a.lastName
-    
-    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'.json',a).subscribe(a=>{console.log(a);
-    })
-  }
-  TIME=["09:00 AM","10:00 AM","11:00 AM","12:00 PM","01:00 PM","02:00 PM","03:00 PM","04:00 PM","05:00 PM","06:00 PM","07:00 PM","08:00 PM"];
-
-
-  isDisableTime(selectedTime: string): boolean {
-    let isTimeOver = false;
-     let currentHour = new Date().getHours();
-    let currentMin = new Date().getMinutes();
-    let currentAmPm = currentHour >= 12 ? 'PM' : 'AM';
-     currentHour = currentHour % 12;
-    let selectedHour = +selectedTime.substr(0, 2) % 12;
-     let selectedMin = +selectedTime.substr(3, 2);
-     let selectedAM_PM = selectedTime.substr(6, 2);
-     if(currentAmPm === selectedAM_PM) {
-     if (selectedHour < currentHour) {
-     isTimeOver = true;
-     } else if (selectedHour === currentHour) {
-     if (selectedMin < currentMin) {
-     isTimeOver = true;
-     }
-     }
-     } else {
-     isTimeOver = currentAmPm > selectedAM_PM;
-     }
-     return isTimeOver;
-     }
-    
 }
+datefil:data[]=[]
+dateFilter(a:any,b:any){
+  
+for(let c of this.dashboardService.patientData){
+  // console.log(c.date,a);
+  this.datefil=[]
+  
+  if(c.date>a && c.date<b){
+    this.datefil.push(c)
+    console.log(c);
+    
+  }
+}
+}
+
+add(){
+  this.route.navigate(['dashboard/patient'])
+this.timeSlotData()
+
+}
+ 
+ 
+// addDoctor:boolean=false;
+// doctor(){
+// this.addDoctor=!this.addDoctor
+// }
+ 
+ 
+// addDoctor:boolean=false;
+// doctor(){
+// this.addDoctor=!this.addDoctor
+// }
+ 
+get(){
+  // this.http.get('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json').pipe(map(
+
+  // ))
+}
+
+timeSlotData(){
+  for (let a of this.dashboardService.patientData){
+    let b = {date:a.date,doctorName:a.doctorName }
+   this.dashboardService.appointmentDetails.push(b)
+  }
+ console.log(this.dashboardService.appointmentDetails);
+}
+}
+
+
+ 
+
+ 

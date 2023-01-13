@@ -14,116 +14,14 @@
                       <a class="nav_link"><img
                               src="https://img.favpng.com/17/12/10/patient-icon-healthcare-icon-medical-icon-vVipqRtL_t.jpg "
                               style="width:60px;">
-                          <span class="nav_name" style="font-weight:500; font-size: larger;" (click)="add1()">patient</span> </a>
+                          <span class="nav_name" style="font-weight:500; font-size: larger;" routerLink="patient" (click)="add1()">patient</span> </a>
                   </div>
               </div>
           </div>
       </nav>
    </div> 
-   
-  
   
 <app-sildebar ></app-sildebar>
-<div *ngIf="addpatient">
-<div class="add" >
- <div> <button class="btn btn-light " (click)="add()"   style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="150px" >
-    <br > 
-   <p style="font-weight:900;">Add-Patient </p> </button></div>  
 
-
-<h2>filter date</h2>
-    <input type="date" #start min="{{minDate|date:'yyyy-MM-dd'}}">
-    <input type="date" #end min="2023-01-04">
-    <button (click)="dateFilter(start.value,end.value)">sub</button>
-
-<table>
-   <tbody>
-    <tr *ngFor="let a of datefil;index as i">
-      <th scope="row" class="font-weight-light">{{i+1}}</th>
-      <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
-      <td class=" font-weight-light">{{a.age}}</td>
-      <td class=" font-weight-light">{{a.gender}}</td>
-      <td class="font-weight-light">{{a.ph}}</td>
-      <td class="font-weight-light">{{a.email}}</td>
-      <td class="font-weight-light">{{a.doctorName}}</td>
-      <td class="font-weight-light">{{a.date}}</td>
-      <td class="font-weight-light">{{a.time}}</td>
-</tr>
-</tbody>
-</table>
-
-   <h5 style="font-weight:780;" >Appointment- Details</h5>
-</div>
-<div class="add1" >
-<table class="table table-hover "  >
-  <thead >
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Age</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Phno</th>
-      <th scope="col">Mail</th>
-      <th scope="col">Consultant Doctor</th>
-      <th scope="col">Appointment Date</th>
-      <th scope="col">Appointment Time</th>
-
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let a of dashboardService.patientData;index as i">
-              <th scope="row" class="font-weight-light">{{i+1}}</th>
-              <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
-              <td class=" font-weight-light">{{a.age}}</td>
-              <td class=" font-weight-light">{{a.gender}}</td>
-              <td class="font-weight-light">{{a.ph}}</td>
-              <td class="font-weight-light">{{a.email}}</td>
-              <td class="font-weight-light">{{a.doctorName}}</td>
-              <td class="font-weight-light">{{a.date}}</td>
-             <td class="font-weight-light">{{a.time}}</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
-
-    <ng-container matColumnDef="firstName">
-      <th mat-header-cell *matHeaderCellDef> First Name </th>
-      <td mat-cell *matCellDef="let ele"> {{ele.firstName+" "+ele.lastName}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="gender">
-      <th mat-header-cell *matHeaderCellDef> Gender </th>
-      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="age">
-      <th mat-header-cell *matHeaderCellDef> Age </th>
-      <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="time">
-      <th mat-header-cell *matHeaderCellDef> Time </th>
-      <td mat-cell *matCellDef="let element"> {{element.ph}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="doctorName">
-      <th mat-header-cell *matHeaderCellDef> Doctor </th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator #paginator [pageSizeOptions]="[3, 5, 10, 20]"
-                 showFirstLastButtons>
-  </mat-paginator>
-</div> -->
-
-
-</div>
-</div>
 <router-outlet></router-outlet>
 

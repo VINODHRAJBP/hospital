@@ -18,10 +18,13 @@ export class DashboardComponent implements OnInit {
 
 
 
-  displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
-    dataSource !: MatTableDataSource<data>;
+  // displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
+  //   dataSource !: MatTableDataSource<data>;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+
+  minDate=new Date()
 
   ngOnInit(): void {
   this.dashboardService.fetchDoctor()
@@ -33,8 +36,7 @@ export class DashboardComponent implements OnInit {
 
 
 
-  data=[]
-  minDate=new Date()
+  
   add(){
     this.route.navigate(['dashboard/patient'])
   this.timeSlotData()
@@ -44,14 +46,8 @@ export class DashboardComponent implements OnInit {
   addpatient=false;
 add1(){
   this.addpatient=!this.addpatient
-  this.dataSource=new MatTableDataSource(this.dashboardService.patientData);
-
-  this.dataSource.paginator = this.paginator;
-  
-
-  console.log(this.dataSource);
-
-
+  // this.dataSource=new MatTableDataSource(this.dashboardService.patientData);
+  // this.dataSource.paginator = this.paginator;
 
 }
 datefil:data[]=[]

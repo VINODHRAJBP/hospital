@@ -11,6 +11,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SignupComponent } from './signup/signup.component';
 import { AppointmentsComponent } from './dashboard/doctor/appointments/appointments.component';
  import { DoctorDetailsComponent } from './dashboard/doctor/doctor-details/doctor-details.component';
+import { AddPatientComponent } from './dashboard/patient/add-patient.component.ts/add-patient.component';
 
 const routes: Routes = [
   {
@@ -42,7 +43,10 @@ const routes: Routes = [
         ]
       },
       {
-        path:'patient',component:PatientComponent
+        path:'patient',component:PatientComponent,
+        children:[
+          {path:'add-patient',component:AddPatientComponent}
+        ]
       },
     ]
   }

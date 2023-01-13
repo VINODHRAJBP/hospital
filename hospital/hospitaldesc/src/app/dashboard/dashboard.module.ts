@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SildebarComponent } from './sildebar/sildebar.component';
 import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
+import { AddPatientComponent } from './patient/add-patient.component.ts/add-patient.component';
 import {HttpClientModule} from '@angular/common/http'
 import { AppointmentsComponent } from './doctor/appointments/appointments.component';
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
@@ -22,7 +23,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SildebarComponent,
     AddDoctorComponent,
     AppointmentsComponent,
-    DoctorDetailsComponent
+    DoctorDetailsComponent,
+    AddPatientComponent
 
   ],
   imports: [
