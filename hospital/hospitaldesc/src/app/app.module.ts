@@ -21,6 +21,8 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { HeaderComponent } from './header/header.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule,
+     
   ],
   providers: [],
   bootstrap: [AppComponent]
