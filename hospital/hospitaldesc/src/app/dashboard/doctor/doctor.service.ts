@@ -40,7 +40,7 @@ export class DoctorService {
                 const  appointments = [];
                 for (const key in res) {
                     if (res.hasOwnProperty(key)) {
-                        appointments.push({ ...res[key],btn:true});
+                        appointments.push({ ...res[key]});
                     }
                 }
                 return appointments;
@@ -53,8 +53,6 @@ export class DoctorService {
 
     deleteAppointment(appointment:any) {
         let folder=appointment.firstName!+" "+appointment.lastName
-        console.log(folder);
-        
         this.http.delete('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + folder + '.json').subscribe((res)=>{
             // console.log(res);
         });
