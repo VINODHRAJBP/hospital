@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators, NG_VALIDATORS } from '@angular/forms';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { timeSlot } from '../dashboard';
+import { data, timeSlot } from '../dashboard';
 import { DashboardService } from '../dashboard.service';
 @Component({
   selector: 'app-patient',
@@ -11,27 +13,20 @@ import { DashboardService } from '../dashboard.service';
 })
 export class PatientComponent implements OnInit {
 
+ 
+
   constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService) { }
-  aj = [{ a: 'a', b: 'b' }, { a: 'd', b: 'c' }, { a: 'h', b: 'g' }]
-  // aj=['a','v']
+  appointmentStartDate=new Date()
   slottime: timeSlot[] = []
+
+
   ngOnInit(): void {
+   
 this.slottime=this.dashboardServices.appointmentDetails
-// console.log(this.slottime);
-
-    // console.log(this.slottime.includes({ date: "2023-01-25", doctorName: "Praveen" }));
-    // console.log(this.slottime.find());
-    
-    console.log({ date: '2023-01-25', time: '4 pm', doctorName: 'Praveen' });
-    console.log(this.aj);
-    
-
-    console.log(this.aj.indexOf({ a: 'd', b: 'c' }));
- 
-
+console.log(this.slottime);
+    console.log(this.slottime.includes({ date: "2023-01-25", doctorName: "Praveen" }));  
   }
-
- 
+  
   register = new FormGroup({
     firstName: new FormControl('',[Validators.required]),
     lastName: new FormControl('',[Validators.required]),
@@ -49,7 +44,7 @@ this.slottime=this.dashboardServices.appointmentDetails
   })
   a=this.dashboardServices.appointmentDetails
 
-  timeSlot = ['Select','10 AM', '11 AM','a', '12 PM', '2 PM', '3 PM', '4 PM', '5 PM',]
+  timeSlot = ['Select','10 AM','a', '11 AM', '12 PM', '2 PM', '3 PM', '4 PM', '5 PM',]
   specilist = ['Select','Praveen','Cardiologist', 'Orthopedics', 'Obstetrics and Gynecology', 'Dermatology', 'Pediatrics', 'Radiology','Ophthalmology']
 
   get data() {
@@ -70,10 +65,30 @@ this.slottime=this.dashboardServices.appointmentDetails
     this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'.json',a).subscribe(a=>{console.log(a);
     })
   }
+  TIME=["09:00 AM","10:00 AM","11:00 AM","12:00 PM","01:00 PM","02:00 PM","03:00 PM","04:00 PM","05:00 PM","06:00 PM","07:00 PM","08:00 PM"];
 
 
-  ddd(a:any,b:any){
-console.log(a,b);
-
-  }
+  isDisableTime(selectedTime: string): boolean {
+    let isTimeOver = false;
+     let currentHour = new Date().getHours();
+    let currentMin = new Date().getMinutes();
+    let currentAmPm = currentHour >= 12 ? 'PM' : 'AM';
+     currentHour = currentHour % 12;
+    let selectedHour = +selectedTime.substr(0, 2) % 12;
+     let selectedMin = +selectedTime.substr(3, 2);
+     let selectedAM_PM = selectedTime.substr(6, 2);
+     if(currentAmPm === selectedAM_PM) {
+     if (selectedHour < currentHour) {
+     isTimeOver = true;
+     } else if (selectedHour === currentHour) {
+     if (selectedMin < currentMin) {
+     isTimeOver = true;
+     }
+     }
+     } else {
+     isTimeOver = currentAmPm > selectedAM_PM;
+     }
+     return isTimeOver;
+     }
+    
 }

@@ -1,7 +1,7 @@
 export interface data {
     address:string
     age:number
-    date:string
+    date:Date
     doctorEmail:string
     doctorName:string
     email:string
