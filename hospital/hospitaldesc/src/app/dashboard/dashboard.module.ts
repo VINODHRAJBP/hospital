@@ -7,13 +7,15 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SildebarComponent } from './sildebar/sildebar.component';
 import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { AppointmentsComponent } from './doctor/appointments/appointments.component';
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
- import { MatTableModule } from '@angular/material/table';
- 
- 
+import { MatTableModule } from '@angular/material/table';
+import{MatIconModule} from '@angular/material/icon';
+import {matMenuAnimations, MatMenuModule} from '@angular/material/menu'
+
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -22,20 +24,22 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SildebarComponent,
     AddDoctorComponent,
     AppointmentsComponent,
-    DoctorDetailsComponent
+    DoctorDetailsComponent,
 
   ],
   imports: [
     CommonModule,
     RouterModule,
-     ReactiveFormsModule,
-     HttpClientModule,
-     MatPaginatorModule,
-     MatTableModule
-     
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatIconModule,
+    MatMenuModule
+
   ],
-  exports:[DoctorComponent,PatientComponent]
+  exports: [DoctorComponent, PatientComponent]
 })
-export class DashboardModule { 
-  
+export class DashboardModule {
+
 }
