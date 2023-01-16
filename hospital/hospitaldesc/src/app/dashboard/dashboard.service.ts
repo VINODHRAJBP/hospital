@@ -18,7 +18,7 @@ export class DashboardService {
         const doctors = [];
         for (const key in res) {
           if (res.hasOwnProperty(key)) {
-            doctors.push({ ...res[key] });
+            doctors.push({ ...res[key],id:key });
           }
         }
         return doctors;

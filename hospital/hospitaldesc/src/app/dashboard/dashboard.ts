@@ -11,6 +11,7 @@ export interface data {
     ph:number
     specilist:string
     time:string
+    id:string
 }
 
 export interface timeSlot{

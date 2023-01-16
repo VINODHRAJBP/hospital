@@ -11,10 +11,14 @@ import { AddPatientComponent } from './patient/add-patient.component.ts/add-pati
 import {HttpClientModule} from '@angular/common/http'
 import { AppointmentsComponent } from './doctor/appointments/appointments.component';
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
+
+
+// material ui
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
 import {matMenuAnimations, MatMenuModule} from '@angular/material/menu'
+
 
 
 @NgModule({
