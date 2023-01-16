@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AppointmentsComponent } from './dashboard/doctor/appointments/appointments.component';
  import { DoctorDetailsComponent } from './dashboard/doctor/doctor-details/doctor-details.component';
 import { AddPatientComponent } from './dashboard/patient/add-patient.component.ts/add-patient.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -33,8 +34,9 @@ const routes: Routes = [
   {
     path: 'forgotpass', component: ForgotpassComponent
   },
+  
   {
-    path:'dashboard',component:DashboardComponent,children:[
+    path:'dashboard',canActivate:[AuthGuard] ,component:DashboardComponent,children:[
       {
         path:'doctor',component:DoctorComponent,children:[
           {path:'add-doctor', component:AddDoctorComponent},

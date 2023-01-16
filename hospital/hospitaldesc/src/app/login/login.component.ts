@@ -4,6 +4,7 @@ import {FormGroup,FormControl,Validators} from '@angular/forms'
 import { Database } from 'firebase/database';
 import { AuthService } from '../shared/authservice.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,10 +14,13 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( public authService: AuthService) { }
+  constructor( public authService: AuthService,private route:Router) { }
   Email: string = "";
   Password: string = "";
   ngOnInit(): void {
+    if(this.authService.isLoggedInn){
+      this.route.navigate(['dashboard'])
+    }
   }
 
   
