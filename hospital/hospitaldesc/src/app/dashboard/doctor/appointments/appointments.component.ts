@@ -34,7 +34,7 @@ export class AppointmentsComponent implements OnInit {
       this.allAppointments = appointments;
       this.dataSource = new MatTableDataSource(appointments);
       this.dataSource.paginator = this.paginator;
-      // console.log(appointments);
+      console.log(appointments);
     })
   }
 
@@ -55,6 +55,7 @@ export class AppointmentsComponent implements OnInit {
   }
 
   onCanceleAppointment(appointment: any) {
+    appointment.btn=true;
     this.doctorService.deleteAppointment(appointment);
     alert(appointment.firstName+" appointment cancelled")
   }

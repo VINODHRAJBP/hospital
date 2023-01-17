@@ -6,7 +6,6 @@ import { DoctorComponent } from './dashboard/doctor/doctor.component';
 import { PatientComponent } from './dashboard/patient/patient.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { LoginComponent } from './login/login.component';
-
 import { RegistrationComponent } from './registration/registration.component';
 import { SignupComponent } from './signup/signup.component';
 import { AppointmentsComponent } from './dashboard/doctor/appointments/appointments.component';

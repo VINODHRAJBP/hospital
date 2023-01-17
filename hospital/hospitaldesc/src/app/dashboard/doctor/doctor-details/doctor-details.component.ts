@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms'
-import { Location } from '@angular/common';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { Doctor } from '../doctor';
 import { DoctorService } from '../doctor.service';
 
@@ -15,7 +13,7 @@ export class DoctorDetailsComponent implements OnInit{
   ngOnInit(): void {
     this.fetchDoctor();
   }
-
+ 
   allDoctors:Doctor[]=[]
 
   fetchDoctor(){

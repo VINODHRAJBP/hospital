@@ -40,7 +40,7 @@ export class DoctorService {
                 const  appointments = [];
                 for (const key in res) {
                     if (res.hasOwnProperty(key)) {
-                        appointments.push({ ...res[key]});
+                        appointments.push({ ...res[key], btn:false});
                     }
                 }
                 return appointments;

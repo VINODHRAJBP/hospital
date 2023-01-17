@@ -17,7 +17,7 @@ import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.c
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
-import {matMenuAnimations, MatMenuModule} from '@angular/material/menu'
+import { MatMenuModule} from '@angular/material/menu'
 
 
 
