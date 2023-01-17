@@ -14,6 +14,11 @@ import { DashboardService } from '../dashboard.service';
 export class PatientComponent implements OnInit {
   constructor(private route:Router,private http:HttpClient,public dashboardService:DashboardService) { }
 
+  myForm:FormGroup
+  // displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
+  //   dataSource !: MatTableDataSource<data>;
+  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+  | undefined
 
 
   // displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
@@ -29,12 +34,7 @@ patientData=''
     console.log(this.dashboardService.appointmentDetails);
   }
 
-  // addpatient=false;
-// add1(){
-  // this.addpatient=!this.addpatient
-  // this.dataSource=new MatTableDataSource(this.dashboardService.patientData);
-  // this.dataSource.paginator = this.paginator;
-// }
+ 
 datefil:data[]=[]
 showAllDataTable=true
   showFilterTable=false

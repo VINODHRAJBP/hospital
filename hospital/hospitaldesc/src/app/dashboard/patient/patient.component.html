@@ -1,7 +1,7 @@
 
 
     <div class="add" >
-      <div> <button class="btn btn-light " routerLink="add-patient"  style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="150px" >
+      <div> <button class="btn btn-light " routerLink="add-patient"   style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="150px" >
          <br > 
         <p style="font-weight:900;">Add-Patient </p> </button></div>  
     </div>
@@ -13,7 +13,11 @@
      </div>
      <div class="add">
      <!-- <app-update-data></app-update-data> -->
-     <app-patient [updatingPatientData]="patientData"></app-patient>
+     <div  class="details">
+     <!-- <app-patient [updatingPatientData]="patientData"></app-patient> -->
+<router-outlet></router-outlet>
+ 
+     </div>
     </div>
         <div class="add" *ngIf="showFilterTable">
      <table class="table table-hover table-bordered" id="escalation" >
@@ -80,14 +84,16 @@
                   <td class="font-weight-light">{{a.time}}</td>
                   <!-- <td class="font-weight-light">{{a.id}}</td> -->
                   <td> <button class="btn btn-pill btn-warning" (click)="cancelAppointment(a.id)"> Cancel</button></td>
-                  <td> <button class="btn btn-pill btn-warning" (click)="updateAppointment(a)"> Edit</button></td>
+                  <!-- <td> <button class="btn btn-pill btn-warning" (click)="updateAppointment(a)"> Edit</button></td> -->
 
          </tr>
          
        </tbody>
      </table>
+     
+
+     
       <h5 style="font-weight:780;">Appointment- Details</h5>
-<<<<<<< HEAD
     
      
      <!-- <div class="mat-elevation-z8">
@@ -132,8 +138,8 @@
       $('#escalation').DataTable();
     }); 
 </script> -->
-<!-- 
-<table id="example" class="table table-striped" style="width:100%">
+
+<!-- <table id="example1" class="table table-striped" style="width:100%">
   <thead>
     <tr>
       <th>Name</th>
@@ -165,18 +171,13 @@
   </tfoot>
 </table>
 
-<script>$(example).ready(function () {
-    $('#example').DataTable();
-  });</script> -->
+<script>$(document).ready(function () {
+    $('#example1').DataTable();
+  });</script>
+
+ -->
 
 
-
-=======
-      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-      <link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">
-      <script src="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.js"></script>
->>>>>>> 8ef8dd70de651aafe13934b4f280d6dcf7bf7fc5
-<router-outlet></router-outlet>
 
 
   

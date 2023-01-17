@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit,ViewChild} from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
@@ -14,28 +15,12 @@ import { DashboardService } from '../../dashboard.service';
 export class AddPatientComponent implements OnInit {
 
     
-    constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService) { }
+    constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService,private loc:Location) { }
     appointmentStartDate=new Date()
     slottime: timeSlot[] = []
-  @Input() updatingPatientData!:any
+  @Input() updatingPatientData=new FormControl()
 
   // @ViewChild('register') form?:FormControl;
-
-   
-   
-    firstName=this.updatingPatientData.firstName
-    lastName=this.updatingPatientData.lastName
-    age=this.updatingPatientData.age
-    ph=this.updatingPatientData.ph
-    gender=this.updatingPatientData.gender
-    email=this.updatingPatientData.email
-    address=this.updatingPatientData.address
-    doctorName=this.updatingPatientData.doctorName
-    specilist=this.updatingPatientData.specilist
-    date=this.updatingPatientData.date
-    time=this.updatingPatientData.time
-    doctorEmail=this.updatingPatientData.doctorEmail
-    status=this.updatingPatientData.status
 
  
     ngOnInit(): void {
@@ -44,12 +29,11 @@ export class AddPatientComponent implements OnInit {
       console.log(this.slottime.includes({ date: "2023-01-25", doctorName: "Praveen" }));  
     }
     
-    
     register = new FormGroup({
       firstName: new FormControl('',[Validators.required]),
       lastName: new FormControl('',[Validators.required]),
       age: new FormControl('',[Validators.required]),
-      ph: new FormControl("", [Validators.required]),
+      ph: new FormControl('', [Validators.required]),
       gender: new FormControl(''),
       email: new FormControl('',[Validators.email,Validators.required]),
       address: new FormControl('',[Validators.required]),
@@ -61,7 +45,7 @@ export class AddPatientComponent implements OnInit {
       status:new FormControl('appoiintmentBooked')
   
     })
-    a=this.dashboardServices.appointmentDetails
+    // a=this.dashboardServices.appointmentDetails
   
     // timeSlot = ['Select','10 AM','a', '11 AM', '12 PM', '2 PM', '3 PM', '4 PM', '5 PM',]
     specilists = ['Select','Praveen','Cardiologist', 'Orthopedics', 'Obstetrics and Gynecology', 'Dermatology', 'Pediatrics', 'Radiology','Ophthalmology']
@@ -71,7 +55,7 @@ export class AddPatientComponent implements OnInit {
     }
   
     onsub1(){
-        this.route.navigate(['../dashboard']);
+        this.loc.back()
     }
     onSub() {
       console.log(this.register.value.date);
