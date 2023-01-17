@@ -17,7 +17,8 @@ import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.c
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
-import {matMenuAnimations, MatMenuModule} from '@angular/material/menu'
+import {matMenuAnimations, MatMenuModule} from '@angular/material/menu';
+import { UpdateDataComponent } from './patient/update-data/update-data.component'
 
 
 
@@ -30,7 +31,8 @@ import {matMenuAnimations, MatMenuModule} from '@angular/material/menu'
     AddDoctorComponent,
     AppointmentsComponent,
     DoctorDetailsComponent,
-    AddPatientComponent
+    AddPatientComponent,
+    UpdateDataComponent
 
   ],
   imports: [

@@ -11,6 +11,10 @@
          <input type="date" #start min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)">
          <input type="date" #end min="{{minDate|date:'yyyy-MM-dd'}}"  (input)="dateFilter(start.value,end.value)">  
      </div>
+     <div class="add">
+     <!-- <app-update-data></app-update-data> -->
+     <app-patient [updatingPatientData]="patientData"></app-patient>
+    </div>
         <div class="add" *ngIf="showFilterTable">
      <table class="table table-hover table-bordered" id="escalation" >
       <thead>
@@ -76,12 +80,14 @@
                   <td class="font-weight-light">{{a.time}}</td>
                   <!-- <td class="font-weight-light">{{a.id}}</td> -->
                   <td> <button class="btn btn-pill btn-warning" (click)="cancelAppointment(a.id)"> Cancel</button></td>
+                  <td> <button class="btn btn-pill btn-warning" (click)="updateAppointment(a)"> Edit</button></td>
 
          </tr>
          
        </tbody>
      </table>
       <h5 style="font-weight:780;">Appointment- Details</h5>
+    
      
      <!-- <div class="mat-elevation-z8">
        <table mat-table [dataSource]="dataSource">

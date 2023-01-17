@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { data, timeSlot } from '../dashboard';
 import { DashboardService } from '../dashboard.service';
 @Component({
-  selector: 'app-patient',
+  selector: 'app-add-patient',
   templateUrl: './patient.component.html',
   styleUrls: ['./patient.component.css']
 })
@@ -21,13 +21,12 @@ export class PatientComponent implements OnInit {
 
   // @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-
+patientData=''
   minDate=new Date()
 
   ngOnInit(): void {
   this.dashboardService.fetchDoctor()
     console.log(this.dashboardService.appointmentDetails);
-    
   }
 
   // addpatient=false;
@@ -81,6 +80,11 @@ cancelAppointment(a:any){
 console.log(a);
   this.http.delete('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+a+'.json').subscribe(a=>{console.log(a);
   })
+
+}
+updateAppointment(data:any){
+this.patientData=data
+console.log(this.patientData);
 
 }
 
