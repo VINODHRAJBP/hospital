@@ -31,7 +31,8 @@ export class AddPatientComponent implements OnInit {
       firstName: new FormControl('',[Validators.required]),
       lastName: new FormControl('',[Validators.required]),
       age: new FormControl('',[Validators.required]),
-      ph: new FormControl("", [Validators.required]),
+      ph: new FormControl("",[Validators.required, Validators.pattern("^[0-9]{10}$"),Validators.maxLength(10)
+    ]),
       gender: new FormControl(''),
       email: new FormControl('',[Validators.email,Validators.required]),
       address: new FormControl('',[Validators.required]),
@@ -90,6 +91,7 @@ export class AddPatientComponent implements OnInit {
        }
        return isTimeOver;
        }
+      
       
   }
   

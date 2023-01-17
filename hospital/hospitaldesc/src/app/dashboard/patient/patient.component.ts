@@ -79,7 +79,10 @@ console.log(a);
   })
 
 }
-
+register1=true
+register2(){
+this.register1=!this.register1
+}
 }
 
 

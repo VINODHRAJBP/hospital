@@ -1,18 +1,18 @@
 
 
-    <div class="add" >
-      <div> <button class="btn btn-light " routerLink="add-patient"  style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="150px" >
+    <div class="add" (click)="register2()">
+      <div> <button class="btn btn-light " routerLink="add-patient"  style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="100px" >
          <br > 
-        <p style="font-weight:900;">Add-Patient </p> </button></div>  
+        <p style="font-weight:900;" >Add-Patient </p> </button></div>  
     </div>
      
-      <div class="add">
+      <div class="add " *ngIf="register1">
      <h2>filter date</h2>
          <input type="date" #start min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)">
          <input type="date" #end min="{{minDate|date:'yyyy-MM-dd'}}"  (input)="dateFilter(start.value,end.value)">  
      </div>
-        <div class="add" *ngIf="showFilterTable">
-     <table class="table table-hover table-bordered" id="escalation" >
+        <div class="add1" *ngIf="showFilterTable" >
+     <table class="table table-hover table-bordered "id="escalation" *ngIf="register1">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -48,7 +48,7 @@
      
         <h5 style="font-weight:780;" >Appointment- Details</h5>
         
-     <table class="table table-hover add table-bordered" *ngIf="showAllDataTable" id="escalation"  >
+     <table class="table table-hover add table-bordered" *ngIf="showAllDataTable && register1" id="escalation"  >
        <thead >
          <tr>
            <th scope="col">#</th>
