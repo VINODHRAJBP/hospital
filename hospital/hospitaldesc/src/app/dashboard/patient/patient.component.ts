@@ -1,8 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, Validators, NG_VALIDATORS } from '@angular/forms';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { data, timeSlot } from '../dashboard';
 import { DashboardService } from '../dashboard.service';
@@ -37,6 +34,7 @@ patientData=''
  
 datefil:data[]=[]
 showAllDataTable=true
+
   showFilterTable=false
 dateFilter(startDate:any,endDate:any){
   this.datefil = []
