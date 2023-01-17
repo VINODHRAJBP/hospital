@@ -82,88 +82,9 @@
        </tbody>
      </table>
       <h5 style="font-weight:780;">Appointment- Details</h5>
-     
-     <!-- <div class="mat-elevation-z8">
-       <table mat-table [dataSource]="dataSource">
-     
-         <ng-container matColumnDef="firstName">
-           <th mat-header-cell *matHeaderCellDef> First Name </th>
-           <td mat-cell *matCellDef="let ele"> {{ele.firstName+" "+ele.lastName}} </td>
-         </ng-container>
-     
-         <ng-container matColumnDef="gender">
-           <th mat-header-cell *matHeaderCellDef> Gender </th>
-           <td mat-cell *matCellDef="let element"> {{element.age}} </td>
-         </ng-container>
-     
-         <ng-container matColumnDef="age">
-           <th mat-header-cell *matHeaderCellDef> Age </th>
-           <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
-         </ng-container>
-     
-         <ng-container matColumnDef="time">
-           <th mat-header-cell *matHeaderCellDef> Time </th>
-           <td mat-cell *matCellDef="let element"> {{element.ph}} </td>
-         </ng-container>
-     
-         <ng-container matColumnDef="doctorName">
-           <th mat-header-cell *matHeaderCellDef> Doctor </th>
-           <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-         </ng-container>
-     
-         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-       </table>
-     
-       <mat-paginator #paginator [pageSizeOptions]="[3, 5, 10, 20]"
-                      showFirstLastButtons>
-       </mat-paginator>
-     </div> -->
-
-     <!-- <script>
-   $(document).ready(function () {
-      $('#escalation').DataTable();
-    }); 
-</script> -->
-<!-- 
-<table id="example" class="table table-striped" style="width:100%">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Office</th>
-      <th>Age</th>
-      <th>Start date</th>
-      <th>Salary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Tiger Nixon</td>
-      <td>System Architect</td>
-      <td>Edinburgh</td>
-      <td>61</td>
-      <td>2011-04-25</td>
-      <td>$320,800</td>
-    </tr>
-  <tfoot>
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Office</th>
-      <th>Age</th>
-      <th>Start date</th>
-      <th>Salary</th>
-    </tr>
-  </tfoot>
-</table>
-
-<script>$(example).ready(function () {
-    $('#example').DataTable();
-  });</script> -->
-
-
-
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">
+      <script src="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.js"></script>
 <router-outlet></router-outlet>
 
 

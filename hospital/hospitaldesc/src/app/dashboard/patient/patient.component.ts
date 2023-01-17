@@ -61,10 +61,6 @@ this.timeSlotData()
 
 }
  
- 
-
- 
-
 
 timeSlotData(){
   for (let a of this.dashboardService.patientData){
@@ -82,9 +78,8 @@ console.log(a);
 
 }
 
-
-
 }
+
 
 
  
