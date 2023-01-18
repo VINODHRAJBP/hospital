@@ -29,7 +29,9 @@ patientData:any
 
   ngOnInit(): void {
   this.dashboardService.fetchDoctor()
-    // console.log(this.dashboardService.appointmentDetails);
+  this.dashboardService.fetchPatientData()
+  this.dashboardService.fetch()
+    console.log(this.dashboardService.appointmentDetails);
   }
 
  
@@ -37,8 +39,22 @@ datefil:data[]=[]
 showAllDataTable=true
 
   showFilterTable=false
-dateFilter(){
-
+dateFilter(startDate:any,endDate:any){
+  this.datefil = []
+for(let c of this.dashboardService.patientData){
+  if(c.date>startDate && c.date<endDate){
+    this.datefil.push(c)
+    console.log(this.datefil);   
+  }
+}
+    if (this.datefil.length==0) {
+      this.showAllDataTable=true
+      this.showFilterTable = false
+    }
+    else{
+      this.showFilterTable=true
+      this.showAllDataTable=false
+    }
 }
 
 add(){

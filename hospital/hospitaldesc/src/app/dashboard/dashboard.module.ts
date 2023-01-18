@@ -11,6 +11,7 @@ import { AddPatientComponent } from './patient/add-patient.component.ts/add-pati
 import {HttpClientModule} from '@angular/common/http'
 import { AppointmentsComponent } from './doctor/appointments/appointments.component';
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 // material ui
@@ -46,7 +47,8 @@ import { FilterByDatePipe } from './patient/filter-by-date.pipe'
     MatPaginatorModule,
     MatTableModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule
 
   ],
   exports: [DoctorComponent, PatientComponent]

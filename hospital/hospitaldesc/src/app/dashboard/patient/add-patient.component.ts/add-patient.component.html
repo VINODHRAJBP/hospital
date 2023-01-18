@@ -7,7 +7,7 @@
             <div class="col-9">
               <div class="card card-registration card-registration-2" style="border-radius: 15px;">
                 <div class="card-body p-0">
-                  <form [formGroup]="register" (ngSubmit)="onSub()">
+                  <form [formGroup]="register"  (ngSubmit)="onSub()">
                     <div class="row g-0">
                       <div class="col-lg-6">
                         <div class="p-3">
@@ -109,27 +109,28 @@
                         </div>
                       </div> -->
                           <div class="mb-2 pb-1">
-                            <select class=" form-control form-control-lg form-select" #doctor
+                            <select class=" form-control form-control-lg form-select" #doctor (click)="fillDoctorData(doctor.value)"
                               aria-label="Default select example" name="doctor" formControlName="specilist" >
-                              <option value="Specilist" class="lead" selected>Select</option>
-                              <option value="Specilist" class="lead" selected>Praveen</option>
+                              <option  class="lead" selected>Select</option>
+                              <option *ngFor="let a of dashboardServices.doctorData" value="{{a.name}}" class="lead" selected>{{a.name}}</option>
   
-                              <option value="Cardiologist" class="lead">Cardiologist</option>
+                              <!-- <option value="Cardiologist" class="lead">Cardiologist</option>
                               <option value="Orthopedics" class="lead">Orthopedics</option>
                               <option value="Obstetrics and Gynecology" class="lead">Obstetrics and Gynecology</option>
                               <option value="Dermatology" class="lead">Dermatology</option>
                               <option value="Dermatology" class="lead">Pediatrics</option>
                               <option value="Radiology" class="lead">Radiology</option>
-                              <option value="Ophthalmology" class="lead">Ophthalmology</option>
+                              <option value="Ophthalmology" class="lead">Ophthalmology</option> -->
                             </select>
                             <label class="form-label" for="form3Examplea3">DoctorName</label>
                           </div>
   
   
                           <div class="mb-2 pb-1">
-                            <select class=" form-control form-control-lg" name="specilist" formControlName="specilist" >
+                            <input type="text" formControlName="specilist">
+                            <!-- <select class=" form-control form-control-lg" name="specilist" formControlName="specilist" >
                               <option class="lead" *ngFor="let a of specilists">{{a}}</option>
-                            </select>
+                            </select> -->
   
                             <label class="form-label" for="form3Examplea3">Specilist</label>
   
@@ -175,7 +176,7 @@
                             <div class="form-outline form-white">
                               <input type="email" id="form3Examplea9" class="form-control form-control-lg"
                                 name="doctorEmail" formControlName="doctorEmail" />
-                              <label class="form-label" for="form3Examplea9">Your Email</label>
+                              <label class="form-label" for="form3Examplea9">Email</label>
                             </div>
                           </div>
   
@@ -206,4 +207,5 @@
       </section>
     </div>
   </div>
+
  
