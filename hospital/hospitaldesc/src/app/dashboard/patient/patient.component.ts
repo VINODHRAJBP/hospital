@@ -12,24 +12,24 @@ import { DashboardService } from '../dashboard.service';
 export class PatientComponent implements OnInit {
   constructor(private route:Router,private http:HttpClient,public dashboardService:DashboardService) { }
 
-  myForm:FormGroup
-  // displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
-  //   dataSource !: MatTableDataSource<data>;
-  // @ViewChild(MatPaginator) paginator!: MatPaginator;
-  | undefined
-
 
   // displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
   //   dataSource !: MatTableDataSource<data>;
+  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
+
+
+  // displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
+  //   dataSource !: MatTableDataSource<data>;
 
   // @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-patientData=''
+patientData:any
   minDate=new Date()
 
   ngOnInit(): void {
   this.dashboardService.fetchDoctor()
-    console.log(this.dashboardService.appointmentDetails);
+    // console.log(this.dashboardService.appointmentDetails);
   }
 
  
@@ -37,22 +37,8 @@ datefil:data[]=[]
 showAllDataTable=true
 
   showFilterTable=false
-dateFilter(startDate:any,endDate:any){
-  this.datefil = []
-for(let c of this.dashboardService.patientData){
-  if(c.date>startDate && c.date<endDate){
-    this.datefil.push(c)
-    console.log(this.datefil);   
-  }
-}
-    if (this.datefil.length==0) {
-      this.showAllDataTable=true
-      this.showFilterTable = false
-    }
-    else{
-      this.showFilterTable=true
-      this.showAllDataTable=false
-    }
+dateFilter(){
+
 }
 
 add(){

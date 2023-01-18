@@ -15,10 +15,20 @@ import { DashboardService } from '../../dashboard.service';
 export class AddPatientComponent implements OnInit {
 
     
-    constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService,private loc:Location) { }
+    constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService,private loc:Location) { 
+      this.form.controls.firstName.setValue('John');
+    }
     appointmentStartDate=new Date()
     slottime: timeSlot[] = []
   @Input() updatingPatientData=new FormControl()
+
+
+
+
+  // formControl updating
+  form=new FormGroup({
+    firstName: new FormControl('')
+  })
 
   // @ViewChild('register') form?:FormControl;
 
@@ -40,7 +50,7 @@ export class AddPatientComponent implements OnInit {
       doctorName: new FormControl('',[Validators.required]),
       specilist: new FormControl('',[Validators.required]),
       date: new FormControl(''),
-      time: new FormControl(''),
+      time: new FormControl(''), 
       doctorEmail: new FormControl('',[Validators.email]),
       status:new FormControl('appoiintmentBooked')
   

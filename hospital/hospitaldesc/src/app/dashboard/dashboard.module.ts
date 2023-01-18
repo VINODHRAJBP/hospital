@@ -18,7 +18,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
 import {matMenuAnimations, MatMenuModule} from '@angular/material/menu';
-import { UpdateDataComponent } from './patient/update-data/update-data.component'
+import { UpdateDataComponent } from './patient/update-data/update-data.component';
+import { FilterByDatePipe } from './patient/filter-by-date.pipe'
 
 
 
@@ -33,7 +34,8 @@ import { UpdateDataComponent } from './patient/update-data/update-data.component
     AppointmentsComponent,
     DoctorDetailsComponent,
     AddPatientComponent,
-    UpdateDataComponent
+    UpdateDataComponent,
+    FilterByDatePipe
 
   ],
   imports: [
