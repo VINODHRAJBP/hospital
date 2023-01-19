@@ -23,6 +23,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatIconModule } from '@angular/material/icon';
  
 
 
@@ -53,7 +54,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatIconModule
      
   ],
   providers: [],

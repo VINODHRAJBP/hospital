@@ -16,13 +16,19 @@ export class PatientComponent implements OnInit {
   constructor(private route: Router, private http: HttpClient, public dashboardService: DashboardService) { }
 
 
-  displayedColumns: string[] = ['name', 'gender', 'age','phno', 'doctorName','date', 'time'];
+  
+  
+
+
+  
+
+patientData:any
+  minDate=new Date()
+  displayedColumns: string[] = ['name', 'gender', 'age','phno', 'doctorName','date', 'time','status'];
   dataSource !: MatTableDataSource<data>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
-  patientData:any;
-  minDate = new Date()
 
   ngOnInit(): void {
     this.dashboardService.fetchDoctor()
@@ -76,6 +82,7 @@ export class PatientComponent implements OnInit {
     }
     console.log(this.dashboardService.appointmentDetails);
   }
+  
 
 
   cancelAppointment(a: any) {
