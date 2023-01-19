@@ -6,6 +6,19 @@ button {
   margin-bottom: 5px;
 }
 
-span {
-  color: red;
+  span{
+    color: red;
+  }
+  input.ng-touched{
+    border-left:5px solid red;
+}
+input.ng-valid{
+    border-left:5px solid green;
+}
+.err{
+ border-left:5px solid red;
+}
+#name{
+  font-weight: 900;
+  color: rgb(12, 141, 226);
 }
