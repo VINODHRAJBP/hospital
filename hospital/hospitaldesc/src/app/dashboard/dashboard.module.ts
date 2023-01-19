@@ -11,14 +11,22 @@ import { AddPatientComponent } from './patient/add-patient.component.ts/add-pati
 import {HttpClientModule} from '@angular/common/http'
 import { AppointmentsComponent } from './doctor/appointments/appointments.component';
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 // material ui
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
+<<<<<<< HEAD
 import { MatMenuModule} from '@angular/material/menu'
 import { NgxPaginationModule } from 'ngx-pagination';
+=======
+import {matMenuAnimations, MatMenuModule} from '@angular/material/menu';
+import { UpdateDataComponent } from './patient/update-data/update-data.component';
+import { FilterByDatePipe } from './patient/filter-by-date.pipe'
+
+>>>>>>> d5ec25fab09ef3a30952d0864eeb38491fdf5088
 
 
 
@@ -31,7 +39,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AddDoctorComponent,
     AppointmentsComponent,
     DoctorDetailsComponent,
-    AddPatientComponent
+    AddPatientComponent,
+    UpdateDataComponent,
+    FilterByDatePipe
 
   ],
   imports: [
@@ -43,7 +53,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatTableModule,
     MatIconModule,
     MatMenuModule,
+<<<<<<< HEAD
     NgxPaginationModule
+=======
+    FormsModule
+>>>>>>> d5ec25fab09ef3a30952d0864eeb38491fdf5088
 
   ],
   exports: [DoctorComponent, PatientComponent]

@@ -55,3 +55,9 @@ width: 300px;
   button{
     margin: 15px;
   }
+
+  .details{
+    position: fixed;
+    top: 50px;
+    left: 160px;
+  }
