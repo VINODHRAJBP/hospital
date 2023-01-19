@@ -1,4 +1,5 @@
 export interface data {
+status: any
     address:string
     age:number
     date:Date

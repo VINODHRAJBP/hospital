@@ -21,13 +21,7 @@ import{MatIconModule} from '@angular/material/icon';
 import { MatMenuModule} from '@angular/material/menu'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UpdateDataComponent } from './patient/update-data/update-data.component';
-<<<<<<< HEAD
 
-
-=======
-import { FilterByDatePipe } from './patient/filter-by-date.pipe'
- 
->>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
 
 
 @NgModule({
