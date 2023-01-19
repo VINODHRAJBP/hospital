@@ -78,4 +78,10 @@ export class AppointmentsComponent implements OnInit {
     this.doctorService.updateAppointment(currentAppointment);
   }
 
+  statusUpdate(data:any){
+    data.btn=true;
+
+this.doctorService.updateStatus(data)
+  }
+
 }

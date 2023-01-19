@@ -63,4 +63,12 @@ export class DoctorService {
         });
     }
 
+
+
+
+    updateStatus(data:any){
+        this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+data.id+'/'+data.status+'.json','cleared').subscribe(a=>{console.log(a);
+        })
+    }
+
 }

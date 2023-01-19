@@ -21,6 +21,11 @@ import{MatIconModule} from '@angular/material/icon';
 import { MatMenuModule} from '@angular/material/menu'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UpdateDataComponent } from './patient/update-data/update-data.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './patient/dialog/dialog.component';
+import {MatFormFieldModule,} from '@angular/material/form-field';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {  MatInputModule } from '@angular/material/input';
 
 
 
@@ -35,6 +40,7 @@ import { UpdateDataComponent } from './patient/update-data/update-data.component
     DoctorDetailsComponent,
     AddPatientComponent,
     UpdateDataComponent,
+    DialogComponent,
 
 
   ],
@@ -48,9 +54,14 @@ import { UpdateDataComponent } from './patient/update-data/update-data.component
     MatIconModule,
     MatMenuModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatInputModule
  
   ],
+  
   exports: [DoctorComponent, PatientComponent]
 })
 export class DashboardModule {

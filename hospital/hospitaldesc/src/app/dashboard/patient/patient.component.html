@@ -167,6 +167,29 @@
         <th mat-header-cell *matHeaderCellDef id="name"> Appointment Time </th>
         <td mat-cell *matCellDef="let element" id="name1"> {{element.time}} </td>
     </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+      <td mat-cell *matCellDef="let row">  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="updateAppointment(row)">
+          <mat-icon>edit</mat-icon>
+          <span>Edit</span>
+        </button>
+        <button mat-menu-item (click)="cancelAppointment(row)" >
+          <mat-icon>cancel</mat-icon>
+          <span>Cancel</span>
+        </button>
+      </mat-menu>
+       </td>
+    </ng-container>
+
+    
+  
+
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>

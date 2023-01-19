@@ -6,6 +6,9 @@ import { data, timeSlot } from '../dashboard';
 import { DashboardService } from '../dashboard.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import {MatDialog, MatDialogConfig, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+import { update } from 'firebase/database';
 
 @Component({
   selector: 'app-add-patient',
@@ -13,7 +16,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
-  constructor(private route: Router, private http: HttpClient, public dashboardService: DashboardService) { }
+  constructor(private route: Router, private http: HttpClient, public dashboardService: DashboardService,private dialog:MatDialog) { }
 
 
   
@@ -24,7 +27,7 @@ export class PatientComponent implements OnInit {
 
 patientData:any
   minDate=new Date()
-  displayedColumns: string[] = ['name', 'gender', 'age','phno', 'doctorName','date', 'time','status'];
+  displayedColumns: string[] = ['name', 'gender', 'age','phno', 'doctorName','date', 'time','status','action'];
   dataSource !: MatTableDataSource<data>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -85,16 +88,33 @@ patientData:any
   
 
 
-  cancelAppointment(a: any) {
-    console.log(a);
-    this.http.delete('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + a + '.json').subscribe(a => {
+  cancelAppointment(data: any) {
+    this.http.delete('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + data.id + '.json').subscribe(a => {
       console.log(a);
     })
 
   }
   updateAppointment(data: any) {
-    this.patientData = data
-    console.log(this.patientData);
+    // console.log(data);
+    if(data == null ){
+      return;
+    }
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width='300px';
+    dialogConfig.data=data;
+    
+    const dialogRef=this.dialog.open(DialogComponent,dialogConfig)
+
+    dialogRef.afterClosed().subscribe(data=>{
+      if(data){  
+
+    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + data.firstName+'.json',data).subscribe(a=>{console.log(a);
+    })
+
+      }
+  })
 
   }
   register1=true
