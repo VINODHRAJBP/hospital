@@ -9,18 +9,14 @@
     .doctor:hover{
 background-color: #7354f0;
 color: #F7F6FB;
-width: 300px;
-
+width: 320px;
     }
-    .patience:hover{
-        background-color: #7354f0;
+.patience:hover{
+  background-color: #7354f0;
 color: #F7F6FB;
-width: 300px;
+width: 320px;
     }
-
-
-
-    .add{
+ .add{
         margin-left:300px;
         margin-top: 30px;
   

@@ -1,6 +1,6 @@
 
 
-    <div class="add" (click)="register2()">
+    <div class="add">
       <div> <button class="btn btn-light " routerLink="add-patient"  style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="100px" >
          <br > 
         <p style="font-weight:900;" >Add-Patient </p> </button></div>  
@@ -11,8 +11,8 @@
          <input type="date" #start min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)">
          <input type="date" #end min="{{minDate|date:'yyyy-MM-dd'}}"  (input)="dateFilter(start.value,end.value)">  
      </div>
-        <div class="add1" *ngIf="showFilterTable" >
-     <table class="table table-hover table-bordered "id="escalation" *ngIf="register1">
+         <div class="add1" *ngIf="showFilterTable" >
+     <table class="table table-hover table-bordered "id="escalation">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -43,12 +43,16 @@
      </tr>
      </tbody>
      </table>
-        </div> 
+    </div>
+           <div class="jjj">
+<router-outlet></router-outlet>
+
+    </div>
 
      
         <h5 style="font-weight:780;" >Appointment- Details</h5>
         
-     <table class="table table-hover add table-bordered" *ngIf="showAllDataTable && register1" id="escalation"  >
+     <table class="table table-hover add table-bordered" *ngIf="showAllDataTable" id="escalation"  >
        <thead >
          <tr>
            <th scope="col">#</th>
@@ -85,7 +89,6 @@
       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
       <link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">
       <script src="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.js"></script>
-<router-outlet></router-outlet>
 
 
   

@@ -8,7 +8,7 @@
               <div class="card card-registration card-registration-2" style="border-radius: 15px;">
                 <div class="card-body p-0">
                   
-                  <form [formGroup]="register" (ngSubmit)="onSub()">
+                  <form [formGroup]="register" #i="ngForm"  (ngSubmit)="onSub()">
                     <div class="row g-0">
                       <div class="col-lg-6">
                         <div class="p-3">
@@ -17,7 +17,7 @@
   
   
                           <div class="mb-2 pb-1">
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" formControlName="title">
                               <option selected>Title</option>
                               <option value="Mr" class="lead">Mr</option>
                               <option value="Miss" class="lead">Miss</option>
@@ -104,12 +104,7 @@
                         <div class="p-3">
                           <h3 class="fw-normal mb-3">Doctor Details</h3>
   
-                          <!-- <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" name="doctorName" formControlName="doctorName" />
-                          <label class="form-label" for="form3Examplea2">Doctorname</label>
-                        </div>
-                      </div> -->
+                       
                           <div class="mb-2 pb-1">
                             <select class=" form-control form-control-lg form-select" #doctor
                               aria-label="Default select example" name="specilist" formControlName="specilist">
@@ -159,16 +154,16 @@
   
   
   
-                            <select class="form-control form-control-lg" formControlName="time" name="time">
+                            <!-- <select class="form-control form-control-lg" formControlName="time" name="time">
                               <option class="lead" *ngFor='let time of timeSlot'>
                                 <ng-container *ngIf="this.slottime.includes({date:'hghg',doctorName:'jjjjj'});else con">
                                   <span>
-                                {{time}}kl
+                                {{time}}
                                 </span>
                                 </ng-container>
-                                <ng-template #con>{{time}}kk</ng-template>
+                                <ng-template #con>{{time}}</ng-template>
                               </option>
-                            </select>
+                            </select> -->
                             <label class="form-label" for="form3Examplea3">Time slot</label>
                           </div>
   
@@ -181,17 +176,8 @@
                             </div>
                           </div>
   
-                          <!-- <div class="form-check d-flex justify-content-start mb-4 pb-3">
-                            <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c"
-                              name="title" />
-                            <label class="form-check-label text-white" for="form2Example3">
-                              I do accept the <a href="#!" class="text-white"><u>Terms and Conditions</u></a> of your
-                              site.
-                            </label>
-                          </div> -->
-  
-                          <button type="button" class="btn btn-light btn-outline-success btn-warning"
-                            data-mdb-ripple-color="dark" (click)="onSub()" routerLink="/dashboard">Submit</button>
+                           <button type="submit" class="btn btn-light btn-outline-success btn-warning "
+                          data-mdb-ripple-color="dark" [disabled]="i.form.touched && i.form.invalid">Submit</button>
   
                           <button type="button" class="btn btn-light btn-outline-danger btn-warning"
                             style="margin-left: 8px;" data-mdb-ripple-color="dark" (click)="onsub1()">cancel</button>
