@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .mat-table {
   font-family: initial;
 } 
@@ -17,11 +18,14 @@ table {
 button{
   margin: 15px;
 }
+=======
+>>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
 
 .filter {
-  margin-left: 270px;
+  margin-left: 250px;
   margin-top: 50px;
 }
+<<<<<<< HEAD
 
 .mat-header-cell{
   font-size: 14px;
@@ -36,4 +40,35 @@ button{
   font-size: 14px;
   margin-top: 2px;
 
+=======
+ 
+
+table {
+   
+   width: 78%;
+  margin-left: 20%;
+  margin-top: 80px;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.flex{
+  flex: 1 1 auto;
+}
+
+.mat-header-cell{
+  font-size: 14px;
+  font-weight: bold;
+  background-color:cornflowerblue;
+  text-align: center;
+}
+
+.mat-cell{
+  text-align: center;
+>>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
 }

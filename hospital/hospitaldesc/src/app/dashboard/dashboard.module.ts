@@ -11,16 +11,23 @@ import { AddPatientComponent } from './patient/add-patient.component.ts/add-pati
 import {HttpClientModule} from '@angular/common/http'
 import { AppointmentsComponent } from './doctor/appointments/appointments.component';
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 // material ui
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
-import {matMenuAnimations, MatMenuModule} from '@angular/material/menu';
-import { UpdateDataComponent } from './patient/update-data/update-data.component'
+import { MatMenuModule} from '@angular/material/menu'
+import { NgxPaginationModule } from 'ngx-pagination';
+import { UpdateDataComponent } from './patient/update-data/update-data.component';
+<<<<<<< HEAD
 
 
+=======
+import { FilterByDatePipe } from './patient/filter-by-date.pipe'
+ 
+>>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
 
 
 @NgModule({
@@ -33,7 +40,8 @@ import { UpdateDataComponent } from './patient/update-data/update-data.component
     AppointmentsComponent,
     DoctorDetailsComponent,
     AddPatientComponent,
-    UpdateDataComponent
+    UpdateDataComponent,
+
 
   ],
   imports: [
@@ -44,8 +52,10 @@ import { UpdateDataComponent } from './patient/update-data/update-data.component
     MatPaginatorModule,
     MatTableModule,
     MatIconModule,
-    MatMenuModule
-
+    MatMenuModule,
+    NgxPaginationModule,
+    FormsModule
+ 
   ],
   exports: [DoctorComponent, PatientComponent]
 })

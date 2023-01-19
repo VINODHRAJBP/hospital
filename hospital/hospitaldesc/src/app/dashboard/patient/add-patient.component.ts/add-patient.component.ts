@@ -30,15 +30,25 @@ export class AddPatientComponent implements OnInit {
   // doctorEmail: new FormControl('',[Validators.email]),
   // status:new FormControl('appoiintmentBooked')
     
+<<<<<<< HEAD
     constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService,
       private loc:Location, private fb : FormBuilder,
  )
      {  }
+=======
+    constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService,private loc:Location) { 
+     
+    }
+>>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
     appointmentStartDate=new Date()
     slottime: timeSlot[] = []
  
 
-  // @ViewChild('register') form?:FormControl;
+
+
+
+ 
+
 
  
     ngOnInit(): void {
@@ -48,9 +58,13 @@ export class AddPatientComponent implements OnInit {
         
       // })
   this.slottime=this.dashboardServices.appointmentDetails
+<<<<<<< HEAD
   console.log(this.slottime);
       console.log(this.slottime.includes({ date: "2023-01-25", doctorName: "Praveen" }));  
       
+=======
+  this.dashboardServices.fetchDoctor()
+>>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
     }
     
     register = new FormGroup({
@@ -64,7 +78,7 @@ export class AddPatientComponent implements OnInit {
       doctorName: new FormControl('',[Validators.required]),
       specilist: new FormControl('',[Validators.required]),
       date: new FormControl(''),
-      time: new FormControl(''),
+      time: new FormControl(''), 
       doctorEmail: new FormControl('',[Validators.email]),
       status:new FormControl('appoiintmentBooked')
   
@@ -84,20 +98,32 @@ export class AddPatientComponent implements OnInit {
     onSub() {
       console.log(this.register.value.date);
       let a=this.register.value
+<<<<<<< HEAD
       console.log(a);
     
       // let patientData={name:a.firstName!+a.lastName,age:a.age,gender:a.gender,ph:a.ph,email:a.email,address:a.address}
       // let doctorData={name:a.doctorName,speciliat:a.specilist,appointmentDate:a.date,appointmentTime:a.time,email:a.doctorEmail}
     
+=======
+>>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
       let folder=a.firstName!+" "+a.lastName
       
-      // this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'.json',a).subscribe(a=>{console.log(a);
-      // })
+      this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'.json',a).subscribe(a=>{console.log(a);
+      })
     }
+
+
+
+   
     TIME=["09:00 AM","10:00 AM","11:00 AM","12:00 PM","01:00 PM","02:00 PM","03:00 PM","04:00 PM","05:00 PM","06:00 PM","07:00 PM","08:00 PM"];
   
   
-    isDisableTime(selectedTime: string): boolean {
+    isDisableTime(selectedTime: string,date:any): boolean {
+      let d=new Date() 
+      let day=d.getDate()
+      console.log(date.substr(8,10)==day);
+      
+      
       let isTimeOver = false;
        let currentHour = new Date().getHours();
       let currentMin = new Date().getMinutes();
@@ -107,9 +133,9 @@ export class AddPatientComponent implements OnInit {
        let selectedMin = +selectedTime.substr(3, 2);
        let selectedAM_PM = selectedTime.substr(6, 2);
        if(currentAmPm === selectedAM_PM) {
-       if (selectedHour < currentHour) {
+       if (selectedHour < currentHour && date.substr(8,10)==day) {
        isTimeOver = true;
-       } else if (selectedHour === currentHour) {
+       } else if (selectedHour === currentHour && date.substr(8,10)==day) {
        if (selectedMin < currentMin) {
        isTimeOver = true;
        }
@@ -119,6 +145,13 @@ export class AddPatientComponent implements OnInit {
        }
        return isTimeOver;
        }
+
+      
+        
+       
+
+
+       
       
        on(){
       console.log(this.updatingPatientData.firstName);

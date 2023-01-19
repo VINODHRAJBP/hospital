@@ -61,3 +61,37 @@ width: 300px;
     top: 50px;
     left: 160px;
   }
+
+   
+
+  
+ 
+
+table {
+   
+   width: 78%;
+  margin-left: 20%;
+  margin-top: 1px;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.flex{
+  flex: 1 1 auto;
+}
+
+.mat-header-cell{
+  font-size: 14px;
+  font-weight: bold;
+  background-color:cornflowerblue;
+  text-align: center;
+}
+
+.mat-cell{
+  text-align: center;
+}

@@ -1,5 +1,24 @@
+<div class="add">
+  <div> <button class="btn btn-light " routerLink="add-patient" style="border-radius: 3px;"><img
+        src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt=""
+        width="150px">
+      <br>
+      <p style="font-weight:900;">Add-Patient </p>
+    </button></div>
+</div>
 
+<div class="add">
+  <h2>filter date</h2>
+  <input type="date" #start min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)">
+  <input type="date" #end min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)">
+</div>
+<div class="add">
+  <!-- <app-update-data></app-update-data> -->
+  <div class="details">
+    <!-- <app-patient [updatingPatientData]="patientData"></app-patient> -->
+    <router-outlet></router-outlet>
 
+<<<<<<< HEAD
     <div class="add" >
       <div> <button class="btn btn-light " routerLink="add-patient"   style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="150px" >
          <br > 
@@ -7,9 +26,9 @@
     </div>
      
       <div class="add">
-     <h2>filter date</h2>
-         <input type="date" #start min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)">
-         <input type="date" #end min="{{minDate|date:'yyyy-MM-dd'}}"  (input)="dateFilter(start.value,end.value)">  
+     <h2>Filter date</h2>
+         <input type="date" class="p-2 m-2" #start min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)">
+         <input type="date" class="p-2 m-2" #end min="{{minDate|date:'yyyy-MM-dd'}}"  (input)="dateFilter(start.value,end.value)">  
      </div>
      <div class="add">
      <!-- <app-update-data></app-update-data> -->
@@ -47,12 +66,45 @@
            <td class="font-weight-light">{{a.date}}</td>
            <td class="font-weight-light">{{a.time}}</td>
           <td> <button class="btn btn-pill btn-warning" (click)="cancelAppointment(a.id)"> Cancel</button></td>
+=======
+  </div>
+</div>
+<div class="add" *ngIf="showFilterTable">
+  <table class="table table-hover table-bordered" id="escalation">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Phno</th>
+        <th scope="col">Mail</th>
+        <th scope="col">Consultant Doctor</th>
+        <th scope="col">Appointment Date</th>
+        <th scope="col">Appointment Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of datefil;index as i">
+        <th scope="row" class="font-weight-light">{{i+1}}</th>
+        <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
+        <td class=" font-weight-light">{{a.age}}</td>
+        <td class=" font-weight-light">{{a.gender}}</td>
+        <td class="font-weight-light">{{a.ph}}</td>
+        <td class="font-weight-light">{{a.email}}</td>
+        <td class="font-weight-light">{{a.doctorName}}</td>
+        <td class="font-weight-light">{{a.date}}</td>
+        <td class="font-weight-light">{{a.time}}</td>
+        <td> <button class="btn btn-pill btn-warning" (click)="cancelAppointment(a.id)"> Cancel</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+>>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
 
-     </tr>
-     </tbody>
-     </table>
-        </div> 
+<h5 style="font-weight:780;">Appointment- Details</h5>
 
+<<<<<<< HEAD
      
         <h5 style="font-weight:780;" >Appointment- Details</h5>
         
@@ -72,7 +124,7 @@
                  </tr>
                </thead>
                <tbody>
-                 <tr *ngFor="let a of dashboardService.patientData;index as i">
+                 <tr *ngFor="let a of dashboardService.patientDataWithPromise;index as i">
                    <th scope="row" class="font-weight-light">{{i+1}}</th>
                    <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
                    <td class=" font-weight-light">{{a.age}}</td>
@@ -82,9 +134,8 @@
                    <td class="font-weight-light">{{a.doctorName}}</td>
                    <td class="font-weight-light">{{a.date}}</td>
                   <td class="font-weight-light">{{a.time}}</td>
-                  <!-- <td class="font-weight-light">{{a.id}}</td> -->
+                  <td class="font-weight-light">{{a.status}}</td>
                   <td> <button class="btn btn-pill btn-warning" (click)="cancelAppointment(a.id)"> Cancel</button></td>
-                  <!-- <td> <button class="btn btn-pill btn-warning" (click)="updateAppointment(a)"> Edit</button></td> -->
 
          </tr>
          
@@ -140,48 +191,92 @@
 </script> -->
 
 <!-- <table id="example1" class="table table-striped" style="width:100%">
+=======
+<!-- <table class="table table-hover add table-bordered" *ngIf="showAllDataTable" id="escalation">
+>>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Office</th>
-      <th>Age</th>
-      <th>Start date</th>
-      <th>Salary</th>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Phno</th>
+      <th scope="col">Mail</th>
+      <th scope="col">Consultant Doctor</th>
+      <th scope="col">Appointment Date</th>
+      <th scope="col">Appointment Time</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Tiger Nixon</td>
-      <td>System Architect</td>
-      <td>Edinburgh</td>
-      <td>61</td>
-      <td>2011-04-25</td>
-      <td>$320,800</td>
+    <tr *ngFor="let a of dashboardService.patientDataWithPromise;index as i">
+      <th scope="row" class="font-weight-light">{{i+1}}</th>
+      <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
+      <td class=" font-weight-light">{{a.age}}</td>
+      <td class=" font-weight-light">{{a.gender}}</td>
+      <td class="font-weight-light">{{a.ph}}</td>
+      <td class="font-weight-light">{{a.email}}</td>
+      <td class="font-weight-light">{{a.doctorName}}</td>
+      <td class="font-weight-light">{{a.date}}</td>
+      <td class="font-weight-light">{{a.time}}</td>
+      <!-- <td class="font-weight-light">{{a.id}}</td> -->
+      <!-- <td> <button class="btn btn-pill btn-warning" (click)="cancelAppointment(a.id)"> Cancel</button></td>
     </tr>
-  <tfoot>
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Office</th>
-      <th>Age</th>
-      <th>Start date</th>
-      <th>Salary</th>
-    </tr>
-  </tfoot>
-</table>
+  </tbody>
+</table> -->
 
+<<<<<<< HEAD
 <script>$(document).ready(function () {
     $('#example1').DataTable();
   });</script>
  -->
+=======
+<div class="mat-elevation" *ngIf="showAllDataTable">
+  <table mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+      </ng-container>
 
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Age </th>
+        <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+>>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
 
+      <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef> Gender </th>
+          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+      </ng-container>
 
+      <ng-container matColumnDef="phno">
+        <th mat-header-cell *matHeaderCellDef>Phone No.</th>
+        <td mat-cell *matCellDef="let element"> {{element.ph}} </td>
+    </ng-container>
 
+      <ng-container matColumnDef="doctorName">
+          <th mat-header-cell *matHeaderCellDef> Consultant Doctor </th>
+          <td mat-cell *matCellDef="let element"> {{element.doctorName}} </td>
+      </ng-container>
+
+<<<<<<< HEAD
 
 
 
   
 
+=======
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Appointment Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+>>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
 
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef> Appointment Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+    </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[3, 1 ,5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
