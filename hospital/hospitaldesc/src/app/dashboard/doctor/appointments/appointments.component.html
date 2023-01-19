@@ -31,37 +31,15 @@
             <td mat-cell *matCellDef="let element"> {{element.time}} </td>
         </ng-container>
 
-        <!-- <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-            <td mat-cell *matCellDef="let element">
-                <div *ngIf="!element.btn">
-                    <button type="button" class="btn btn-secondary"
-                        (click)="onCanceleAppointment(element)">Cancel</button>
-                </div>
-                <div *ngIf="element.btn">
-                    <button type="button" class="btn btn-danger" disabled>Canceled</button>
-                </div>
-            </td>
-        </ng-container> -->
 
 
-        <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-            <td mat-cell *matCellDef="let row">  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>
-                <mat-icon>visibility</mat-icon>
-                <span>View</span>
-              </button>
-              <button mat-menu-item >
-                <mat-icon>edit</mat-icon>
-                <span>Edit</span>
-              </button>
-            </mat-menu>
-             </td>
-          </ng-container>
+
+
+     
+
+        
+       
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 

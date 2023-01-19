@@ -67,6 +67,9 @@ export class AddPatientComponent implements OnInit {
     // a=this.dashboardServices.appointmentDetails
   
     // timeSlot = ['Select','10 AM','a', '11 AM', '12 PM', '2 PM', '3 PM', '4 PM', '5 PM',]
+
+
+
     specilists = ['Select','Praveen','Cardiologist', 'Orthopedics', 'Obstetrics and Gynecology', 'Dermatology', 'Pediatrics', 'Radiology','Ophthalmology']
   
     get data() {
@@ -79,9 +82,8 @@ export class AddPatientComponent implements OnInit {
     onSub() {
       console.log(this.register.value.date);
       let a=this.register.value
-      let folder=a.firstName!+" "+a.lastName
       
-      this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'.json',a).subscribe(a=>{console.log(a);
+      this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+a.firstName+'.json',a).subscribe(a=>{console.log(a);
       })
     }
 
@@ -94,8 +96,6 @@ export class AddPatientComponent implements OnInit {
     isDisableTime(selectedTime: string,date:any): boolean {
       let d=new Date() 
       let day=d.getDate()
-      console.log(date.substr(8,10)==day);
-      
       
       let isTimeOver = false;
        let currentHour = new Date().getHours();

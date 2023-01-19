@@ -20,7 +20,7 @@ export class AppointmentsComponent implements OnInit {
   allAppointments: any[] = []
   allDoctors: Doctor[] = []
 
-  displayedColumns: string[] = ['doctorName', 'department','firstName', 'date','time', 'action'];
+  displayedColumns: string[] = ['doctorName', 'department','firstName', 'date','time', 'action','actions'];
   dataSource !: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -60,6 +60,12 @@ export class AppointmentsComponent implements OnInit {
     appointment.btn=true;
     this.doctorService.deleteAppointment(appointment);
     alert(appointment.firstName+" appointment cancelled")
+  }
+
+  statusUpdate(data:any){
+    data.btn=true;
+
+this.doctorService.updateStatus(data)
   }
 
 }
