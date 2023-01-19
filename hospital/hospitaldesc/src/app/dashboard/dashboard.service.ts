@@ -1,25 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, throwError } from 'rxjs';
-import { data, timeSlot} from './dashboard';
+import { data, timeSlot } from './dashboard';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  appointmentDetails:timeSlot[]=[]
-  patientData:any = []
-  doctorData:any=[]
+  appointmentDetails: timeSlot[] = []
+  patientData: any = []
+  doctorData: any = []
+
   fetchPatientData() {
     return this.http.get<{ [key: string]: data }>('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json')
       .pipe(map((res) => {
         const data = [];
         for (const key in res) {
           if (res.hasOwnProperty(key)) {
-            data.push({ ...res[key],id:key });
+            data.push({ ...res[key], id: key });
           }
         }
         return data;
@@ -41,7 +42,7 @@ export class DashboardService {
         const doctors = [];
         for (const key in res) {
           if (res.hasOwnProperty(key)) {
-            doctors.push({ ...res[key],id:key });
+            doctors.push({ ...res[key], id: key });
           }
         }
         return doctors;
@@ -51,28 +52,32 @@ export class DashboardService {
       })).subscribe(a => {
         this.doctorData = a
         //  console.log(a); 
-      },(err)=>{console.log(err)}
+      }, (err) => { console.log(err) }
       )
   }
 
 
 
-  promise =new Promise(()=>{})
-  patientDataWithPromise:any=[]
+  promise = new Promise(() => { })
+  patientDataWithPromise: any = []
 
-fetch(){
-  return this.promise = fetch('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json').then((res) => {
-    return res.json();
-}).then((data) => {
-    // const books = [];
-    for (const key in data) {
+  fetch() {
+    return this.promise = fetch('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json').then((res) => {
+      return res.json();
+    }).then((data) => {
+      for (const key in data) {
         this.patientDataWithPromise.push({ ...data[key] });
+<<<<<<< HEAD
     }
     
     return this.patientDataWithPromise;
   })
+=======
+      }
+      console.log(this.patientDataWithPromise);
+>>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
 
-  
-  
-}
+      return this.patientDataWithPromise;
+    })
+  }
 }

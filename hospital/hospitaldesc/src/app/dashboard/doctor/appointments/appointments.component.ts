@@ -3,6 +3,8 @@ import { Doctor } from '../doctor';
 import { DoctorService } from '../doctor.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatIcon } from '@angular/material/icon';
+
 
 
 @Component({
@@ -18,7 +20,7 @@ export class AppointmentsComponent implements OnInit {
   allAppointments: any[] = []
   allDoctors: Doctor[] = []
 
-  displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName', 'time', 'action'];
+  displayedColumns: string[] = ['doctorName', 'department','firstName', 'date','time', 'action'];
   dataSource !: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
