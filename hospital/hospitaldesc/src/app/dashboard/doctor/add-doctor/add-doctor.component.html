@@ -33,27 +33,24 @@
                             value="Female">
                         <label class="form-check-label" for="female">Female</label>
                     </div>
-                    
+
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="gender" formControlName="gender"
                             value="Others">
                         <label class="form-check-label" for="others">Others</label>
                     </div>
-                    <!-- <span id="gender" class="form-text" *ngIf="gender && gender.invalid">Gender Not Selected</span> -->
                 </div>
                 <div class="mb-3">
                     <label for="department" class="form-label">Department</label>
                     <select class="form-select" formControlName="department" name="department">
                         <option *ngFor="let department of departments" [value]="department">{{department}}</option>
                     </select>
-                    <!-- <span id="department" class="form-text" *ngIf="department && department.invalid">Department Not
-                        Selected.</span> -->
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary" [disabled]="doctorRegister.invalid">Save</button>
                 </div>
             </form>
-                <button class="btn btn-light" (click)="goBack()">Cancel</button>
+            <button class="btn btn-light" (click)="goBack()">Cancel</button>
         </div>
     </div>
 </div>

@@ -21,40 +21,45 @@ export class DoctorService {
     fetchDoctor() {
         return this.http.get<{ [key: string]: Doctor }>('https://hospital-desk-default-rtdb.firebaseio.com/doctors.json')
             .pipe(map((res) => {
-                const doctors = [];
+                const doctors: any[] = [];
                 for (const key in res) {
                     if (res.hasOwnProperty(key)) {
-                        doctors.push({ ...res[key]});
+                        doctors.push({ ...res[key] });
                     }
                 }
                 return doctors;
-                
+
             }), catchError((err) => {
                 return throwError(err);
             }))
     }
 
     fetchApointments() {
-        return this.http.get<{ [key: string]:any }>('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json')
+        return this.http.get<{ [key: string]: any }>('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json')
             .pipe(map((res) => {
-                const  appointments = [];
+                const appointments = [];
                 for (const key in res) {
                     if (res.hasOwnProperty(key)) {
-                        appointments.push({ ...res[key], btn:false});
+                        appointments.push({ ...res[key], btn: false });
                     }
                 }
                 return appointments;
-                
+
             }), catchError((err) => {
                 return throwError(err);
             }))
     }
 
 
-    deleteAppointment(appointment:any) {
-        let folder=appointment.firstName!+" "+appointment.lastName
-        this.http.delete('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + folder + '.json').subscribe((res)=>{
-            // console.log(res);
+    deleteAppointment(appointment: any) {
+        let folder = appointment.firstName! + " " + appointment.lastName
+        this.http.delete('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + folder + '.json').subscribe((res) => {
+        });
+    }
+
+    updateAppointment(appointment: any) {
+        let folder = appointment.firstName! + " " + appointment.lastName
+        this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + folder + '.json', appointment).subscribe((res) => {
         });
     }
 

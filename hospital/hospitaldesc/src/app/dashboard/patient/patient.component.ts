@@ -85,6 +85,7 @@ patientData:any
     }
     console.log(this.dashboardService.appointmentDetails);
   }
+  
 
 
   cancelAppointment(data: any) {
