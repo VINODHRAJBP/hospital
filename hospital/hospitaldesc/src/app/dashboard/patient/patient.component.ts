@@ -117,16 +117,10 @@ patientData:any
   })
 
   }
-<<<<<<< HEAD
- 
-
-
-=======
   register1=true
   register2(){
   this.register1=!this.register1
   }
->>>>>>> 1ac74bf0fdacf0aeef7bd24e3f642e82a27ea44e
 }
 
 
