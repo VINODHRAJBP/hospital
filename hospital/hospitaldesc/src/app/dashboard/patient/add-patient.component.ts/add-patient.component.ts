@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit,ViewChild} from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Component, Inject, Input, OnInit,ViewChild} from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { data, timeSlot } from '../../dashboard';
 import { DashboardService } from '../../dashboard.service';
@@ -14,14 +14,40 @@ import { DashboardService } from '../../dashboard.service';
 })
 export class AddPatientComponent implements OnInit {
 
+  
+  @Input() updatingPatientData:any =[]
+  // address: new FormControl('',[Validators.required]),
+  // doctorName: new FormControl('',[Validators.required]),
+  // specilist: new FormControl('',[Validators.required]),
+  // date: new FormControl(''),
+  // time: new FormControl(''),
+  // doctorEmail: new FormControl('',[Validators.email]),
+  // status:new FormControl('appoiintmentBooked')
     
     constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService,private loc:Location) { 
      
     }
     appointmentStartDate=new Date()
     slottime: timeSlot[] = []
+<<<<<<< HEAD
   @Input() updatingPatientData=new FormControl() 
+=======
+ 
+
+
+
+
+ 
+
+
+ 
+>>>>>>> 88625a155c56fae6f231c4e0d8d3ecdbd9c96b9c
     ngOnInit(): void {
+      
+      // this.form = this.fb.group({
+       
+        
+      // })
   this.slottime=this.dashboardServices.appointmentDetails
   this.dashboardServices.fetchDoctor()
     }
@@ -69,7 +95,12 @@ export class AddPatientComponent implements OnInit {
     TIME=["09:00 AM","10:00 AM","11:00 AM","12:00 PM","01:00 PM","02:00 PM","03:00 PM","04:00 PM","05:00 PM","06:00 PM","07:00 PM","08:00 PM"];
   
   
-    isDisableTime(selectedTime: string): boolean {
+    isDisableTime(selectedTime: string,date:any): boolean {
+      let d=new Date() 
+      let day=d.getDate()
+      console.log(date.substr(8,10)==day);
+      
+      
       let isTimeOver = false;
        let currentHour = new Date().getHours();
       let currentMin = new Date().getMinutes();
@@ -79,9 +110,9 @@ export class AddPatientComponent implements OnInit {
        let selectedMin = +selectedTime.substr(3, 2);
        let selectedAM_PM = selectedTime.substr(6, 2);
        if(currentAmPm === selectedAM_PM) {
-       if (selectedHour < currentHour) {
+       if (selectedHour < currentHour && date.substr(8,10)==day) {
        isTimeOver = true;
-       } else if (selectedHour === currentHour) {
+       } else if (selectedHour === currentHour && date.substr(8,10)==day) {
        if (selectedMin < currentMin) {
        isTimeOver = true;
        }
@@ -92,6 +123,7 @@ export class AddPatientComponent implements OnInit {
        return isTimeOver;
        }
 
+<<<<<<< HEAD
        doctorName=''
        specilist=''
        email=''
@@ -107,5 +139,8 @@ export class AddPatientComponent implements OnInit {
         
        }
       
+=======
+   
+>>>>>>> 88625a155c56fae6f231c4e0d8d3ecdbd9c96b9c
   }
   

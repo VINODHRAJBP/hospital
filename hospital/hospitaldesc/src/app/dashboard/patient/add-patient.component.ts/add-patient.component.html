@@ -109,7 +109,7 @@
                       </div> -->
                         <div class="mb-2 pb-1">
                           <select class=" form-control form-control-lg form-select" #doctor
-                            (click)="fillDoctorData(doctor.value)" aria-label="Default select example" name="doctor"
+                           aria-label="Default select example" name="doctor"
                             formControlName="doctorName">
                             <option class="lead" selected>Select</option>
                             <option *ngFor="let a of dashboardServices.doctorData" value="{{a.name}}" class="lead"
@@ -142,7 +142,7 @@
                         <div class="mb-2 pb-1">
 
                           <select class="form-control form-control-lg" formControlName="time" name="time">
-                            <option *ngFor="let time of TIME" [value]="time" [disabled]="isDisableTime(time)">{{time}}
+                            <option *ngFor="let time of TIME" [value]="time" [disabled]="isDisableTime(time,date)">{{time}}
                             </option>
                             <!-- <option class="lead" *ngFor='let time of timeSlot'>
                                 {{time}}

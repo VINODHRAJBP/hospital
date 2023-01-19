@@ -21,8 +21,7 @@ import{MatIconModule} from '@angular/material/icon';
 import { MatMenuModule} from '@angular/material/menu'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UpdateDataComponent } from './patient/update-data/update-data.component';
-import { FilterByDatePipe } from './patient/filter-by-date.pipe'
- 
+
 
 
 @NgModule({
@@ -36,7 +35,7 @@ import { FilterByDatePipe } from './patient/filter-by-date.pipe'
     DoctorDetailsComponent,
     AddPatientComponent,
     UpdateDataComponent,
-    FilterByDatePipe
+
 
   ],
   imports: [
