@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit,ViewChild} from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Component, Inject, Input, OnInit,ViewChild} from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { data, timeSlot } from '../../dashboard';
 import { DashboardService } from '../../dashboard.service';
@@ -14,19 +14,43 @@ import { DashboardService } from '../../dashboard.service';
 })
 export class AddPatientComponent implements OnInit {
 
+  firstName!: any;
+  lastName!: any;
+  age!: any;
+  ph!: any;
+  gender!: any;
+  email!: any;
+  form!:FormGroup;
+  @Input() updatingPatientData:any =[]
+  // address: new FormControl('',[Validators.required]),
+  // doctorName: new FormControl('',[Validators.required]),
+  // specilist: new FormControl('',[Validators.required]),
+  // date: new FormControl(''),
+  // time: new FormControl(''),
+  // doctorEmail: new FormControl('',[Validators.email]),
+  // status:new FormControl('appoiintmentBooked')
     
-    constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService,private loc:Location) { }
+    constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService,
+      private loc:Location, private fb : FormBuilder,
+ )
+     {  }
     appointmentStartDate=new Date()
     slottime: timeSlot[] = []
-  @Input() updatingPatientData=new FormControl()
+ 
 
   // @ViewChild('register') form?:FormControl;
 
  
     ngOnInit(): void {
+      
+      // this.form = this.fb.group({
+       
+        
+      // })
   this.slottime=this.dashboardServices.appointmentDetails
   console.log(this.slottime);
       console.log(this.slottime.includes({ date: "2023-01-25", doctorName: "Praveen" }));  
+      
     }
     
     register = new FormGroup({
@@ -61,7 +85,7 @@ export class AddPatientComponent implements OnInit {
       console.log(this.register.value.date);
       let a=this.register.value
       console.log(a);
-      
+    
       // let patientData={name:a.firstName!+a.lastName,age:a.age,gender:a.gender,ph:a.ph,email:a.email,address:a.address}
       // let doctorData={name:a.doctorName,speciliat:a.specilist,appointmentDate:a.date,appointmentTime:a.time,email:a.doctorEmail}
     
@@ -96,5 +120,10 @@ export class AddPatientComponent implements OnInit {
        return isTimeOver;
        }
       
+       on(){
+      console.log(this.updatingPatientData.firstName);
+      this.firstName = this.updatingPatientData.firstName;
+
+       }
   }
   

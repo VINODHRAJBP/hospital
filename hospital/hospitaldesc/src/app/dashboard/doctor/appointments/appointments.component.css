@@ -1,21 +1,39 @@
-
 .mat-table {
   font-family: initial;
 } 
+
+table {
+  width: 78%;
+  margin-left: 20%;
+  border: 1px solid black;
+}
+
+
+/* 
+.flex{
+  flex: 1 1 auto;
+} */
+
+button{
+  margin: 15px;
+}
 
 .filter {
   margin-left: 270px;
   margin-top: 50px;
 }
 
-.table {
-   border: 1px solid black;
-  width: 1000px;
-  margin-left: 270px;
-  margin-top: 80px;
+.mat-header-cell{
+  font-size: 14px;
+  color: black;
+ text-align: center;
+ font-weight: bold;
+
 }
 
-table {
- width:100%;
- 
+.mat-cell{
+  text-align: center;
+  font-size: 14px;
+  margin-top: 2px;
+
 }

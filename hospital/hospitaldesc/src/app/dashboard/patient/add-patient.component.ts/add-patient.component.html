@@ -7,13 +7,12 @@
             <div class="col-9">
               <div class="card card-registration card-registration-2" style="border-radius: 15px;">
                 <div class="card-body p-0">
-                  <form [formGroup]="register" (ngSubmit)="onSub()">
+                  <mat-dialog-content [formGroup]="register" (ngSubmit)="onSub()">
                     <div class="row g-0">
                       <div class="col-lg-6">
                         <div class="p-3">
                           <h3 class="fw-normal mb-3" style="color: #4835d4;">Patient Infomation</h3>
   
-   
                           <div class="mb-2 pb-1">
                             <select class="form-select" aria-label="Default select example">
                               <option selected>Title</option>
@@ -54,7 +53,7 @@
                           </div>
   
   
-  
+  <!-- <button (click)="on()">sub</button> -->
                           <div class="mb-2 pb-1">
                             <select class="form-select" aria-label="Default select example" name="gender"
                               formControlName="gender" >
@@ -197,7 +196,7 @@
                         </div>
                       </div>
                     </div>
-                  </form>
+                  </mat-dialog-content>
                 </div>
               </div>
             </div>
