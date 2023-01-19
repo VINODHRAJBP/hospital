@@ -71,6 +71,9 @@ export class DashboardService {
       console.log(this.patientDataWithPromise);
 
       return this.patientDataWithPromise;
+    }).catch(err=>{
+      console.log(err);
+      
     })
   }
 }

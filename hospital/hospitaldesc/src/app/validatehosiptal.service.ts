@@ -8,9 +8,6 @@ import { registration } from './registration';
 export class ValidatehosiptalService {
 
   constructor( private http:HttpClient) { }
-
-
-
   register1:any[]=[]
   register(email: string, password: string) {
     let val = { email, password }
@@ -18,8 +15,6 @@ export class ValidatehosiptalService {
       .subscribe(a => {
         console.log(a);
       })
-
-
 }
 }
 

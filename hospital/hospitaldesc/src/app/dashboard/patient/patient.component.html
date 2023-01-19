@@ -8,28 +8,15 @@
 </div>
 
 <div class="add">
-  <h2>filter date</h2>
-  <input type="date" #start min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)">
-  <input type="date" #end min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)">
+  <label style="font-weight:700;font-size: larger;">Filter Date: </label>
+  <input type="date" #start min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)" style="width:200px;height:30px;font-weight: 600;border-width:5px;">
+  <input type="date" #end min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value) " style="width:200px;height:30px;font-weight: 600;border-width:5px;margin-left: 10px;">
 </div>
 <div class="add">
-  <!-- <app-update-data></app-update-data> -->
   <div class="details">
-    <!-- <app-patient [updatingPatientData]="patientData"></app-patient> -->
     <router-outlet></router-outlet>
 
-<<<<<<< HEAD
-    <div class="add">
-      <div> <button class="btn btn-light " routerLink="add-patient"  style="border-radius: 3px;"><img src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt="" width="100px" >
-         <br > 
-        <p style="font-weight:900;" >Add-Patient </p> </button></div>  
-    </div>
-     
-      <div class="add " *ngIf="register1">
-     <h2>filter date</h2>
-         <input type="date" #start min="{{minDate|date:'yyyy-MM-dd'}}" (input)="dateFilter(start.value,end.value)">
-         <input type="date" #end min="{{minDate|date:'yyyy-MM-dd'}}"  (input)="dateFilter(start.value,end.value)">  
-     </div>
+  
          <div class="add1" *ngIf="showFilterTable" >
      <table class="table table-hover table-bordered "id="escalation">
       <thead>
@@ -65,9 +52,7 @@
     </div>
            <div class="jjj">
 <router-outlet></router-outlet>
-
     </div>
-=======
   </div>
 </div>
 <div class="add" *ngIf="showFilterTable">
@@ -103,7 +88,6 @@
 </div>
 
 <h5 style="font-weight:780;">Appointment- Details</h5>
->>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
 
 <!-- <table class="table table-hover add table-bordered" *ngIf="showAllDataTable" id="escalation">
   <thead>
@@ -130,58 +114,51 @@
       <td class="font-weight-light">{{a.doctorName}}</td>
       <td class="font-weight-light">{{a.date}}</td>
       <td class="font-weight-light">{{a.time}}</td>
-      <!-- <td class="font-weight-light">{{a.id}}</td> -->
+      <- <td class="font-weight-light">{{a.id}}</td> -->
       <!-- <td> <button class="btn btn-pill btn-warning" (click)="cancelAppointment(a.id)"> Cancel</button></td>
     </tr>
   </tbody>
 </table> -->
 
-<<<<<<< HEAD
-         </tr>
-         
-       </tbody>
-     </table>
-      <h5 style="font-weight:780;">Appointment- Details</h5>
+       
       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
       <link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">
       <script src="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.js"></script>
-=======
-<div class="mat-elevation" *ngIf="showAllDataTable">
+<div class="mat-elevation" *ngIf="showAllDataTable" >
   <table mat-table [dataSource]="dataSource">
       <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+          <th mat-header-cell *matHeaderCellDef id="name"> Name </th>
+          <td mat-cell *matCellDef="let element" id="name1"> {{element.firstName}} </td>
       </ng-container>
->>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
 
       <ng-container matColumnDef="age">
-        <th mat-header-cell *matHeaderCellDef> Age </th>
-        <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+        <th mat-header-cell *matHeaderCellDef id="name" > Age </th>
+        <td mat-cell *matCellDef="let element" id="name1"> {{element.age}} </td>
     </ng-container>
 
       <ng-container matColumnDef="gender">
-          <th mat-header-cell *matHeaderCellDef> Gender </th>
-          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+          <th mat-header-cell *matHeaderCellDef id="name"> Gender </th>
+          <td mat-cell *matCellDef="let element" id="name1"> {{element.gender}} </td>
       </ng-container>
 
       <ng-container matColumnDef="phno">
-        <th mat-header-cell *matHeaderCellDef>Phone No.</th>
-        <td mat-cell *matCellDef="let element"> {{element.ph}} </td>
+        <th mat-header-cell *matHeaderCellDef id="name">Phone No.</th>
+        <td mat-cell *matCellDef="let element" id="name1"> {{element.ph}} </td>
     </ng-container>
 
       <ng-container matColumnDef="doctorName">
-          <th mat-header-cell *matHeaderCellDef> Consultant Doctor </th>
-          <td mat-cell *matCellDef="let element"> {{element.doctorName}} </td>
+          <th mat-header-cell *matHeaderCellDef id="name"> Consultant Doctor </th>
+          <td mat-cell *matCellDef="let element" id="name1"> {{element.doctorName}} </td>
       </ng-container>
 
       <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef>Appointment Date</th>
-        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        <th mat-header-cell *matHeaderCellDef id="name">Appointment Date</th>
+        <td mat-cell *matCellDef="let element" id="name1"> {{element.date}} </td>
     </ng-container>
 
       <ng-container matColumnDef="time">
-        <th mat-header-cell *matHeaderCellDef> Appointment Time </th>
-        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+        <th mat-header-cell *matHeaderCellDef id="name"> Appointment Time </th>
+        <td mat-cell *matCellDef="let element" id="name1"> {{element.time}} </td>
     </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

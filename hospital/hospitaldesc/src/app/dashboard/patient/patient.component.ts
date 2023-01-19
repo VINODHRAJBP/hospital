@@ -90,17 +90,13 @@ export class PatientComponent implements OnInit {
     console.log(this.patientData);
 
   }
+  register1=true
+  register2(){
+  this.register1=!this.register1
+  }
+}
 
-}
-<<<<<<< HEAD
-register1=true
-register2(){
-this.register1=!this.register1
-}
-}
-=======
 
->>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
 
 
 

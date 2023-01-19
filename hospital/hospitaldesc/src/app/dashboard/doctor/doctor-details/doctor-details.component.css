@@ -23,7 +23,7 @@ button{
       border: 1px solid rgb(152, 193, 255);
       width: 1000px;
       margin-left: 100px;
-      box-shadow: 10px 0px 5px rgb(100, 172, 196);
+      /* box-shadow: 10px 0px 5px rgb(100, 172, 196); */
       
     }
     
@@ -37,9 +37,12 @@ button{
     
     .details{
     margin-left: 100px;
-    margin-top: 50px;
-    text-shadow: 1px 1px 4px rgb(163, 191, 233);
-    text-decoration: underline;
+    margin-top: 20px;
+    font-weight: 700;
+    /* margin-bottom: 10px; */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* text-shadow: 1px 1px 4px rgb(163, 191, 233); */
+    /* text-decoration: underline; */
     }
   
 

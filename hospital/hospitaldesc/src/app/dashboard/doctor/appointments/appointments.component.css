@@ -1,7 +1,9 @@
 
 .filter {
-  margin-left: 250px;
+  margin-left:300px;
   margin-top: 50px;
+  font-weight: 700;
+  font-size: larger;
 }
  
 
@@ -25,11 +27,17 @@ table {
 
 .mat-header-cell{
   font-size: 14px;
-  font-weight: bold;
-  background-color:cornflowerblue;
+  font-weight:800px;
+  background-color: rgb(145, 203, 221);
   text-align: center;
+
 }
 
 .mat-cell{
   text-align: center;
+}
+#name{
+  font-size: larger;
+  font-weight: 700;
+  color: black;
 }

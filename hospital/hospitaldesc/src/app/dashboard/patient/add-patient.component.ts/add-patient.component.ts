@@ -21,14 +21,6 @@ export class AddPatientComponent implements OnInit {
     appointmentStartDate=new Date()
     slottime: timeSlot[] = []
   @Input() updatingPatientData=new FormControl()
-
-
-
-
- 
-
-
- 
     ngOnInit(): void {
   this.slottime=this.dashboardServices.appointmentDetails
   this.dashboardServices.fetchDoctor()
@@ -38,27 +30,18 @@ export class AddPatientComponent implements OnInit {
       firstName: new FormControl('',[Validators.required]),
       lastName: new FormControl('',[Validators.required]),
       age: new FormControl('',[Validators.required]),
-<<<<<<< HEAD
       ph: new FormControl('',[Validators.required]),
       // gender: new FormControl(''),
-=======
-      ph: new FormControl('', [Validators.required]),
+      // ph: new FormControl('', [Validators.required]),
       gender: new FormControl(''),
->>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
       email: new FormControl('',[Validators.email,Validators.required]),
       address: new FormControl('',[Validators.required]),
       doctorName: new FormControl('',[Validators.required]),
       specilist: new FormControl('',[Validators.required]),
-<<<<<<< HEAD
-      // date: new FormControl(''),
-      // time: new FormControl(''),
-      doctorEmail: new FormControl('',[Validators.email])
-=======
+      doctorEmail: new FormControl('',[Validators.email]),
       date: new FormControl(''),
       time: new FormControl(''), 
-      doctorEmail: new FormControl('',[Validators.email]),
       status:new FormControl('appoiintmentBooked')
->>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
   
     })
     // a=this.dashboardServices.appointmentDetails
@@ -69,6 +52,7 @@ export class AddPatientComponent implements OnInit {
     get data() {
       return this.register.get(['firstName', 'lastName', 'age', 'ph', 'gender', 'email', 'address', 'doctorName', 'specilist', 'date', 'time', 'doctorEmail'])
     }
+
   
     onsub1(){
         this.loc.back()
@@ -103,7 +87,7 @@ export class AddPatientComponent implements OnInit {
        } else if (selectedHour === currentHour) {
        if (selectedMin < currentMin) {
        isTimeOver = true;
-       }
+       }  
        }
        } else {
        isTimeOver = currentAmPm > selectedAM_PM;
