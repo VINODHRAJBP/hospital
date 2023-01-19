@@ -35,6 +35,7 @@ export class PatientComponent implements OnInit {
 // }
 datefil:data[]=[]
 showAllDataTable=true
+page:number=1;
 
   showFilterTable=false
 dateFilter(startDate:any,endDate:any){

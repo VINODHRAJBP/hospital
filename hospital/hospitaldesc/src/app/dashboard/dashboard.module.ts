@@ -18,6 +18,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
 import { MatMenuModule} from '@angular/material/menu'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -41,7 +42,8 @@ import { MatMenuModule} from '@angular/material/menu'
     MatPaginatorModule,
     MatTableModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    NgxPaginationModule
 
   ],
   exports: [DoctorComponent, PatientComponent]

@@ -22,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { NgxPaginationModule } from 'ngx-pagination';
  
 
 
@@ -52,6 +53,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
+    NgxPaginationModule
      
   ],
   providers: [],

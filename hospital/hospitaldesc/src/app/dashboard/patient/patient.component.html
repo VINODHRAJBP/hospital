@@ -63,8 +63,8 @@
      
                  </tr>
                </thead>
-               <tbody>
-                 <tr *ngFor="let a of dashboardService.patientData;index as i">
+                <tbody>
+                 <tr *ngFor="let a of dashboardService.patientData;index as i ">
                    <th scope="row" class="font-weight-light">{{i+1}}</th>
                    <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
                    <td class=" font-weight-light">{{a.age}}</td>
