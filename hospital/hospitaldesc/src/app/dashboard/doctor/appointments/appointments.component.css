@@ -1,46 +1,8 @@
-<<<<<<< HEAD
-.mat-table {
-  font-family: initial;
-} 
-
-table {
-  width: 78%;
-  margin-left: 20%;
-  border: 1px solid black;
-}
-
-
-/* 
-.flex{
-  flex: 1 1 auto;
-} */
-
-button{
-  margin: 15px;
-}
-=======
->>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
 
 .filter {
   margin-left: 250px;
   margin-top: 50px;
 }
-<<<<<<< HEAD
-
-.mat-header-cell{
-  font-size: 14px;
-  color: black;
- text-align: center;
- font-weight: bold;
-
-}
-
-.mat-cell{
-  text-align: center;
-  font-size: 14px;
-  margin-top: 2px;
-
-=======
  
 
 table {
@@ -70,5 +32,4 @@ table {
 
 .mat-cell{
   text-align: center;
->>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
 }

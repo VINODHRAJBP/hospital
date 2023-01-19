@@ -14,13 +14,7 @@ import { DashboardService } from '../../dashboard.service';
 })
 export class AddPatientComponent implements OnInit {
 
-  firstName!: any;
-  lastName!: any;
-  age!: any;
-  ph!: any;
-  gender!: any;
-  email!: any;
-  form!:FormGroup;
+  
   @Input() updatingPatientData:any =[]
   // address: new FormControl('',[Validators.required]),
   // doctorName: new FormControl('',[Validators.required]),
@@ -30,16 +24,9 @@ export class AddPatientComponent implements OnInit {
   // doctorEmail: new FormControl('',[Validators.email]),
   // status:new FormControl('appoiintmentBooked')
     
-<<<<<<< HEAD
-    constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService,
-      private loc:Location, private fb : FormBuilder,
- )
-     {  }
-=======
     constructor(private http:HttpClient,private route:Router,public dashboardServices:DashboardService,private loc:Location) { 
      
     }
->>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
     appointmentStartDate=new Date()
     slottime: timeSlot[] = []
  
@@ -58,13 +45,7 @@ export class AddPatientComponent implements OnInit {
         
       // })
   this.slottime=this.dashboardServices.appointmentDetails
-<<<<<<< HEAD
-  console.log(this.slottime);
-      console.log(this.slottime.includes({ date: "2023-01-25", doctorName: "Praveen" }));  
-      
-=======
   this.dashboardServices.fetchDoctor()
->>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
     }
     
     register = new FormGroup({
@@ -98,14 +79,6 @@ export class AddPatientComponent implements OnInit {
     onSub() {
       console.log(this.register.value.date);
       let a=this.register.value
-<<<<<<< HEAD
-      console.log(a);
-    
-      // let patientData={name:a.firstName!+a.lastName,age:a.age,gender:a.gender,ph:a.ph,email:a.email,address:a.address}
-      // let doctorData={name:a.doctorName,speciliat:a.specilist,appointmentDate:a.date,appointmentTime:a.time,email:a.doctorEmail}
-    
-=======
->>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
       let folder=a.firstName!+" "+a.lastName
       
       this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+folder+'.json',a).subscribe(a=>{console.log(a);
@@ -146,17 +119,6 @@ export class AddPatientComponent implements OnInit {
        return isTimeOver;
        }
 
-      
-        
-       
-
-
-       
-      
-       on(){
-      console.log(this.updatingPatientData.firstName);
-      this.firstName = this.updatingPatientData.firstName;
-
-       }
+   
   }
   
