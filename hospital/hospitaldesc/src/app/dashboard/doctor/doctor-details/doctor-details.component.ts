@@ -15,10 +15,14 @@ export class DoctorDetailsComponent implements OnInit{
   }
  
   allDoctors:Doctor[]=[]
+  page:number=1;
+  totalRecords?:number;
+
 
   fetchDoctor(){
     this.doctorService.fetchDoctor().subscribe((doctors)=>{
       this.allDoctors=doctors
+      this.totalRecords=this.allDoctors.length;
        console.log(this.allDoctors);
     })
   }

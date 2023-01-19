@@ -29,8 +29,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   this.dashboardService.fetchDoctor()
+  this.dashboardService.fetchPatientData()
+  // this.dashboardService.fetch()
     console.log(this.dashboardService.appointmentDetails);
-    
   }
 
   
@@ -45,12 +46,12 @@ export class DashboardComponent implements OnInit {
   }
 
   addpatient=false;
-add1(){
-  this.addpatient=!this.addpatient
+// add1(){
+  // this.addpatient=!this.addpatient
   // this.dataSource=new MatTableDataSource(this.dashboardService.patientData);
   // this.dataSource.paginator = this.paginator;
 
-}
+// }
 datefil:data[]=[]
 dateFilter(a:any,b:any){
   

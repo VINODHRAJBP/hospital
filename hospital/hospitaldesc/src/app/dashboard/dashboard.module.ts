@@ -11,6 +11,7 @@ import { AddPatientComponent } from './patient/add-patient.component.ts/add-pati
 import {HttpClientModule} from '@angular/common/http'
 import { AppointmentsComponent } from './doctor/appointments/appointments.component';
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 // material ui
@@ -18,7 +19,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
 import { MatMenuModule} from '@angular/material/menu'
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { UpdateDataComponent } from './patient/update-data/update-data.component';
+import { FilterByDatePipe } from './patient/filter-by-date.pipe'
+ 
 
 
 @NgModule({
@@ -30,7 +34,9 @@ import { MatMenuModule} from '@angular/material/menu'
     AddDoctorComponent,
     AppointmentsComponent,
     DoctorDetailsComponent,
-    AddPatientComponent
+    AddPatientComponent,
+    UpdateDataComponent,
+    FilterByDatePipe
 
   ],
   imports: [
@@ -41,8 +47,10 @@ import { MatMenuModule} from '@angular/material/menu'
     MatPaginatorModule,
     MatTableModule,
     MatIconModule,
-    MatMenuModule
-
+    MatMenuModule,
+    NgxPaginationModule,
+    FormsModule
+ 
   ],
   exports: [DoctorComponent, PatientComponent]
 })

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <div class="patient mt-2">
     <div class="body">
@@ -97,8 +98,106 @@
                             </div>
                           </div>
   
+=======
+<div class="patient mt-2">
+  <div class="body">
+    <section class="h-50  gradient-custom-2">
+      <div class="container py-3 h-50">
+        <div class="row d-flex justify-content-center align-items-center h-50">
+          <div class="col-9">
+            <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+              <div class="card-body p-0">
+                <form [formGroup]="register" (ngSubmit)="onSub()">
+                  <div class="row g-0">
+                    <div class="col-lg-6">
+                      <div class="p-3">
+                        <h3 class="fw-normal mb-3" style="color: #4835d4;">Patient Infomation</h3>
+
+
+                        <div class="mb-2 pb-1">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Title</option>
+                            <option value="Mr" class="lead">Mr</option>
+                            <option value="Miss" class="lead">Miss</option>
+                            <option value="Mrs" class="lead">Mrs</option>
+                          </select>
+>>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
                         </div>
+
+
+
+
+
+                        <div class="row">
+                          <div class="col-md-6 mb-2 pb-1">
+
+                            <div class="form-outline">
+                              <input type="text" id="form3Examplev2" name="firstName"
+                                class="form-control form-control-lg" formControlName="firstName" />
+                              <label class="form-label" for="form3Examplev2">First name</label>
+                            </div>
+
+                          </div>
+                          <div class="col-md-6 mb-2 pb-1">
+
+                            <div class="form-outline">
+                              <input type="text" id="form3Examplev3" name="lastName"
+                                class="form-control form-control-lg" formControlName="lastName" />
+                              <label class="form-label" for="form3Examplev3">Last name</label>
+                            </div>
+
+                          </div>
+                          <div class="col-md-6 mb-2 pb-1 form-outline">
+                            <input type="number" id="form3Examplev3" name="age" class="form-control form-control-lg"
+                              formControlName="age" />
+                            <label class="form-label" for="form3Examplev3">Age</label>
+                          </div>
+                        </div>
+
+
+
+                        <div class="mb-2 pb-1">
+                          <select class="form-select" aria-label="Default select example" name="gender"
+                            formControlName="gender">
+                            <!-- <option selected>Gender</option> -->
+                            <option value="Male" class="lead">Male</option>
+                            <option value="Female" class="lead">Female</option>
+                            <option value="Others" class="lead">Others</option>
+                          </select>
+                          <label class="form-label" for="form3Examplea3">Gender</label>
+
+                        </div>
+
+                        <div class="mb-2 pb-1">
+                          <div class="form-outline">
+                            <input type="number" name="ph" class="form-control form-control-lg" formControlName="ph" />
+
+                            <label class="form-label">Contact no</label>
+                          </div>
+                        </div>
+
+                        <div class="mb-2">
+                          <div class="form-outline form-white">
+                            <input type="email" id="form3Examplea9" class="form-control form-control-lg" name="email"
+                              formControlName="email" />
+                            <label class="form-label" for="form3Examplea9">Email</label>
+                          </div>
+                        </div>
+
+
+                        <div class="row">
+                          <div class=" mb-2 pb-1 mb-md-0 pb-md-0">
+
+                            <div class="form-outline ">
+                              <input type="text" id="form3Examplev5" class="form-control form-control-lg" name="address"
+                                formControlName="address" />
+                              <label class="form-label" for="form3Examplev5">Address</label>
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
+<<<<<<< HEAD
                       <!-- end of form 1 -->
                       <div class="col-lg-6 bg-indigo text-white">
                         <div class="p-3">
@@ -120,41 +219,73 @@
                               <option value="Ophthalmology" class="lead">Ophthalmology</option>
                             </select>
                             <label class="form-label" for="form3Examplea3">DoctorName</label>
+=======
+                    </div>
+                    <!-- end of form 1 -->
+                    <div class="col-lg-6 bg-indigo text-white">
+                      <div class="p-3">
+                        <h3 class="fw-normal mb-3">Doctor Details</h3>
+
+                        <!-- <div class="mb-4 pb-2">
+                        <div class="form-outline form-white">
+                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" name="doctorName" formControlName="doctorName" />
+                          <label class="form-label" for="form3Examplea2">Doctorname</label>
+                        </div>
+                      </div> -->
+                        <div class="mb-2 pb-1">
+                          <select class=" form-control form-control-lg form-select" #doctor
+                            (click)="fillDoctorData(doctor.value)" aria-label="Default select example" name="doctor"
+                            formControlName="doctorName">
+                            <option class="lead" selected>Select</option>
+                            <option *ngFor="let a of dashboardServices.doctorData" value="{{a.name}}" class="lead"
+                              selected>{{a.name}}</option>
+                          </select>
+                          <label class="form-label" for="form3Examplea3">DoctorName</label>
+                        </div>
+
+
+                        <div class="mb-2 pb-1">
+                          <select class=" form-control form-control-lg" name="specilist" formControlName="specilist">
+                            <option class="lead" selected>Select</option>
+                            <option class="lead" *ngFor="let a of dashboardServices.doctorData" value="{{a.department}}">{{a.department}}
+                            </option>
+                          </select>
+                          <label class="form-label" for="form3Examplea3">Specilist</label>
+                        </div>
+
+
+
+
+                        <div class="mb-2 pb-1">
+                          <div class="form-outline form-white">
+                            <input type="date" id="form3Examplea3" #date class="form-control form-control-lg"
+                              name="date" formControlName="date" min="{{appointmentStartDate|date:'yyyy-MM-dd'}}" />
+                            <label class="form-label" for="form3Examplea3">Appointment Date</label>
+>>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
                           </div>
-  
-  
-                          <div class="mb-2 pb-1">
-                            <select class=" form-control form-control-lg" name="specilist" formControlName="specilist">
-                              <option class="lead" *ngFor="let a of specilist">{{a}}</option>
-                            </select>
-  
-                            <label class="form-label" for="form3Examplea3">Specilist</label>
-  
-                          </div>
-  
-  
-  
-  
-                          <div class="mb-2 pb-1">
-                            <div class="form-outline form-white">
-                              <input type="date" id="form3Examplea3" #date class="form-control form-control-lg"
-                                name="date" formControlName="date" min="{{appointmentStartDate|date:'yyyy-MM-dd'}}" />
-                              <label class="form-label" for="form3Examplea3">Appointment Date</label>
-                            </div>
-                          </div>
-  
-                          <div class="mb-2 pb-1">
-  
-                            <select class="form-control form-control-lg" formControlName="time" name="time">
-                              <option  *ngFor="let time of TIME" [value]="time" [disabled]="isDisableTime(time)">{{time}}</option>
-                              <!-- <option class="lead" *ngFor='let time of timeSlot'>
+                        </div>
+
+                        <div class="mb-2 pb-1">
+
+                          <select class="form-control form-control-lg" formControlName="time" name="time">
+                            <option *ngFor="let time of TIME" [value]="time" [disabled]="isDisableTime(time)">{{time}}
+                            </option>
+                            <!-- <option class="lead" *ngFor='let time of timeSlot'>
                                 {{time}}
                               </option> -->
+<<<<<<< HEAD
                             </select>
   
   
   
                             <!-- <select class="form-control form-control-lg" formControlName="time" name="time">
+=======
+                          </select>
+
+
+
+                          <!-- <select class="form-control form-control-lg" formControlName="time" name="time">
+>>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
                               <option class="lead" *ngFor='let time of timeSlot'>
                                 <ng-container *ngIf="this.slottime.includes({date:'hghg',doctorName:'jjjjj'});else con">
                                   <span>
@@ -164,6 +295,7 @@
                                 <ng-template #con>{{time}}</ng-template>
                               </option>
                             </select> -->
+<<<<<<< HEAD
                             <label class="form-label" for="form3Examplea3">Time slot</label>
                           </div>
   
@@ -183,14 +315,50 @@
                             style="margin-left: 8px;" data-mdb-ripple-color="dark" (click)="onsub1()">cancel</button>
   
                         </div>
+=======
+                          <label class="form-label" for="form3Examplea3">Time slot</label>
+                        </div>
+
+
+                        <div class="mb-2">
+                          <div class="form-outline form-white">
+                            <input type="email" id="form3Examplea9" class="form-control form-control-lg"
+                              name="doctorEmail" formControlName="doctorEmail" />
+                            <label class="form-label" for="form3Examplea9">Email</label>
+                          </div>
+                        </div>
+
+                        <!-- <div class="form-check d-flex justify-content-start mb-4 pb-3">
+                            <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c"
+                              name="title" />
+                            <label class="form-check-label text-white" for="form2Example3">
+                              I do accept the <a href="#!" class="text-white"><u>Terms and Conditions</u></a> of your
+                              site.
+                            </label>
+                          </div> -->
+
+                        <button type="button" class="btn btn-light btn-outline-success btn-warning"
+                          data-mdb-ripple-color="dark" (click)="onSub()" routerLink="/dashboard">Submit</button>
+
+                        <button type="button" class="btn btn-light btn-outline-danger btn-warning"
+                          style="margin-left: 8px;" data-mdb-ripple-color="dark" (click)="onsub1()">cancel</button>
+
+>>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
                       </div>
                     </div>
-                  </form>
-                </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
+<<<<<<< HEAD
       </section>
     </div>
   </div>
+=======
+      </div>
+    </section>
+  </div>
+</div>
+>>>>>>> fef60b0c156c167e17fbe4c0b7059faa9a3565bd
