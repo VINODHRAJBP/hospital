@@ -76,6 +76,7 @@ export class PatientComponent implements OnInit {
     }
     console.log(this.dashboardService.appointmentDetails);
   }
+  
 
 
   cancelAppointment(a: any) {

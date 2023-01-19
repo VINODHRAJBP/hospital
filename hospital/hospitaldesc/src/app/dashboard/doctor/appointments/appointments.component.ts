@@ -3,9 +3,6 @@ import { Doctor } from '../doctor';
 import { DoctorService } from '../doctor.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatIcon } from '@angular/material/icon';
-
-
 
 @Component({
   selector: 'app-appointments',
@@ -20,7 +17,7 @@ export class AppointmentsComponent implements OnInit {
   allAppointments: any[] = []
   allDoctors: Doctor[] = []
 
-  displayedColumns: string[] = ['doctorName', 'department','firstName', 'date','time', 'action'];
+  displayedColumns: string[] = ['doctorName', 'department', 'firstName', 'date', 'time', 'status', 'action'];
   dataSource !: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -52,14 +49,33 @@ export class AppointmentsComponent implements OnInit {
   onFetchDoctors() {
     this.doctorService.fetchDoctor().subscribe((doctors) => {
       this.allDoctors = doctors;
-      // console.log(doctors);
     })
   }
 
   onCanceleAppointment(appointment: any) {
-    appointment.btn=true;
+    appointment.btn = true;
     this.doctorService.deleteAppointment(appointment);
-    alert(appointment.firstName+" appointment cancelled")
+    alert(appointment.firstName + " appointment cancelled")
+  }
+
+  onAcceptAppointment(appointment: any) {
+    appointment.status = "Done";
+    let currentAppointment: any = {
+      address: appointment.address,
+      age: appointment.age,
+      date: appointment.date,
+      doctorEmail: appointment.doctorEmail,
+      doctorName: appointment.doctorName,
+      email: appointment.email,
+      firstName: appointment.firstName,
+      gender: appointment.gender,
+      lastName: appointment.lastName,
+      ph: appointment.ph,
+      specilist: appointment.specilist,
+      status: "Done",
+      time: appointment.time
+    }
+    this.doctorService.updateAppointment(currentAppointment);
   }
 
 }

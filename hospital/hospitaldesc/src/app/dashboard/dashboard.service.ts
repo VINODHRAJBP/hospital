@@ -61,16 +61,17 @@ export class DashboardService {
   promise = new Promise(() => { })
   patientDataWithPromise: any = []
 
-  fetch() {
+  fetch(){
     return this.promise = fetch('https://hospital-desk-default-rtdb.firebaseio.com/appointments.json').then((res) => {
       return res.json();
     }).then((data) => {
       for (const key in data) {
         this.patientDataWithPromise.push({ ...data[key] });
       }
-      console.log(this.patientDataWithPromise);
+      // console.log(this.patientDataWithPromise);
 
       return this.patientDataWithPromise;
     })
   }
+
 }

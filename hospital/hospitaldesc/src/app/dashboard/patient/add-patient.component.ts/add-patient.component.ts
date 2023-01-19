@@ -20,15 +20,7 @@ export class AddPatientComponent implements OnInit {
     }
     appointmentStartDate=new Date()
     slottime: timeSlot[] = []
-  @Input() updatingPatientData=new FormControl()
-
-
-
-
- 
-
-
- 
+  @Input() updatingPatientData=new FormControl() 
     ngOnInit(): void {
   this.slottime=this.dashboardServices.appointmentDetails
   this.dashboardServices.fetchDoctor()
@@ -113,11 +105,7 @@ export class AddPatientComponent implements OnInit {
              }
         }
         
-        
        }
-
-
-       
       
   }
   
