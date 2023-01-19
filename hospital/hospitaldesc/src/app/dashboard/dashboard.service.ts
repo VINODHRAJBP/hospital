@@ -68,7 +68,6 @@ fetch(){
     for (const key in data) {
         this.patientDataWithPromise.push({ ...data[key] });
     }
-    console.log(this.patientDataWithPromise);
     
     return this.patientDataWithPromise;
   })

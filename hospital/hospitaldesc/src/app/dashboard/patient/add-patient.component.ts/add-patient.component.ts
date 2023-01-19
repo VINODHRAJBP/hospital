@@ -77,7 +77,12 @@ export class AddPatientComponent implements OnInit {
     TIME=["09:00 AM","10:00 AM","11:00 AM","12:00 PM","01:00 PM","02:00 PM","03:00 PM","04:00 PM","05:00 PM","06:00 PM","07:00 PM","08:00 PM"];
   
   
-    isDisableTime(selectedTime: string): boolean {
+    isDisableTime(selectedTime: string,date:any): boolean {
+      let d=new Date() 
+      let day=d.getDate()
+      console.log(date.substr(8,10)==day);
+      
+      
       let isTimeOver = false;
        let currentHour = new Date().getHours();
       let currentMin = new Date().getMinutes();
@@ -87,9 +92,9 @@ export class AddPatientComponent implements OnInit {
        let selectedMin = +selectedTime.substr(3, 2);
        let selectedAM_PM = selectedTime.substr(6, 2);
        if(currentAmPm === selectedAM_PM) {
-       if (selectedHour < currentHour) {
+       if (selectedHour < currentHour && date.substr(8,10)==day) {
        isTimeOver = true;
-       } else if (selectedHour === currentHour) {
+       } else if (selectedHour === currentHour && date.substr(8,10)==day) {
        if (selectedMin < currentMin) {
        isTimeOver = true;
        }
@@ -100,21 +105,9 @@ export class AddPatientComponent implements OnInit {
        return isTimeOver;
        }
 
-       doctorName=''
-       specilist=''
-       email=''
-       fillDoctorData(a:any){
-        for(let c of this.dashboardServices.doctorData){
-             if(a==c.name){
-              console.log(c);
-              this.doctorName=c.name
-              this.specilist=c.department
-              this.email=c.mail
-             }
-        }
+      
         
-        
-       }
+       
 
 
        

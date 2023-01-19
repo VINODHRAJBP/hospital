@@ -13,16 +13,11 @@ export class PatientComponent implements OnInit {
   constructor(private route:Router,private http:HttpClient,public dashboardService:DashboardService) { }
 
 
-  // displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
-  //   dataSource !: MatTableDataSource<data>;
-  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
   
 
 
-  // displayedColumns: string[] = ['firstName', 'gender', 'age', 'doctorName','time'];
-  //   dataSource !: MatTableDataSource<data>;
-
-  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
 
 patientData:any
   minDate=new Date()

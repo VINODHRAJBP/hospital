@@ -20,7 +20,6 @@ import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
 import {matMenuAnimations, MatMenuModule} from '@angular/material/menu';
 import { UpdateDataComponent } from './patient/update-data/update-data.component';
-import { FilterByDatePipe } from './patient/filter-by-date.pipe'
 
 
 
@@ -36,7 +35,7 @@ import { FilterByDatePipe } from './patient/filter-by-date.pipe'
     DoctorDetailsComponent,
     AddPatientComponent,
     UpdateDataComponent,
-    FilterByDatePipe
+
 
   ],
   imports: [
