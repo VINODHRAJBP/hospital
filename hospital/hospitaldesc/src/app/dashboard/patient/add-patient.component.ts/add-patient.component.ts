@@ -29,9 +29,6 @@ export class AddPatientComponent implements OnInit {
     }
     appointmentStartDate=new Date()
     slottime: timeSlot[] = []
-<<<<<<< HEAD
-  @Input() updatingPatientData=new FormControl() 
-=======
  
 
 
@@ -41,7 +38,6 @@ export class AddPatientComponent implements OnInit {
 
 
  
->>>>>>> 88625a155c56fae6f231c4e0d8d3ecdbd9c96b9c
     ngOnInit(): void {
       
       // this.form = this.fb.group({
@@ -123,24 +119,6 @@ export class AddPatientComponent implements OnInit {
        return isTimeOver;
        }
 
-<<<<<<< HEAD
-       doctorName=''
-       specilist=''
-       email=''
-       fillDoctorData(a:any){
-        for(let c of this.dashboardServices.doctorData){
-             if(a==c.name){
-              console.log(c);
-              this.doctorName=c.name
-              this.specilist=c.department
-              this.email=c.mail
-             }
-        }
-        
-       }
-      
-=======
    
->>>>>>> 88625a155c56fae6f231c4e0d8d3ecdbd9c96b9c
   }
   

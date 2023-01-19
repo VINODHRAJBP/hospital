@@ -67,11 +67,6 @@ export class DashboardService {
     }).then((data) => {
       for (const key in data) {
         this.patientDataWithPromise.push({ ...data[key] });
-<<<<<<< HEAD
-      }
-      // console.log(this.patientDataWithPromise);
-=======
->>>>>>> 88625a155c56fae6f231c4e0d8d3ecdbd9c96b9c
 
       }
       return this.patientDataWithPromise;
