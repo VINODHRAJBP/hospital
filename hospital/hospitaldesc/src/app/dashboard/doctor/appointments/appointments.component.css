@@ -1,21 +1,35 @@
 
-.mat-table {
-  font-family: initial;
-} 
-
 .filter {
-  margin-left: 270px;
+  margin-left: 250px;
   margin-top: 50px;
 }
-
-.table {
-   border: 1px solid black;
-  width: 1000px;
-  margin-left: 270px;
-  margin-top: 80px;
-}
+ 
 
 table {
- width:100%;
- 
+   
+   width: 78%;
+  margin-left: 20%;
+  margin-top: 80px;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.flex{
+  flex: 1 1 auto;
+}
+
+.mat-header-cell{
+  font-size: 14px;
+  font-weight: bold;
+  background-color:cornflowerblue;
+  text-align: center;
+}
+
+.mat-cell{
+  text-align: center;
 }

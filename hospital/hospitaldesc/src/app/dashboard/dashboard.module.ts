@@ -18,16 +18,11 @@ import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
-<<<<<<< HEAD
 import { MatMenuModule} from '@angular/material/menu'
 import { NgxPaginationModule } from 'ngx-pagination';
-=======
-import {matMenuAnimations, MatMenuModule} from '@angular/material/menu';
 import { UpdateDataComponent } from './patient/update-data/update-data.component';
 import { FilterByDatePipe } from './patient/filter-by-date.pipe'
-
->>>>>>> d5ec25fab09ef3a30952d0864eeb38491fdf5088
-
+ 
 
 
 @NgModule({
@@ -53,12 +48,9 @@ import { FilterByDatePipe } from './patient/filter-by-date.pipe'
     MatTableModule,
     MatIconModule,
     MatMenuModule,
-<<<<<<< HEAD
-    NgxPaginationModule
-=======
+    NgxPaginationModule,
     FormsModule
->>>>>>> d5ec25fab09ef3a30952d0864eeb38491fdf5088
-
+ 
   ],
   exports: [DoctorComponent, PatientComponent]
 })
