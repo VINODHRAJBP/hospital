@@ -1,3 +1,4 @@
+
 <div class="patient mt-2">
   <div class="body">
     <section class="h-50  gradient-custom-2">
@@ -10,7 +11,7 @@
                   <div class="row g-0">
                     <div class="col-lg-6">
                       <div class="p-3">
-                        <h3 class="fw-normal mb-3" style="color: #4835d4;">Patient Infomation</h3>
+                        <h4 class="fw-normal mb-3" style="color: #15131f;">Patient Infomation</h4>
 
 
                         <div class="mb-2 pb-1">
@@ -34,7 +35,7 @@
                                 class="form-control form-control-lg" formControlName="firstName" />
                               <label class="form-label" for="form3Examplev2">First name</label>
                             </div>
-
+                            
                           </div>
                           <div class="col-md-6 mb-2 pb-1">
 
@@ -155,12 +156,13 @@
                               <option class="lead" *ngFor='let time of timeSlot'>
                                 <ng-container *ngIf="this.slottime.includes({date:'hghg',doctorName:'jjjjj'});else con">
                                   <span>
-                                {{time}}kl
+                                {{time}}
                                 </span>
                                 </ng-container>
-                                <ng-template #con>{{time}}kk</ng-template>
+                                <ng-template #con>{{time}}</ng-template>
                               </option>
                             </select> -->
+
                           <label class="form-label" for="form3Examplea3">Time slot</label>
                         </div>
 
@@ -196,6 +198,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
   </div>

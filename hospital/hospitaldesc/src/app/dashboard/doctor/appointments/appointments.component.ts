@@ -17,11 +17,7 @@ export class AppointmentsComponent implements OnInit {
   allAppointments: any[] = []
   allDoctors: Doctor[] = []
 
-<<<<<<< HEAD
-  displayedColumns: string[] = ['doctorName', 'department','firstName', 'date','time', 'action','actions'];
-=======
   displayedColumns: string[] = ['doctorName', 'department', 'firstName', 'date', 'time', 'status', 'action'];
->>>>>>> c797ab835615a27675f2e26949ee10fcd49abbe5
   dataSource !: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

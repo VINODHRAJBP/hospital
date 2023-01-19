@@ -52,15 +52,17 @@ export class AddPatientComponent implements OnInit {
       firstName: new FormControl('',[Validators.required]),
       lastName: new FormControl('',[Validators.required]),
       age: new FormControl('',[Validators.required]),
-      ph: new FormControl('', [Validators.required]),
+      ph: new FormControl('',[Validators.required]),
+      // gender: new FormControl(''),
+      // ph: new FormControl('', [Validators.required]),
       gender: new FormControl(''),
       email: new FormControl('',[Validators.email,Validators.required]),
       address: new FormControl('',[Validators.required]),
       doctorName: new FormControl('',[Validators.required]),
       specilist: new FormControl('',[Validators.required]),
+      doctorEmail: new FormControl('',[Validators.email]),
       date: new FormControl(''),
       time: new FormControl(''), 
-      doctorEmail: new FormControl('',[Validators.email]),
       status:new FormControl('appoiintmentBooked')
   
     })
@@ -75,12 +77,13 @@ export class AddPatientComponent implements OnInit {
     get data() {
       return this.register.get(['firstName', 'lastName', 'age', 'ph', 'gender', 'email', 'address', 'doctorName', 'specilist', 'date', 'time', 'doctorEmail'])
     }
+
   
     onsub1(){
         this.loc.back()
     }
     onSub() {
-      console.log(this.register.value.date);
+      // console.log(this.register.value.date);
       let a=this.register.value
       
       this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+a.firstName+'.json',a).subscribe(a=>{console.log(a);
@@ -111,7 +114,7 @@ export class AddPatientComponent implements OnInit {
        } else if (selectedHour === currentHour && date.substr(8,10)==day) {
        if (selectedMin < currentMin) {
        isTimeOver = true;
-       }
+       }  
        }
        } else {
        isTimeOver = currentAmPm > selectedAM_PM;

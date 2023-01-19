@@ -1,12 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { catchError, map, throwError } from 'rxjs';
 import { data, timeSlot } from './dashboard';
 import { DashboardService } from './dashboard.service';
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -14,7 +13,9 @@ import { DashboardService } from './dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private route:Router,private http:HttpClient,public dashboardService:DashboardService) { }
+  constructor(private route:Router,private http:HttpClient,public dashboardService:DashboardService) {
+    
+   }
 
 
 
@@ -92,4 +93,9 @@ timeSlotData(){
   }
  console.log(this.dashboardService.appointmentDetails);
 }
+ 
+isValue: number = 0;  
+
+toggle1() { this.isValue = 1; }
+toggle2() { this.isValue = 2; }
 }

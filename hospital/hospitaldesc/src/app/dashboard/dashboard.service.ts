@@ -70,6 +70,9 @@ export class DashboardService {
 
       }
       return this.patientDataWithPromise;
+    }).catch(err=>{
+      console.log(err);
+      
     })
   }
 
