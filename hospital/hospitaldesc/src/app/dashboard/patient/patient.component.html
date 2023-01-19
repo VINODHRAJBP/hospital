@@ -55,6 +55,12 @@
 <h5 style="font-weight:780;">Appointment- Details</h5>
 
 
+<<<<<<< HEAD
+<script>$(document).ready(function () {
+    $('#example1').DataTable();
+  });</script>
+ -->
+=======
 <div class="mat-elevation" *ngIf="showAllDataTable">
   <table mat-table [dataSource]="dataSource">
       <ng-container matColumnDef="name">
@@ -66,6 +72,7 @@
         <th mat-header-cell *matHeaderCellDef> Age </th>
         <td mat-cell *matCellDef="let element"> {{element.age}} </td>
     </ng-container>
+>>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
 
       <ng-container matColumnDef="gender">
           <th mat-header-cell *matHeaderCellDef> Gender </th>
@@ -82,10 +89,18 @@
           <td mat-cell *matCellDef="let element"> {{element.doctorName}} </td>
       </ng-container>
 
+<<<<<<< HEAD
+
+
+
+  
+
+=======
       <ng-container matColumnDef="date">
         <th mat-header-cell *matHeaderCellDef>Appointment Date</th>
         <td mat-cell *matCellDef="let element"> {{element.date}} </td>
     </ng-container>
+>>>>>>> 0a0219873467221e1dd1eabaec7e45f0481d20b2
 
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>status</th>
