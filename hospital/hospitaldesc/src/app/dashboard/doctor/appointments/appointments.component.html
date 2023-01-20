@@ -11,6 +11,11 @@
             <td mat-cell *matCellDef="let element"> {{element.doctorName}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Patient ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
         <ng-container matColumnDef="firstName">
             <th mat-header-cell *matHeaderCellDef> Patient Name </th>
             <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>

@@ -17,7 +17,7 @@ export class AppointmentsComponent implements OnInit {
   allAppointments: any[] = []
   allDoctors: Doctor[] = []
 
-  displayedColumns: string[] = ['doctorName', 'department', 'firstName', 'date', 'time', 'status', 'action'];
+  displayedColumns: string[] = ['doctorName', 'id','department', 'firstName', 'date', 'time', 'status', 'action'];
   dataSource !: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -54,6 +54,8 @@ export class AppointmentsComponent implements OnInit {
 
   onCanceleAppointment(appointment: any) {
     appointment.btn = true;
+    console.log(appointment);
+    
     this.doctorService.deleteAppointment(appointment);
     alert(appointment.firstName + " appointment cancelled")
   }
@@ -78,10 +80,9 @@ export class AppointmentsComponent implements OnInit {
     this.doctorService.updateAppointment(currentAppointment);
   }
 
-  statusUpdate(data:any){
-    data.btn=true;
-
-this.doctorService.updateStatus(data)
+  statusUpdate(data: any) {
+    data.btn = true;
+    this.doctorService.updateStatus(data)
   }
 
 }

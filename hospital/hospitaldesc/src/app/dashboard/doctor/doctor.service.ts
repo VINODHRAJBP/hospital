@@ -52,19 +52,16 @@ export class DoctorService {
 
 
     deleteAppointment(appointment: any) {
-        let folder = appointment.firstName! + " " + appointment.lastName
-        this.http.delete('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + folder + '.json').subscribe((res) => {
+        this.http.delete('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + appointment.id  + '.json').subscribe((res) => {
         });
     }
 
     updateAppointment(appointment: any) {
-        let folder = appointment.firstName! + " " + appointment.lastName
-        this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + folder + '.json', appointment).subscribe((res) => {
+        this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + appointment.id + '.json', appointment).subscribe((res) => {
         });
     }
 
-
-
+    
 
     updateStatus(data:any){
         this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+data.id+'/'+data.status+'.json','cleared').subscribe(a=>{console.log(a);
