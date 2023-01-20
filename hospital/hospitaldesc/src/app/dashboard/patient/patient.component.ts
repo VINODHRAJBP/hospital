@@ -94,23 +94,38 @@ patientData:any
     })
 
   }
-  updateAppointment(data: any) {
+  updateAppointment(data1: any) {
     // console.log(data);
-    if(data == null ){
+    if(data1 == null ){
       return;
     }
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width='300px';
-    dialogConfig.data=data;
+    dialogConfig.data=data1;
     
     const dialogRef=this.dialog.open(DialogComponent,dialogConfig)
 
     dialogRef.afterClosed().subscribe(data=>{
       if(data){  
-
-    this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + data.firstName+'.json',data).subscribe(a=>{console.log(a);
+        let currentAppointment: any = {
+          id:data1.id,
+          address: data1.address,
+          age: data1.age,
+          date: data.date,
+          doctorEmail: data1.doctorEmail,
+          doctorName: data.doctorName,
+          email: data1.email,
+          firstName: data.firstName,
+          gender: data.gender,
+          lastName: data1.lastName,
+          ph: data.ph,
+          specilist: data1.specilist,
+          status: data1.status,
+          time: data.time
+        }
+        this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/' + data.id + '.json', currentAppointment).subscribe(a=>{console.log(a);
     })
 
       }

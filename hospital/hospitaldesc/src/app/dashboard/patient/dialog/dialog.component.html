@@ -3,8 +3,8 @@
       <mat-grid-list cols="1" rowHeight="100px">
         <mat-grid-tile>
                 <mat-form-field>
-                    <mat-label>Student Name</mat-label>
-                    <input matInput placeholder="Student name" formControlName ="name" required>
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="name" formControlName ="firstName" required>
                     <mat-error *ngIf="form.get('name')?.invalid || form.get('name')?.dirty || form.get('name')?.touched ">Enter valid name</mat-error>
                   </mat-form-field>
                 </mat-grid-tile>
@@ -16,7 +16,7 @@
                   
                     <mat-form-field>
                       <mat-label>Phone :</mat-label>
-                      <input matInput placeholder="Phone" formControlName="phone" required>
+                      <input matInput placeholder="Phone" formControlName="ph" required>
                       
                     <mat-error *ngIf="form.get('phone')?.invalid || form.get('phone')?.dirty || form.get('phone')?.touched ">Enter valid Phone Number</mat-error>
                     </mat-form-field>
@@ -27,7 +27,7 @@
                     <mat-form-field appearance="fill">
                       <mat-label>Time</mat-label>
                       <select matNativeControl formControlName="time" #required>
-                        <option value="time" *ngFor="let a of TIME">{{a}}</option>
+                        <option value="time" *ngFor="let a of TIME" [disabled]="isDisableTime(a,date)">{{a}}</option>
                         
                       </select>
                       <mat-error *ngIf=" form.get('time')?.touched ">Select Valid Option</mat-error>
@@ -37,8 +37,8 @@
     
               <mat-grid-tile>
               <mat-form-field>
-                <mat-label>DOB :</mat-label>
-                <input matInput type="date" placeholder="Enter Date of Birth" formControlName="date" #required>
+                <mat-label>Date :</mat-label>
+                <input matInput type="date" placeholder="Enter Date" formControlName="date" #required>
                 
               <mat-error *ngIf="form.get('date')?.invalid || form.get('date')?.dirty || form.get('date')?.touched ">Enter date</mat-error>
               </mat-form-field>
@@ -64,7 +64,7 @@
 
                 <mat-form-field appearance="fill">
                   <mat-label>Doctor</mat-label>
-                  <select matNativeControl formControlName="doctor" #required>
+                  <select matNativeControl formControlName="doctorName" #required>
                     <option value="{{a.name}}" *ngFor="let a of dashboard.doctorData">{{a.name}}</option>
                     
                   </select>
@@ -72,6 +72,13 @@
                 </mat-form-field>
           
         </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field>
+            <mat-label>ID :</mat-label>
+            <input matInput placeholder="ID" formControlName="id" #required>
+          </mat-form-field>
+          </mat-grid-tile>
 
 
 
