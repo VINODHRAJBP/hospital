@@ -49,6 +49,7 @@ export class AddPatientComponent implements OnInit {
     }
     
     register = new FormGroup({
+      id:new FormControl('',[Validators.required]),
       firstName: new FormControl('',[Validators.required]),
       lastName: new FormControl('',[Validators.required]),
       age: new FormControl('',[Validators.required]),
@@ -86,7 +87,7 @@ export class AddPatientComponent implements OnInit {
       // console.log(this.register.value.date);
       let a=this.register.value
       
-      this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+a.firstName+'.json',a).subscribe(a=>{console.log(a);
+      this.http.put('https://hospital-desk-default-rtdb.firebaseio.com/appointments/'+a.id+'.json',a).subscribe(a=>{console.log(a);
       })
     }
 

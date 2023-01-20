@@ -20,7 +20,7 @@ export class DashboardService {
         const data = [];
         for (const key in res) {
           if (res.hasOwnProperty(key)) {
-            data.push({ ...res[key], id: key });
+            data.push({ ...res[key] });
           }
         }
         return data;
@@ -42,7 +42,7 @@ export class DashboardService {
         const doctors = [];
         for (const key in res) {
           if (res.hasOwnProperty(key)) {
-            doctors.push({ ...res[key], id: key });
+            doctors.push({ ...res[key]});
           }
         }
         return doctors;
@@ -66,7 +66,8 @@ export class DashboardService {
       return res.json();
     }).then((data) => {
       for (const key in data) {
-        this.patientDataWithPromise.push({ ...data[key] });
+        this.patientDataWithPromise.push({ ...data[key]});
+console.log(key);
 
       }
       return this.patientDataWithPromise;
