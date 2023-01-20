@@ -5,18 +5,18 @@
                       style="padding-top:80px">Dashboard</span></a>
               <div class="nav_list "  >
                 <ng-container >
-                  <div class="doctor "  [ngStyle]="{backgroundColor:isValue==1?'rgb(145, 203, 221)':'white'}" (click)="toggle1()">
+                  <div class="doctor " routerLink="doctor"  [ngStyle]="{backgroundColor:isValue==1?'rgb(145, 203, 221)':'white'}" (click)="toggle1()">
                       <a class="nav_link active button mat-button filter-button ng-star-inserted" ><img
                               src="https://thumbs.dreamstime.com/z/medical-team-icon-male-female-doctor-symbols-medical-team-icon-male-female-doctor-symbols-flat-style-vector-eps-157851279.jpg"
                               style="width:60px;">
-                          <span class="nav_name" style="color: rgb(1, 1, 22);font-weight:bolder; text-shadow: 1px 1px 2px rgb(243, 243, 243), 0 0 25px rgb(196, 196, 243), 0 0 5px rgb(241, 241, 250);font-size: larger;" routerLink="doctor" >Doctor</span> </a>
+                          <span class="nav_name" style="color: rgb(1, 1, 22);font-weight:bolder; text-shadow: 1px 1px 2px rgb(243, 243, 243), 0 0 25px rgb(196, 196, 243), 0 0 5px rgb(241, 241, 250);font-size: larger;"  >Doctor</span> </a>
                   </div>
                 </ng-container>
-                  <div class="patience"  [ngStyle]="{backgroundColor:isValue==2?'rgb(145, 203, 221)':'white'}" style="width: 300px;" (click)="toggle2()">
+                  <div class="patience" routerLink="patient"  [ngStyle]="{backgroundColor:isValue==2?'rgb(145, 203, 221)':'white'}" style="width: 300px;" (click)="toggle2()">
                       <a class="nav_link"><img
                               src="https://img.favpng.com/17/12/10/patient-icon-healthcare-icon-medical-icon-vVipqRtL_t.jpg "
                               style="width:60px;">
-                          <span class="nav_name" style="color: rgb(1, 1, 22);font-weight:bolder; text-shadow: 1px 1px 2px rgb(243, 243, 243), 0 0 25px rgb(196, 196, 243), 0 0 5px rgb(241, 241, 250);font-size: larger" routerLink="patient"  [ngClass]="{ 'active' : isValue == 2 }" (click)="toggle2()">Patient</span> </a>
+                          <span class="nav_name" style="color: rgb(1, 1, 22);font-weight:bolder; text-shadow: 1px 1px 2px rgb(243, 243, 243), 0 0 25px rgb(196, 196, 243), 0 0 5px rgb(241, 241, 250);font-size: larger"   [ngClass]="{ 'active' : isValue == 2 }" (click)="toggle2()">Patient</span> </a>
                   </div>
               </div>
           </div>

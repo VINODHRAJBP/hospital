@@ -1,5 +1,5 @@
 <div class="add">
-  <div> <button class="btn btn-light " routerLink="add-patient" style="border-radius: 3px;"><img
+  <div routerLink="add-patient"> <button class="btn btn-light "  style="border-radius: 3px;"><img
         src="https://image.shutterstock.com/image-vector/medical-volunteer-long-shadow-icon-260nw-379459084.jpg" alt=""
         width="150px">
       <br>
@@ -30,20 +30,24 @@
           <th scope="col">Consultant Doctor</th>
           <th scope="col">Appointment Date</th>
           <th scope="col">Appointment Time</th>
+          <th scope="col">Status</th>
+
       
         </tr>
       </thead>
         <tbody>
          <tr *ngFor="let a of datefil;index as i">
            <th scope="row" class="font-weight-light">{{i+1}}</th>
-           <td class=" font-weight-light">{{a.firstName+" "+a.lastName}}</td>
+           <td class=" font-weight-light">{{a.firstName+" "+a.lastName | titlecase}}</td>
            <td class=" font-weight-light">{{a.age}}</td>
            <td class=" font-weight-light">{{a.gender}}</td>
            <td class="font-weight-light">{{a.ph}}</td>
            <td class="font-weight-light">{{a.email}}</td>
-           <td class="font-weight-light">{{a.doctorName}}</td>
+           <td class="font-weight-light">{{a.doctorName | titlecase}}</td>
            <td class="font-weight-light">{{a.date}}</td>
            <td class="font-weight-light">{{a.time}}</td>
+           <td class="font-weight-light">{{a.status | titlecase}}</td>
+
           <td> <button class="btn btn-pill btn-warning" (click)="cancelAppointment(a.id)"> Cancel</button></td>
 
      </tr>
@@ -59,7 +63,7 @@
   <table mat-table [dataSource]="dataSource">
       <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef id="name"> Name </th>
-          <td mat-cell *matCellDef="let element" id="name1"> {{element.firstName}} </td>
+          <td mat-cell *matCellDef="let element" id="name1"> {{element.firstName |titlecase}} </td>
       </ng-container>
 
       <ng-container matColumnDef="age">
@@ -69,7 +73,7 @@
 
       <ng-container matColumnDef="gender">
           <th mat-header-cell *matHeaderCellDef id="name"> Gender </th>
-          <td mat-cell *matCellDef="let element" id="name1"> {{element.gender}} </td>
+          <td mat-cell *matCellDef="let element" id="name1"> {{element.gender |titlecase}} </td>
       </ng-container>
 
       <ng-container matColumnDef="phno">
@@ -79,7 +83,7 @@
 
       <ng-container matColumnDef="doctorName">
           <th mat-header-cell *matHeaderCellDef id="name"> Consultant Doctor </th>
-          <td mat-cell *matCellDef="let element" id="name1"> {{element.doctorName}} </td>
+          <td mat-cell *matCellDef="let element" id="name1"> {{element.doctorName |titlecase}} </td>
       </ng-container>
 
       <ng-container matColumnDef="date">
@@ -88,8 +92,8 @@
     </ng-container>
 
     <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef>status</th>
-      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      <th mat-header-cell *matHeaderCellDef id="name">Status</th>
+      <td mat-cell *matCellDef="let element" ><h4 class="badge badge-pill badge-primary mt-2"> {{element.status |titlecase}}</h4> </td>
   </ng-container>
 
       <ng-container matColumnDef="time">
@@ -98,7 +102,7 @@
     </ng-container>
 
     <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header id="name"> Action </th>
       <td mat-cell *matCellDef="let row">  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon>more_vert</mat-icon>
       </button>
@@ -122,5 +126,5 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <mat-paginator [pageSizeOptions]="[3, 1 ,5, 10, 20]" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 1 ,3, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>

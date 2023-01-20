@@ -1,8 +1,65 @@
- <div class="justify-content-between">
-   <button  class="btn btn-light"  routerLink="doctor-details"  style="border-radius: 3px; width:180px;background-color: rgb(194, 194, 240);border-width:4px;border-color: rgb(194, 194, 211);font-weight: 800;" [ngStyle]="{backgroundColor:isvalue==1?' rgb(190, 233, 229)':'white'}" (click)="toggle1()">All Doctors <br> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Ek-NHRywUF19UdAZQ-kAj51ez3XvAO4WAA&usqp=CAU" alt=""></button>  
-    <button  class="btn btn-light" routerLink="add-doctor" style="border-radius: 3px; width:180px;background-color: rgb(194, 194, 240);border-width:4px;border-color: rgb(194, 194, 211)" [ngStyle]="{backgroundColor:isvalue==2?'rgb(190, 233, 229)':'white'}" (click)="toggle2()">Add Doctor <br> <img src="https://t3.ftcdn.net/jpg/01/00/06/12/240_F_100061229_hvVo7l1ZjGKkaDKUIfuL3NuzOd4T8Xbf.jpg" alt=""></button>   
-   <button  class="btn btn-light" routerLink="appointments" style="border-radius: 3px; width:180px;background-color: rgb(194, 194, 240);border-width:4px;border-color:  rgb(194, 194, 211);font-weight: 800" [ngStyle]="{backgroundColor:isvalue==3?'rgb(190, 233, 229)':'white'}" (click)="toggle3()">Appointments <br> <img src="https://static.thenounproject.com/png/1072809-200.png" alt=""></button>   
+<div class="justify-content-between">
+  <button
+    class="btn btn-light"
+    routerLink="doctor-details"
+    style="
+      border-radius: 3px;
+      width: 180px;
+      background-color: rgb(194, 194, 240);
+      border-width: 4px;
+      border-color: rgb(194, 194, 211);
+      font-weight: 800;
+    "
+    [ngStyle]="{
+      backgroundColor: isvalue == 1 ? ' rgb(190, 233, 229)' : 'white'
+    }"
+    (click)="toggle1()"
+  >
+    All Doctors <br />
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Ek-NHRywUF19UdAZQ-kAj51ez3XvAO4WAA&usqp=CAU"
+      alt=""
+    />
+  </button>
+  <button
+    class="btn btn-light"
+    routerLink="add-doctor"
+    style="
+      border-radius: 3px;
+      width: 180px;
+      background-color: rgb(194, 194, 240);
+      border-width: 4px;
+      border-color: rgb(194, 194, 211);
+    "
+    [ngStyle]="{
+      backgroundColor: isvalue == 2 ? 'rgb(190, 233, 229)' : 'white'
+    }"
+    (click)="toggle2()"
+  >
+    Add Doctor <br />
+    <img
+      src="https://t3.ftcdn.net/jpg/01/00/06/12/240_F_100061229_hvVo7l1ZjGKkaDKUIfuL3NuzOd4T8Xbf.jpg"
+      alt=""
+    />
+  </button>
+  <button
+    class="btn btn-light"
+    routerLink="appointments"
+    style="
+      border-radius: 3px;
+      width: 180px;
+      background-color: rgb(194, 194, 240);
+      border-width: 4px;
+      border-color: rgb(194, 194, 211);
+      font-weight: 800;
+    "
+    [ngStyle]="{
+      backgroundColor: isvalue == 3 ? 'rgb(190, 233, 229)' : 'white'
+    }"
+    (click)="toggle3()"
+  >
+    Appointments <br />
+    <img src="https://static.thenounproject.com/png/1072809-200.png" alt="" />
+  </button>
 </div>
- <router-outlet></router-outlet>
-  
- 
+<router-outlet></router-outlet>

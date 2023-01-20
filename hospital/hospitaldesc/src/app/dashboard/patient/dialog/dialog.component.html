@@ -24,10 +24,22 @@
 
 
                 <mat-grid-tile>
+                  <mat-form-field>
+                    <mat-label>Date :</mat-label>
+                    <input matInput type="date" placeholder="Enter Date" formControlName="date" #required>
+                    
+                  <mat-error *ngIf="form.get('date')?.invalid || form.get('date')?.dirty || form.get('date')?.touched ">Enter date</mat-error>
+                  </mat-form-field>
+              </mat-grid-tile>
+
+              
+
+
+                <mat-grid-tile>
                     <mat-form-field appearance="fill">
                       <mat-label>Time</mat-label>
                       <select matNativeControl formControlName="time" #required>
-                        <option value="time" *ngFor="let a of TIME" [disabled]="isDisableTime(a,date)">{{a}}</option>
+                        <option value="time" *ngFor="let a of TIME" >{{a}}</option>
                         
                       </select>
                       <mat-error *ngIf=" form.get('time')?.touched ">Select Valid Option</mat-error>
@@ -35,15 +47,7 @@
               
               </mat-grid-tile>
     
-              <mat-grid-tile>
-              <mat-form-field>
-                <mat-label>Date :</mat-label>
-                <input matInput type="date" placeholder="Enter Date" formControlName="date" #required>
-                
-              <mat-error *ngIf="form.get('date')?.invalid || form.get('date')?.dirty || form.get('date')?.touched ">Enter date</mat-error>
-              </mat-form-field>
-          </mat-grid-tile>
-
+             
 
           <mat-grid-tile>
     
