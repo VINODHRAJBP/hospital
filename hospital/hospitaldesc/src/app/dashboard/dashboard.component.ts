@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   this.dashboardService.fetchDoctor()
-  this.dashboardService.fetchPatientData()
+  // this.dashboardService.fetchPatientData()
   // this.dashboardService.fetch()
     console.log(this.dashboardService.appointmentDetails);
   }

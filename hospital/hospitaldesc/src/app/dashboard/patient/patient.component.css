@@ -47,10 +47,13 @@ width: 300px;
   button{
     margin: 15px;
   }
-.add1{
-width:5px;
-
-}
+  .add1{
+    width:100px;
+    margin-top:310px;
+    margin-left:100px;
+    font-weight: 500px;
+    
+    }
 
 
   .details{

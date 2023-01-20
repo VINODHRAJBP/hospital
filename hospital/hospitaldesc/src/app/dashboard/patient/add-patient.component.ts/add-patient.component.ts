@@ -48,8 +48,9 @@ export class AddPatientComponent implements OnInit {
   this.dashboardServices.fetchDoctor()
     }
     
+    paitentID =(Math.random().toString().slice(2,7));
     register = new FormGroup({
-      id:new FormControl('',[Validators.required]),
+      id:new FormControl(this.paitentID,[Validators.required]),
       firstName: new FormControl('',[Validators.required]),
       lastName: new FormControl('',[Validators.required]),
       age: new FormControl('',[Validators.required]),
@@ -80,10 +81,10 @@ export class AddPatientComponent implements OnInit {
     }
 
   
-    onsub1(){
+    back(){
         this.loc.back()
     }
-    onSub() {
+    submit() {
       // console.log(this.register.value.date);
       let a=this.register.value
       

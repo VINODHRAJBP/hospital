@@ -32,6 +32,11 @@ patientData:any
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
+  dataSource1 !: MatTableDataSource<data>;
+  @ViewChild(MatPaginator) paginator1!: MatPaginator;
+
+
+
 
   ngOnInit(): void {
     this.dashboardService.fetchDoctor()

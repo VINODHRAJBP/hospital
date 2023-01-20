@@ -20,7 +20,6 @@ import { MatTableModule } from '@angular/material/table';
 import{MatIconModule} from '@angular/material/icon';
 import { MatMenuModule} from '@angular/material/menu'
 import { NgxPaginationModule } from 'ngx-pagination';
-import { UpdateDataComponent } from './patient/update-data/update-data.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './patient/dialog/dialog.component';
 import {MatFormFieldModule,} from '@angular/material/form-field';
@@ -39,7 +38,6 @@ import {  MatInputModule } from '@angular/material/input';
     AppointmentsComponent,
     DoctorDetailsComponent,
     AddPatientComponent,
-    UpdateDataComponent,
     DialogComponent,
 
 
